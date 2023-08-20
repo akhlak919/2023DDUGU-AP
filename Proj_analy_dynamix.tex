@@ -1,0 +1,420 @@
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{wrapfig}
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+\usepackage{mathrsfs}  %for cursive writting
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{ddugu.ac.in}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Project : Analytical Dynamics}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape By: \href{https://github.com/akhlak919}{Akhlak Ansari}\\ \url{https://github.com/akhlak919}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+\usepackage[pages=some]{background}
+\backgroundsetup{scale=2, angle=0, opacity=0.1, contents={\includegraphics[]{DDU_Logo.png}}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \Large{\bf PROJECT}\\ 
+        \Large{\textbf{Analytical Dynamics}}
+        
+
+        \vspace*{1cm}
+
+        \includegraphics[scale=1]{DDU_Logo.png}
+        \vspace*{1cm}
+
+        \begin{center}
+            {\bf Department of Mathematics and Statistics\\
+        DDU Gorakhpur University, Gorakhpur (India)}
+        \end{center}
+        
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\BgThispage
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+% \vspace*{0.2cm}
+
+\BgThispage
+
+\section*{
+    \begin{center}
+    \textcolor{blue!50!black}{\slshape \underline{Lagrangian Approach to Study Dynamical Systems}}
+\end{center}}
+
+\section{Introduction}
+
+Lagrangian mechanics is a mathematical framework used to describe the motion of particles and systems in classical mechanics. It was developed by Joseph-Louis Lagrange in the late 18th century as an alternative to the Newtonian approach of describing motion using forces.
+
+The motivation behind the development of Lagrangian mechanics was to find a more elegant and general approach to describe the motion of systems, without relying on the concept of force. Lagrange recognized that the description of motion in terms of forces is not always straightforward, as the forces acting on a system may be difficult to identify or measure. Instead, he proposed a new approach that would allow the motion of a system to be described in terms of a single quantity called the Lagrangian, which depends only on the positions and velocities of the particles in the system.
+
+One of the key insights of Lagrangian mechanics is the concept of a Lagrangian function, which is a mathematical expression that encapsulates all the information about a system's motion in a compact form. The Lagrangian function is defined as the difference between a system's kinetic energy and its potential energy, and it is a function of the system's coordinates and velocities.
+
+The Lagrangian approach has several advantages over the Newtonian approach. For one, it is more general, as it can be used to describe systems with complex constraints and geometries, and it can be extended to include quantum mechanical systems. Additionally, it provides a natural way to derive the equations of motion for a system, which can be used to predict future behavior.
+
+Overall, the Lagrangian approach provides a powerful mathematical framework for describing the motion of systems in classical mechanics, and it continues to be an important tool in physics and engineering today.
+
+\newpage
+
+\section{Some Useful Definitions}
+
+\BgThispage
+
+Here, we will discuss some key definitions that are related to Lagrangian mechanics, let's get started,
+
+\subsection{Lagrangian}
+
+In Lagrangian mechanics, the Lagrangian is a mathematical function that describes the difference between a system's kinetic energy and potential energy. It is denoted by the symbol $\mathscr{L}$ and is a function of the system's generalized coordinates $q$ and their time derivatives $\dot{q}$. Mathematically, the Lagrangian can be written as:
+
+\[\mathscr{L}(q, \dot{q}) = \mathcal{T}(\dot{q}) - \mathcal{V}(q)\]
+
+where $\mathcal{T}$ is the system's kinetic energy and $\mathcal{V}$ is its potential energy. The Lagrangian is a fundamental concept in Lagrangian mechanics, as it is used to derive the equations of motion of a system through the principle of least action. By minimizing the action functional (the integral of the Lagrangian over time), one can obtain the Euler-Lagrange equations, which describe the motion of the system. The Lagrangian formulation of mechanics has proven to be extremely powerful and versatile, and is used to model a wide range of physical systems.
+
+\subsection{Action}
+
+In Lagrangian mechanics, the action is a mathematical quantity that describes the behavior of a physical system over a period of time. It is defined as the integral of the Lagrangian $\mathscr{L}(q, \dot{q})$ over time $t$, from an initial time $t_1$ to a final time $t_2$:
+
+\[S = \int_{t_1}^{t_2} \mathscr{L}(q, \dot{q}) dt\]
+
+where $q$ represents the system's generalized coordinates and $\dot{q}$ represents their time derivatives. The action $S$ is a scalar quantity that characterizes the path taken by the system in its configuration space.
+
+The principle of least action states that the path taken by a system between two points in its configuration space is the one that minimizes the action. This principle provides a powerful tool for deriving the equations of motion of a system in terms of its Lagrangian. By varying the action with respect to the system's coordinates, one can obtain the Euler-Lagrange equations, which describe the motion of the system.
+
+The action is an important concept in Lagrangian mechanics, as it allows one to model a wide range of physical systems and derive their equations of motion in a unified way. It is closely related to other important concepts in mechanics, such as energy and momentum, and provides a powerful tool for understanding the behavior of physical systems.
+
+\subsection{Principle of Least Action}
+We know from classical mechanics, that the equations of motion for various mechanical systems arise naturally from demanding that an infinitesimal variation in the action  $S$
+of a system is equal to zero,  $\delta S=0$, where:
+
+\BgThispage
+
+\begin{equation*}
+    S = \int_{t_1}^{t_2}\mathscr{L}\left(q_i, \dot{q_i}\right)dt 
+\end{equation*}
+
+This means that the action remains invariant in infinitesimal variations from the actual motion of the system, which implies the fact that the action takes on an extremum value (maximum or minimum) in the same way a given function would yield a maximum value at the point where its derivative becomes zero.
+
+This “demanding” of an extremum value is also known as the {\bf principle of least action} and can easily be transformed to a system of second order differential equations which, by definition, make up the equations of motion for the system.
+
+Let's assume for simplicity a system with only one generalized coordinate $q=q(t)$, or equivalently one degree of freedom, if you wish. Assume that  $q(t)$ is the actual trajectory of the particle which begins at a point  $q_1$ at time  $t_1$ and ends at the point  $q_2$ at time  $t_2$. What we want to do now is replace this, with an other hypothetical trajectory of the form  $Q(t)=q(t)+\delta q(t)$, for a given infinitesimal deviation $( \delta q(t))$ and demand that the variation of the action becomes zero:
+
+\begin{equation*}
+    \delta S = \delta \int_{t_1}^{t_2}\mathscr{L}\left(q_i, \dot{q_i}\right)dt = 0
+\end{equation*}
+
+From here it follows,
+
+\begin{equation*}
+    \delta S = \int_{t_1}^{t_2}\delta \mathscr{L}dt = \int_{t_1}^{t_2}\left(\frac{\partial \mathscr{L}}{\partial q}\delta q + \frac{\partial \mathscr{L}}{\partial \dot{q}}\delta \dot{q}\right)dt = 0 \tag*{(1)}
+\end{equation*}
+
+If we consider the fact that a variation in the derivative is equal to the derivative of a variation, the second term inside the integral can be re-written,
+
+\begin{equation*}
+    \int_{t_1}^{t_2}\frac{\partial \mathscr{L}}{\partial \dot{q}}\delta \dot{q}dt = -\int_{t_1}^{t_2}\frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{q}}\right)\delta q dt
+\end{equation*}
+
+so we can re-write equation $(1)$ as such:
+
+\begin{equation*}
+    \delta S =  \int_{t_1}^{t_2}\left(\frac{\partial \mathscr{L}}{\partial q} - \frac{d}{dt}\frac{\partial \mathscr{L}}{\partial \dot{q}}\right)\delta q dt = 0 \tag*{(2)}
+\end{equation*}
+
+which obviously is only true if the entire term in the parenthesis is identical to zero.
+
+This leads to the Euler-Lagrange equation,
+
+\begin{equation*}
+    \frac{d}{dt}\frac{\partial \mathscr{L}}{\partial \dot{q}} - \frac{\partial \mathscr{L}}{\partial q}  = 0 \tag*{(3)}
+\end{equation*}
+
+\BgThispage
+
+which is the required expression for the motion of our $1\mbox{-degree-of-freedom}$ system.
+
+Of course in the case of mechanical systems, the Lagrangian is the difference between kinetic and potential energy, so you just find the Lagrangian, insert it in the Euler-Lagrange equation and you found the equations of motion of the system.
+
+At this point, you might ask yourself “well, what's the point in searching for the Lagrangian of a system when the equations of motion are already known?”. The answer to this logical question lies in the premises of a fundamentally deep theorem, known as Noether's theorem and in essence, it means that if the equations of motion of a system emanate from a Lagrangian (more specifically a Lagrangian density), then in each and every continuous symmetry of the system, there is a corresponding conserved quantity.
+
+\subsection{Euler-Lagrange Equations}
+
+In Lagrangian mechanics, the Euler-Lagrange equations are a set of differential equations that describe the motion of a physical system in terms of its Lagrangian. They are obtained by applying the principle of least action, which states that the path taken by a system between two points in its configuration space is the one that minimizes the action.
+
+The Euler-Lagrange equations can be derived by varying the action S with respect to the system's coordinates $q(t)$. This gives rise to a set of equations known as the Euler-Lagrange equations:
+
+\begin{equation*}
+    \frac{d}{dt}\frac{\partial \mathscr{L}}{\partial \dot{q}} - \frac{\partial \mathscr{L}}{\partial q}  = 0 
+\end{equation*}
+
+
+\BgThispage
+
+where $\dot{q}$ represents the time derivative of the generalized coordinates q, and L is the Lagrangian of the system. The Euler-Lagrange equations describe the motion of the system in terms of its Lagrangian and are equivalent to Newton's laws of motion.
+
+The first term on the left-hand side of the Euler-Lagrange equations represents the rate of change of the Lagrangian with respect to the generalized velocities $\dot{q}$, while the second term represents the rate of change of the Lagrangian with respect to the generalized coordinates $q$. The equations can be used to determine the motion of a wide range of physical systems, from simple particles to more complex systems such as fluids and electromagnetic fields.
+
+The Euler-Lagrange equations are an important concept in Lagrangian mechanics, as they provide a powerful tool for modeling and understanding the behavior of physical systems. They have many applications in physics, engineering, and other fields, and are considered to be one of the fundamental concepts of modern physics.
+
+\subsection{Generalized Co-ordinates}
+
+In classical mechanics, generalized coordinates are a set of independent variables that describe the configuration of a physical system. They are used to specify the position and orientation of the system in its configuration space, which is the space of all possible configurations of the system.
+
+The choice of generalized coordinates depends on the geometry and constraints of the system, and can greatly simplify the analysis of its motion. For example, in a simple pendulum, the angle that the pendulum makes with the vertical can be used as a generalized coordinate, instead of the more complex Cartesian coordinates of the pendulum's position. Similarly, in a system of interacting particles, the positions and velocities of the particles can be replaced by a set of generalized coordinates that describe the overall motion of the system.
+
+The number of generalized coordinates needed to describe a system is equal to the number of degrees of freedom of the system, which is the minimum number of independent variables needed to specify the configuration of the system. For example, a simple pendulum has one degree of freedom, and can be described by a single generalized coordinate, while a system of $N$ particles moving in three-dimensional space has $3N$ degrees of freedom, and can be described by $3N$ generalized coordinates.
+
+\BgThispage
+
+\subsection{Constraints}
+
+In Lagrangian mechanics, constraints are conditions that limit the motion of a physical system. They can arise from various sources, such as physical obstructions, geometrical configurations, or conservation laws. Constraints can be classified into two types: holonomic and nonholonomic.
+
+{\bf Holonomic constraints} are restrictions on the motion of a system that can be expressed as equations between its generalized coordinates and/or their time derivatives. These constraints limit the possible paths that the system can take in its configuration space. Examples of holonomic constraints include the length of a pendulum, the distance between two particles, or the angle between two rigid bodies.
+
+{\bf Nonholonomic constraints} are restrictions on the motion of a system that cannot be expressed as equations between its generalized coordinates and/or their time derivatives. These constraints impose conditions on the velocity or acceleration of the system, and limit the possible velocities and accelerations that the system can have. Examples of nonholonomic constraints include the rolling without slipping of a wheel, or the motion of a system subject to friction.
+
+
+
+Constraints play a crucial role in Lagrangian mechanics, as they affect the Lagrangian of the system and the resulting equations of motion. They can be incorporated into the Lagrangian using Lagrange multipliers, which are introduced to enforce the constraints and ensure that the motion of the system satisfies them. The resulting equations of motion are known as the constrained Euler-Lagrange equations, and they describe the motion of the system subject to the constraints.
+
+\section{Some Theorem and their Proofs}
+
+
+
+Here we discuss some theorems that are related to Lagrangian mechanics and have an important role to build the Lagrangian mechanics.
+
+\subsection{Theorem: (Principle of Virtual work done)}
+
+\BgThispage
+
+{\bf Statement :}
+
+"The principle of virtual work states that for a system in static equilibrium, the virtual work done by external forces acting on the system is equal to the virtual work done by internal forces in response to virtual displacements."
+
+Mathematically, this can be expressed as:
+
+\[\boxed{\delta W_{\mbox{ext}} = \delta W_{\mbox{int}}}\]
+
+where $\delta W_{\mbox{ext}}$ is the virtual work done by external forces and $\delta W_{\mbox{int}}$ is the virtual work done by internal forces.
+
+{\bf Proof :}
+
+To derive this principle, consider a system in static equilibrium under the action of external forces $F_i$ and internal forces $\displaystyle f_i$. Let $\delta r_i$ be a virtual displacement of the system that preserves its static equilibrium. The virtual work done by the external forces is given by:
+
+\[\delta W_{\mbox{ext}} = \sum_{i}^{} F_i \cdot \delta r_i\]
+
+where $\displaystyle \sum_{i}^{}$ denotes the sum over all forces. The virtual work done by the internal forces is given by:
+
+\[\delta W_{\mbox{int}} = \sum_{i}^{} f_i \cdot \delta r_i\]
+
+By Newton's third law, the internal forces come in pairs that are equal in magnitude and opposite in direction. Therefore, the sum of the internal forces can be expressed as the negative of the sum of the forces acting on the corresponding external bodies. That is:
+
+\[\sum_{i}^{} f_i = -\sum_{i}^{} F_{\mbox{ext}, i}\]
+
+Substituting this expression into the equation for $\delta W_{\mbox{int}}$ yields:
+
+\[\delta W_{\mbox{int}} = -\sum_{i}^{} F_{\mbox{ext}, i} \cdot \delta r_i\]
+
+Equating $\delta W_{\mbox{ext}}$ and $\delta W_{\mbox{int}}$ and simplifying yields the principle of virtual work:
+
+\[\sum_{i}^{} F_i \cdot \delta r_i = 0\]
+
+This equation implies that for a system in static equilibrium, the net work done by external forces acting on the system is zero for any virtual displacement that preserves the equilibrium.
+
+
+\subsection{Theorem : (D'Alembert Principle)}
+
+\BgThispage
+
+For equilibrium of dynamical system, the principal of virtual work is modified by D'Alembert using concept of reverse force.
+
+{\bf Statement and Proof :}
+
+"A dynamical system remains in equilibrium under action of two forces, net force on any particle and a reversed force on that particle."
+
+\[\mbox{i.e}\hspace*{1cm} F_i = \dot{p}_i\]
+
+\[\mbox{or}\hspace*{1cm} F_i - \dot{p}_i = 0\]
+
+
+If $\delta r_i$ be virtual displacement, then 
+
+\[\left( F_i - \dot{p}_i  \right)\delta r_i = 0\]
+
+For all particles,
+
+\[\sum_{i}^{}\left( F_i - \dot{p}_i  \right)\delta r_i = 0\]
+
+Since, $F_i = F^{\mbox{ext}}_i + f_i$ thus,
+
+\[\sum_{i}^{}\left( F^{\mbox{ext}}_i + f_i - \dot{p}_i\right)\delta r_i = 0\]
+
+Since, $\sum_{i}^{}f_i\cdot \delta r_i = 0$ thus,
+
+\[\boxed{\sum_{i}^{}\left( F^{\mbox{ext}}_i - \dot{p}_i \right)\delta r_i = 0}\]
+
+This is called D'Alembert principle.It explains equilibrium of dynamical systems.
+
+\BgThispage
+
+\section{Illustrative Example(Using Lagrangian mechanics)}
+
+\subsection{Simple Pendulum}
+
+Since, Lagrangian in plane polar coordinate is given by,
+\vspace*{4mm}
+$\displaystyle \mathscr{L} = \frac{1}{2}m\left(\dot{r}^2 + r^2\dot{\theta}^2\right) - \mathcal{V}\left(r, \theta\right)$
+\vspace*{4mm}
+Since, $r = l\implies \dot{r} = 0 $ where, $l$ is the length of the string and $m$ is the mass of the bob.
+\vspace*{4mm}
+$\displaystyle \mathcal{V} = -mgl\cos\theta$
+
+
+thus,
+\begin{equation*}
+    \mathscr{L} = \frac{1}{2}ml^2\dot{\theta}^2 + mgl\cos\theta \tag*{(1)}
+\end{equation*}
+
+Since, Euler-Lagranges equation is,
+
+\begin{equation*}
+    \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\theta}}\right) - \frac{\partial \mathscr{L}}{\partial \theta} = 0 \tag*{(2)}
+\end{equation*}
+
+Now, let's compute the required things with the help of equation no.$(1)$, we have
+
+
+\vspace*{4mm}
+$\displaystyle \frac{\partial \mathscr{L}}{\partial \dot{\theta}} = ml^2\dot{\theta}$
+\vspace*{4mm}
+$\displaystyle \implies \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\theta}}\right) = ml^2\ddot{\theta}$
+
+Again,  $\displaystyle \frac{\partial \mathscr{L}}{\partial \theta} = -mgl\sin\theta$
+
+Using these results in equation no.$(2)$,we have
+
+$\displaystyle ml^2\ddot{\theta} + mgl\sin\theta = 0$
+
+
+If $\theta$ is very small then, $\sin\theta \approx \theta$
+
+
+$\displaystyle \therefore\ ml^2\ddot{\theta} + mgl\theta = 0$
+
+thus, 
+\begin{equation*}
+    \boxed{\ddot{\theta} + \frac{g}{l}\theta = 0}
+\end{equation*}
+
+thus time period, $\displaystyle T = 2\pi \sqrt{\frac{l}{g}}$
+
+\section{Applications of Lagrangian mechanics in daily life}
+
+Lagrangian mechanics has a wide range of applications in daily life, from simple mechanical systems to complex engineering problems. Here are some examples:
+
+{\bf 1. Pendulum clocks:} The motion of a pendulum in a clock can be described using the principles of Lagrangian mechanics. The Lagrangian for a simple pendulum can be derived, and its equations of motion can be used to determine the period of oscillation and other properties of the pendulum.
+
+{\bf 2. Robotics:} The principles of Lagrangian mechanics are used in robotics to model the motion of robotic systems and to design control algorithms that optimize their performance. For example, the dynamics of a robotic arm can be modeled using Lagrangian mechanics, and its motion can be optimized to achieve precise positioning and control.
+
+{\bf 3. Aircraft and spacecraft design:} Lagrangian mechanics is used to analyze the motion and stability of aircraft and spacecraft. The principles of Lagrangian mechanics are used to model the aerodynamics and control of these systems, and to design flight control systems that ensure their safe operation.
+
+{\bf 4. Structural engineering:} The principles of Lagrangian mechanics are used in structural engineering to analyze the behavior of materials and structures under various loading conditions. For example, the deformation and stress distribution in a bridge can be modeled using Lagrangian mechanics, and the design of the bridge can be optimized for maximum strength and durability.
+
+{\bf 5. Quantum mechanics:} Lagrangian mechanics is also used in quantum mechanics to describe the behavior of subatomic particles and to develop quantum field theories. The Lagrangian for a quantum mechanical system can be derived, and its equations of motion can be used to determine the probabilities of various quantum events.
+
+{\bf 6. Astronomy and space exploration:} Lagrangian mechanics is used in the study of celestial mechanics, which involves the motion of celestial bodies, such as planets, asteroids, and comets. It is used in the design of spacecraft trajectories and in predicting the behavior of objects in space.
+
+{\bf 7. Sports:} Lagrangian mechanics is used in the analysis and design of sports equipment, such as bicycles, skis, and golf clubs. It helps in optimizing the performance of these equipment by considering factors such as friction, inertia, and energy transfer.
+
+These are just a few examples of the many applications of Lagrangian mechanics in daily life. The principles of Lagrangian mechanics are used in a wide range of fields, from physics and engineering to biology and economics, and they continue to be a valuable tool for understanding and designing complex systems.
+
+
+\section{References}
+
+StackOverflow : \url{https://stackoverflow.com/}\\
+My Github Repo : \url{https://github.com/akhlak919/LaTeX_Stuffs/}\\
+LiberTexts : \url{https://phys.libretexts.org/}
+
+
+\end{document}

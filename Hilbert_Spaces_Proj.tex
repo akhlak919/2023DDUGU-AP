@@ -1,0 +1,521 @@
+%% Preamble of the document starts here
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{ddugu.ac.in}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Project : Hilbert Spaces}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape By: \href{https://github.com/akhlak919}{Akhlak Ansari}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        \Large{\textbf{IB Mathematics SL}}\\ 
+        \Large{\bf Internal Assessment}
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+% \vspace*{0.2cm}
+
+       
+    \begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black,title=\begin{center}
+        \section{ Title of the Project(Problem)}
+    \end{center}]
+        The inner product space $C[a,b]$\footnote{Here $C[a,b]$ is a linear space over the field of real numbers $\mathbb{R}$}, set of all continuous real valued(or complex valued) functions on $[a,b]$ defined as,
+        \[\langle x,y \rangle = \int_{a}^{b} \overline{x(t)}y(t) dt \hspace*{3cm} \forall\  x,y \in C[a,b]\] equipped with the induced norm, 
+        \[\norm*{x} = \sqrt{\int_{a}^{b}\abs*{x(t)}^2 dt}\]
+        is not a Hilbert Space.
+    \end{tcolorbox}
+
+    \section{Pre-requisites}  
+
+    The pre-requisites for studying Inner Product Spaces include a good understanding of basic Linear Algebra and vector spaces. Some specific topics that you should be familiar with are:
+          \subsection{Vectors and Vector Spaces}
+          You should have a good understanding of what a vector is, how to add and subtract vectors, and how to scale them by a scalar. You should also be comfortable with the concept of a vector space and know some examples of vector spaces such as $\mathbb{R}^n$, the set of polynomials, and the set of functions.
+
+          \subsubsection{Vector Spaces (Definition)}
+
+         Let $\F$ be a field. A \emph{vector space} over $\F$ (or an $\F$-vector space) is a set $V$ together with two operations:
+
+         \begin{enumerate}
+            \item[(i)] \emph{Addition}, which assigns to each pair of elements $u,v\in V$ an element $u+v\in V$ (called the \emph{sum} of $u$ and $v$), and
+            \item[(ii)] \emph{Scalar multiplication}, which assigns to each element $u\in V$ and each scalar $\lambda\in \F$ an element $\lambda u\in V$ (called the \emph{product} of $\lambda$ and $u$),
+         \end{enumerate}
+
+         \vspace*{0.5cm}
+
+         satisfying the following axioms for all $u,v,w\in V$ and all $\lambda,\mu\in \F$:
+
+         \begin{enumerate}
+            \item[(V1)] $u+v=v+u$ (commutativity of addition)
+            \item[(V2)] $(u+v)+w=u+(v+w)$ (associativity of addition)
+            \item[(V3)] There exists an element $0\in V$ (called the \emph{zero vector}) such that $u+0=u$ for all $u\in V$
+           \item[(V4)] For every $u\in V$, there exists an element $-u\in V$ (called the \emph{additive inverse} of $u$) such that $u+(-u)=0$
+           \item[(V5)] $\lambda(u+v)=\lambda u+\lambda v$ (distributivity of scalar multiplication over vector addition)
+           \item[(V6)] $(\lambda+\mu)u=\lambda u+\mu u$ (distributivity of vector multiplication over scalar addition)
+           \item[(V7)] $(\lambda\mu)u=\lambda(\mu u)$ (associativity of scalar multiplication)
+           \item[(V8)] $1u=u$ (multiplicative identity)
+         \end{enumerate}
+
+         \textbf{Example.} Let $\mathbb{R}^2$ denote the set of ordered pairs of real numbers $(x,y)$ with the usual addition and scalar multiplication defined componentwise, that is, for $(x_1,y_1),(x_2,y_2)\in \mathbb{R}^2$ and $\lambda \in \mathbb{R}$, we have 
+         \[(x_1, y_1) + (x_2, y_2) = (x_1 + x_2, y_1 + y_2)\  \mbox{and}\ \lambda(x_1, y_1) = (\lambda x_1, \lambda y_1)\]
+         Then $\mathbb{R}^2$ is a vector space over $\mathbb{R}$.
+        
+         \subsection{Matrices and linear transformations}
+
+         A \textit{matrix} is a rectangular array of numbers, usually denoted by $\mathcal{A}$, $\mathcal{B}$, $\mathcal{C}$, etc. The \textit{size} or \textit{dimension} of a matrix $\mathcal{A}$ is given by the number of rows and columns, denoted by $m$ and $n$, respectively. A $m \times n$ matrix has $m$ rows and $n$ columns, and is written as,
+
+         \[\mathcal{A} = \begin{bmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+
+         \end{bmatrix}_{m\times n}\]
+
+         \vspace*{0.5cm}
+
+         where $a_{ij}$ is the entry in the $i$-th row and $j$-th column of $\mathcal{A}$.
+
+         \textbf{Linear Transformations.} Let $V$ and $W$ be vector spaces over a field $\mathbb{F}$. A function $T:V\rightarrow W$ is called a \textit{linear transformation} if it satisfies the following two conditions for all vectors $\mathbf{u},\mathbf{v}\in V$ and scalars $a,b\in \mathbb{F}$:
+
+\begin{itemize}
+\item[(LT1)] $T(\mathbf{u}+\mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})$ (additivity)
+\item[(LT2)] $T(a\mathbf{u}) = aT(\mathbf{u})$ (homogeneity)
+\end{itemize}
+
+The set of all linear transformations from $V$ to $W$ is denoted by $\mathcal{L}(V,W)$.
+
+\subsection{Norm and Normed Linear Spaces}
+
+\textbf{Norm.} Let $V$ be a linear space over a field $\mathbb{F}$. A function $\norm*{\cdot}:V\rightarrow \mathbb{F(\mathbb{R}\ \mbox{or}\ \mathbb{C} )}$ is called a \textit{norm} if it satisfies the following three conditions for all vectors $\mathbf{u},\mathbf{v}\in V$ and scalars $a\in \mathbb{F}$:
+
+\begin{itemize}
+\item[(N1)] $\norm*{\mathbf{u}}\geq 0$ and $\norm*{\mathbf{u}}=0$ if and only if $\mathbf{u}=\mathbf{0}$ (non-negativity and definiteness)
+\item[(N2)] $\norm*{\mathbf{u}+\mathbf{v}}\leq \norm*{\mathbf{u}}+\norm*{\mathbf{v}}$ (triangle inequality)
+\item[(N3)] $\norm*{a\mathbf{u}}=|a|\norm*{\mathbf{u}}$ (homogeneity)
+\end{itemize}
+
+A linear space $V$ equipped with a norm is called a \textit{\bf normed linear space}, denoted by $(V,\norm*{\cdot})$.
+
+
+\textbf{Examples of Normed Linear Spaces.}
+
+\begin{itemize}
+\item[(a)] $\mathbb{R}^n$ with the Euclidean norm $\norm*{\mathbf{x}}^2 = \sqrt{x_1^2+\cdots+x_n^2}$.
+\item[(b)] $\mathbb{C}^n$ with the Euclidean norm $\norm*{\mathbf{x}}^2 = \sqrt{|x_1|^2+\cdots+|x_n|^2}$.
+\item[(c)] $C([0,1])$ with the supremum norm $\norm*{f}_{\infty} = \displaystyle \sup_{x\in[0,1]}|f(x)|$.
+\end{itemize}
+
+\subsubsection{Banach Spaces}
+A normed linear space $(V,\norm*{\cdot})$ is called a \textit{Banach space} if it is complete with respect to the norm $\norm*{\cdot}$. That is, every Cauchy sequence in space converges to a limit in same space. Some examples of Banach spaces include:
+
+\pagebreak
+
+\vspace*{0.2cm}
+\begin{itemize}
+\item[(a)] $\ell^p$, the space of all sequences $(x_n)$ of complex numbers or real numbers, such that $\displaystyle \sum_{n=1}^{\infty}|x_n|^p<\infty$, with the norm $\norm*{(x_n)}_p = \left(\displaystyle \sum_{n=1}^{\infty}|x_n|^p \right)^{1/p}$ for $1\leq p<\infty$.
+\item[(b)] $L^p([0,1])$, the space of all Lebesgue measurable functions $f:[0,1]\rightarrow \mathbb{C}$ or $\mathbb{R}$, such that $\displaystyle \int_0^1|f(x)|^p dx<\infty$, with the norm $\norm*{f}_p = \left(\displaystyle \int_0^1|f(x)|^p dx \right)^{1/p}$ for $1\leq p<\infty$.
+\item[(c)] $C^1([a,b])$, the space of all continuously differentiable functions $f:[a,b]\rightarrow \mathbb{C}$ or $\mathbb{R}$, with the norm $\norm*{f}_{\infty} = \displaystyle \displaystyle \max_{x\in[a,b]}|f(x)| + \displaystyle \max_{x\in[a,b]}|f'(x)|$\footnote{$f'$ denotes the differentiation of function $f$}.
+\end{itemize}
+
+\subsection{Dot Product(Building block of the Inner Product)}
+
+The dot product of two vectors $\mathbf{u} = [u_1, u_2, \ldots, u_n]$ and $\mathbf{v} = [v_1, v_2, \ldots, v_n]$ in Euclidean space can be defined using the following formula:
+
+\[\mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \cdots \cdots \cdots + u_n v_n\]
+
+Alternatively, the dot product can also be written in terms of vector notation as:
+
+\[\mathbf{u}\cdot \mathbf{v} = \norm*{\mathbf{u}}\norm*{\mathbf{v}}\cos\theta\]
+
+where $\norm*{\mathbf{u}}$ and $\norm*{\mathbf{v}}$ are the magnitudes (or lengths) of the vectors, and $\theta$ is the angle between them.
+
+\newpage
+
+\section{Introduction}
+
+An inner product space is a fundamental concept in mathematics that arises in many areas of study, such as linear algebra, functional analysis, and quantum mechanics. It is a generalization of the Euclidean space that allows us to define a notion of length, angle, and orthogonality for vectors in a more abstract setting than that of the dot product of vectors.
+
+Formally, an inner product space is a vector space equipped with an inner product, which is a function that takes two vectors and returns a scalar value. This scalar value represents the "length" of the projection of one vector onto the other, and it satisfies certain properties that generalize the familiar properties of the dot product in Euclidean space.\footnote{Euclidean n-space, sometimes called Cartesian space or simply n-space, is the space of all n-tuples of real numbers, $(x_1, x_2, ..., x_n)$. Such n-tuples are sometimes called points, although other nomenclature may be used. The totality of n-space is commonly denoted $\mathbb{R}^n$, although older literature uses the symbol $\mathbb{E}^n$ (or actually, its non-doublestruck variant $\mathbb{E}^n$; O'Neill 1966, p. 3).\\
+
+
+$\mathbb{R}^n$ is a vector space and has Lebesgue covering dimension $n$. For this reason, elements of $\mathbb{R}^n$ are sometimes called n-vectors. $\mathbb{R}^1$=$\mathbb{R}$ is the set of real numbers (i.e., the real line), and $\mathbb{R}^2$ is called the Euclidean plane.\\
+\hspace*{10cm} Source: \url{mathworld.wolfram.com}}
+
+One of the most important properties of the inner product is that it induces a norm, which measures the "size" of a vector. This norm satisfies the triangle inequality and other properties that are essential in the study of convergence and continuity of functions.
+
+Inner product spaces also have a rich theory of orthogonality, which allows us to decompose a vector into orthogonal components, and to define concepts such as orthogonal projections, orthogonal complements, and orthogonal bases.
+
+The study of inner product spaces is important not only for its theoretical significance but also for its practical applications. For example, they are used extensively in signal processing, image compression, and machine learning, where they provide a natural framework for representing and manipulating high-dimensional data.
+
+Overall, the theory of inner product spaces is a fascinating and fundamental subject that underlies many areas of modern mathematics and has a wide range of applications in various fields of science and engineering.
+
+\subsection{Inner Product Spaces and Hilbert Space}
+
+An inner product on a vector space $V$ over the field $\mathbb{F(R\  \mbox{or}\ C)}$ is defined as a function $\langle \cdot, \cdot \rangle : V \times V \to \mathbb{F}$ that satisfies the following properties for all vectors $\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$ and all scalars $\lambda \in \mathbb{F}$ :
+
+\begin{enumerate}
+    \item [(IP1)] {\bf positivity} \[\langle v,v\rangle \geq 0\ \mbox{for all}\ v\in V ;\]
+    \item [(IP2)]{\bf definiteness} \[\langle v,v \rangle = 0\ \mbox{if and only if}\ v=0 ;\]
+    \item [(IP3)] {\bf conjugate symmetry} \[\langle u, v\rangle = \overline{\langle v, u \rangle}\ \mbox{for all}\ u,v\in V ;\]
+    \item [(IP4)] {\bf additivity in the first slot} \[\langle u + v, w\rangle = \langle u, w \rangle + \langle v, w \rangle\ \mbox{for all}\ u,v,w \in V ;\]
+    \item [(IP5)] {\bf homogeneity in the first slot} \[\langle \lambda u, v \rangle = \lambda \langle u,v \rangle\ \mbox{for all}\ \lambda \in \mathbb{F}\ \mbox{and all}\ u,v \in V\]
+\end{enumerate}
+
+{\bf Examples}
+
+\begin{itemize}
+    \item The Euclidean inner product on $\mathbb{F}^n$ is defined by \[\langle\left(w_1, \cdots \cdots , w_n\right), \left(z_1, \cdots \cdots, z_n\right)\rangle = w_1\overline{z_1} + \cdots \cdots + w_n \overline{z_n}\]
+    \item If $C_1, \cdots \cdots, C_n$ are poaitive numbers then an inner product can be defined on $\mathbb{F}^n$ by         \[\langle \left(w_1, \cdots \cdots , w_n\right), \left(z_1, \cdots \cdots, z_n\right)\rangle = c_1 w_1\overline{z_1} + \cdots \cdots + c_n w_n \overline{z_n}\]
+    \item An inner product can be defined on the vector space of continuous real valued functions on the interval $C[-1,1]$ by \[\langle f, g \rangle = \int_{-1}^{1} f(x) g(x) dx\]
+
+\end{itemize}
+
+% \pagebreak
+{\bf Hilbert Space}
+
+A complete inner product space is referred as the Hilbert Space.
+
+\pagebreak
+
+{\bf \large \underline{Assigned Problem(for Project)}}
+
+The inner product space $C[a,b]$, set of all continuous real valued(or complex valued) functions on $[a,b]$ defined as,
+        \[\langle x,y \rangle = \int_{a}^{b} \overline{x(t)}y(t) dt \hspace*{3cm} \forall\  x,y \in C[a,b]\] equipped with the induced norm, 
+        \[\norm*{x} = \sqrt{\int_{a}^{b}\abs*{x(t)}^2 dt}\]
+        is not a Hilbert Space.
+
+\section{Solution of the Problem}  
+
+    First of all we must show that $C[a,b]$ is an inner product space with respect to defined inner product and induced norm.
+    To do so, we must verify all the axioms to be inner product space. 
+
+    \[IP1:\hspace*{3cm} \langle x, x \rangle = \int_{a}^{b}|x(t)|^2 dt \geq 0\hspace*{2cm} \forall\ x\in C[a,b]\]
+
+    
+    Since our integrand is modulus function\footnote{A modulus function is a function which gives the absolute value of a number or variable. It produces the magnitude of the number of variables. It is also termed as an absolute value function. The outcome of this function is always positive, no matter what input has been given to the function. It is represented as $y = |x|$.}, and it represents area under the curve above the $x-\mbox{axis}$.\ Since area never be negative, so the case is obvious.
+    
+
+    \vspace*{0.3cm}
+   \begin{center}
+    \begin{equation*}
+        \begin{split}
+            IP2:\hspace*{3cm} \langle x, x \rangle = 0 & \iff \int_{a}^{b} \overline{x(t)} x(t) dt  = 0\\[2mm]
+            & \iff \int_{a}^{b}|x(t)|^2 dt = 0\\[2mm]
+            & \iff |x(t)|^2 = 0\\[2mm]
+            & \iff |x(t)| = 0\\[2mm]
+            & \iff x = 0
+        \end{split}
+   \end{equation*}
+   \end{center}
+   
+    \pagebreak
+
+    \begin{equation*}
+        \begin{split}
+            IP3:\hspace*{3cm} \langle x, y \rangle & = \int_{a}^{b}\overline{x(t)} y(t) dt \hspace*{2cm} \forall\ x,y\in C[a,b]\\[2mm]
+            & = \int_{a}^{b} \overline{x(t)} \cdot \overline{\overline{y(t)}}dt \\[2mm]
+            & = \int_{a}^{b} \overline{x(t) \cdot \overline{y(t)}} dt \\[2mm]
+            & = \int_{a}^{b} \overline{\overline{y(t)} \cdot x(t)} dt \\[2mm]
+            & = \overline{\langle y, x \rangle}
+        \end{split}
+    \end{equation*}
+
+
+    \begin{equation*}
+        \begin{split}
+            IP4:\hspace*{3cm} \langle x + y, z \rangle & = \int_{a}^{b}\overline{(x + y)(t)}\cdot z(t) dt \hspace*{2cm} \forall\ x,y,z\in C[a,b]\\[2mm]
+            & = \int_{a}^{b} \left\{\overline{x(t)} + \overline{y(t)} \right\}\cdot z(t) dt \\[2mm]
+            & = \int_{a}^{b} \overline{x(t)} \cdot z(t) dt + \int_{a}^{b} \overline{y(t)} \cdot z(t) dt\\[2mm]
+            & = \langle x, z \rangle + \langle y, z \rangle
+        \end{split}
+    \end{equation*}
+
+
+    \begin{equation*}
+        \begin{split}
+            IP5:\hspace*{3cm} \langle \lambda x, y \rangle & = \int_{a}^{b} \overline{\lambda x(t)} y(t) dt \hspace*{2cm} \forall\ x,y\in C[a,b]\ \mbox{and}\ \lambda \in \mathbb{R}\\[2mm]
+            & = \lambda \int_{a}^{b} \overline{x(t)} y(t) dt\\[2mm]
+            & = \lambda \langle x, y \rangle
+        \end{split}
+    \end{equation*}
+
+    \vspace*{0.2cm}
+
+    Hence, all the conditions to be an inner product space is satisfied, thus $\left(C[a,b],\langle \cdot, \cdot \rangle \right)$ is an {\bf inner product space}.
+
+    \vspace*{0.5cm}
+
+    % Now, Let's check wheather the inner product space is {\bf complete} or {\bf incomplete}.
+
+    % Consider a sequence of functions $\left\{f_n\right\}$ whose terms are defined as,
+    % \begin{equation*}
+    %     f_n(t) = \begin{cases}
+    %         1 \hspace*{2cm} -1\leq t \leq 0\\
+    %         1-nt \hspace*{1.5cm} 0 < t \leq \frac{1}{n}\\
+    %         0 \hspace*{2.4cm} \frac{1}{n} < t \leq 1
+    %     \end{cases}
+    % \end{equation*}
+
+    % Let's draw picture of above defined piecewise function for our convenience,
+
+    % \begin{center}
+    %     \def\svgwidth{12cm}
+    %     \input{drawing-6.eps_tex}
+    % \end{center}
+
+    % It may be observed that $\left\{f_n\right\}$ is a Cauchy sequence.Geometrically the function $f_n$ is shown in above figure.
+
+    % And $\norm{f_n -f_m}$ represents the area of the triangle shown in the figure.
+
+    % Clearly, each $f_n(t)$ is continuous on $[-1,1]$, also  $\left\{f_n\right\}$ is a Cauchy sequence in $C[-1,1]$.
+
+    % \vspace*{0.4cm}
+
+    % If $n > m$ then,
+
+    % \[\norm{f_n - f_m}^2  = \int_{-1}^{1}|f_n(t) - f_m(t)|^2dt\]
+
+    % Let if possible, $f_n\to f$ in $[-1,1]$.
+
+    % But, 
+    
+    % \begin{equation*}
+    %     \begin{split}
+    %         \norm{f_n - f}^2  & = \int_{-1}^{1}|f_n(t) - f(t)|^2 dt\\[2mm]
+    %         & = \int_{-1}^{0}|1-f(t)|^2 dt + \int_{0}^{\frac{1}{n}}|f_n(t)-f(t)|^2 dt + \int_{\frac{1}{n}}^{1}|f(t)|^2 dt
+    %     \end{split}
+    % \end{equation*}
+
+    % Since integrands are non-negative,so our each integral on the RHS also non-negative.
+
+    % Hence $\norm{f_n - f}^2 \to 0$ or, $\norm{f_n - f} \to 0$  would imply that each integral on RHS approaches to zero as $n\to \infty$. So we have,
+
+    % \begin{equation*}
+    %     \begin{cases}
+    %        \displaystyle \lim_{n\to \infty} \int_{-1}^{0}|1-f(t)|^2 dt = 0\\[1cm]
+    %        \displaystyle \lim_{n\to \infty} \int_{0}^{\frac{1}{n}}|f_n(t)-f(t)|^2 dt = 0\\[1cm]
+    %        \displaystyle \lim_{n\to \infty}  \int_{\frac{1}{n}}^{1}|f(t)|^2 dt = 0
+    %     \end{cases}
+    % \end{equation*}
+
+    % Now, extracting the values of $f(t)$ from each integral we have,
+
+    % \begin{equation*}
+    %     f(t) = \begin{cases}
+    %         1 \hspace*{2cm} -1\leq t \leq 0\\
+    %         0 \hspace*{2.4cm} 0 < t \leq 1
+    %     \end{cases}
+    % \end{equation*}
+
+    % But, here we see that the function is breaks at $t = 0$, so that function is not continuous in $[-1,1]$.So as such $f\not \in C[-1,1]$.
+
+    % \vspace*{0.6cm}
+
+    % So that, it voilates the criteria for completeness.Eventually, we say that $\left(C[-1,1],\langle \cdot, \cdot \rangle \right)$ is {\bf incomplete inner product space} i.e. {\bf not a Hilbert Space}. 
+
+    \begin{tcolorbox}[colback=yellow!60!white, colframe=red!50!gray,title= Parallelogram Equality]
+
+        Suppose $u, v\in V$.Then
+        \newline
+        \[\norm*{u+v}^2 + \norm*{u-v}^2 = 2\left(\norm*{u}^2 + \norm*{v}^2\right)\]
+    \end{tcolorbox}
+
+    \pagebreak
+
+    Now, to show that the inner product $C[a,b]$ defined as
+    \[\langle x, y \rangle = \int_{a}^{b}\overline{x(t)}\cdot y(t) dt\ \hspace*{2cm}\ \forall\ x,y\in C[a,b]\]
+    \[\mbox{with respect to induced norm}\ \norm*{x}^2 = \int_{a}^{b}\abs*{x(t)}^2 dt\  \ \mbox{is not a Hilbert Space.}\]
+
+    We must show that the given norm induced by inner product, voilates the {\bf Parallelogram Equality.}
+
+    To do so, Let us consider trignometric functions like this,
+    \[x(t) = \cos\left(\frac{\pi}{2}\left(\frac{t-a}{b-a}\right)\right)\]
+    \[\&\ y(t) = \sin\left(\frac{\pi}{2}\left(\frac{t-a}{b-a}\right)\right)\]
+
+    From above we can find,
+    \begin{equation*}
+        \begin{split}
+            \abs*{{x(t)}}^2 & = \bigg|\cos\left(\frac{\pi}{2}\left(\frac{t-a}{b-a}\right)\right)\bigg|^2\\[4mm]
+            & = \cos^2\left(\frac{\pi}{2}\left(\frac{t-a}{b-a}\right)\right) \hspace*{2cm}\ ;\ \forall\ a,b,t\in \mathbb{R}
+        \end{split}
+    \end{equation*}
+
+    Again, A/C to the definition of the induced norm 
+    \[\norm*{x(t)}^2 = \int_{a}^{b} \abs*{x(t)}^2 dt = \int_{a}^{b} \cos^2\left(\frac{\pi}{2}\left(\frac{t-a}{b-a}\right)\right) dt\]
+
+    \begin{equation*}
+        \begin{split}
+            \int_{a}^{b} \cos^2\left(\frac{\pi}{2}\left(\frac{t-a}{b-a}\right)\right) dt & = \int_{0}^{b-a} \cos^2\left(\frac{\pi}{2}\left(\frac{u}{b-a}\right)\right) du \hspace*{1cm} \ \begin{cases}
+               \because \mbox{Let,}\ u = t-a\  \mbox{then}\ du = dt\\
+               \mbox{and limits are from}\ 0 \ \mbox{to}\ b-a
+            \end{cases}\\[4mm]
+            & = \int_{0}^{\frac{\pi}{2}} \cos^2(s)\cdot \frac{2(b-a)}{\pi} ds \hspace*{1cm} 
+                \begin{cases}
+                    \because\ \mbox{Let,}\ s = \frac{\pi u}{2(b-a)}\\
+                    du = \frac{2(b-a)}{\pi} ds\\
+                    \mbox{and limits are changes as,}\ 0\  \mbox{to}\ \frac{\pi}{2} 
+                \end{cases}\\[4mm]
+                & = \frac{2(b-a)}{\pi} \int_{0}^{\frac{\pi}{2}} \cos^2(s) ds\\[4mm]
+                & = \frac{2(b-a)}{\pi} \int_{0}^{\frac{\pi}{2}} \frac{1+\cos(2s)}{2} ds\\[4mm]
+                & = \frac{2(b-a)}{2 \pi} \int_{0}^{\frac{\pi}{2}} [1+ \cos(2s)] ds\\[4mm]
+        \end{split}
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{split}
+            & = \frac{(b-a)}{\pi}\left[s\bigg|_{0}^{\frac{\pi}{2}} + \frac{\sin(2s)}{2}\bigg|_{0}^{\frac{\pi}{2}}\right]\\[4mm]
+            & = \frac{b-a}{\pi}\left[\frac{\pi}{2} + 0\right]\\[4mm]
+        \end{split}
+    \end{equation*}
+
+    Or, 
+
+    \begin{align*}
+        \boxed{\norm*{x(t)}^2 = \int_{a}^{b} \cos^2\left(\frac{\pi}{2}\left(\frac{t-a}{b-a}\right)\right) dt  = \frac{b-a}{2}}
+    \end{align*}
+
+    Similarly we can find the value of,
+
+    \begin{align*}
+        \boxed{\norm*{y(t)}^2 = \int_{a}^{b} \sin^2\left(\frac{\pi}{2}\left(\frac{t-a}{b-a}\right)\right) dt  = \frac{b-a}{2}}
+    \end{align*}
+
+
+    Since Pythagorian theorem
+   
+
+
+    Since, we observe that integral only depends on boundry points, so we can find easialy
+    
+    \section{Applications}
+
+    Inner product spaces and Hilbert spaces are powerful mathematical tools with numerous 
+    \newline 
+    applications in various fields, including physics, engineering, computer science, and statistics. Here are some examples of applications :
+
+    \begin{enumerate}
+        \item {\bf Signal processing:} Inner product spaces and Hilbert spaces are used to represent signals as vectors and to analyze and process them using linear transformations, filters, and spectral analysis.
+        \item {\bf Quantum mechanics:} The fundamental principles of quantum mechanics are based on the mathematical structures of Hilbert spaces and inner product spaces. The state of a quantum system is represented by a vector in a Hilbert space, and physical observables are represented by Hermitian operators.
+        \item {\bf Machine learning:} Inner product spaces and Hilbert spaces are used to represent data and to learn models using various algorithms, such as kernel methods, support vector machines, and neural networks.
+        
+
+        Hilbert spaces are used to represent data and learn models from the data. For example, support vector machines (SVMs) use a kernel function to map data into a high-dimensional Hilbert space, where linear classifiers can be constructed.
+
+        \item {\bf Geometry:} Inner product spaces and Hilbert spaces are used to study the geometry of vector spaces, such as distances, angles, projections, and orthogonality, and to generalize them to non-Euclidean spaces.
+       
+        \item {\bf Optimization:} Hilbert spaces provide a natural setting for the study of optimization problems, particularly those involving nonlinear functions. For example, the gradient descent algorithm for minimizing a function is a special case of the steepest descent algorithm, which uses the inner product to find the direction of steepest descent.
+
+        \item {\bf Probability theory:} Hilbert spaces are used to study the properties of random variables and stochastic processes, such as moments, covariance, correlation, and spectral decomposition.
+        \item {\bf Fourier analysis:} Inner product spaces and Hilbert spaces are essential for the study of Fourier analysis. The Fourier transform can be viewed as an inner product, and it is often used to decompose functions into a sum of simpler functions. This technique is used in signal processing, image processing, and other areas of applied mathematics.
+        \item {\bf Linear regression:} Inner product spaces are used in linear regression to find the best fit line or plane that passes through a set of data points. This is done by minimizing the sum of the squared distances between the data points and the line or plane. The solution to this problem is the projection of the data onto a subspace of the inner product space.
+    \end{enumerate}
+
+
+    \section{References}
+
+    \href{https://www.amazon.in/Linear-Algebra-Right-Undergraduate-Mathematics/dp/3319110799}{Linear Algebra Done Right : Sheldon Axler}
+
+    \href{https://www.wikipedia.org/}{Wikipedia(The Free Encyclopedia)}
+
+    \href{https://www.amazon.in/Jain-K_Functional-Analysis-3ed-399/dp/9388818318/ref=pd_lpo_1?pd_rd_w=7bwU4&content-id=amzn1.sym.c3daf87c-2802-47b7-8fa4-23dc91a4fca7&pf_rd_p=c3daf87c-2802-47b7-8fa4-23dc91a4fca7&pf_rd_r=FGF7SKZPN6HC6SPPK134&pd_rd_wg=PMVzO&pd_rd_r=fd25d7b1-184f-47a8-85d9-82bc452d6210&pd_rd_i=9388818318&psc=1}{Functional Analysis; PK Jain, OM P Ahuja}
+
+    \href{https://chat.openai.com/}{OpenAI}
+
+    \href{https://github.com/akhlak919/LaTeX_stuffs}{My Github Repository}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

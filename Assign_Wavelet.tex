@@ -1,0 +1,1142 @@
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{wrapfig}
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+\usepackage{mathrsfs}  %for cursive writting
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+\usepackage{tabularx}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{relsize}
+%%Font changes of normal and math mode by this package ///////////////////////
+\usepackage{txfonts,pxfonts}
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{http://ddugu.ac.in/homenew.aspx}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Assignment : Wavelet Analysis}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape \href{https://github.com/akhlak919}{Akhlak Ansari}\\ \href{http://ddugu.ac.in/homenew.aspx}{Roll No. 2213010010011}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+\usepackage[pages=some]{background}
+\backgroundsetup{scale=2, angle=0, opacity=0.05, contents={\includegraphics[]{DDU_Logo.png}}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+% Color for Guassian 
+% \definecolor{wwqqcc}{rgb}{0.4,0,0.8}
+% \definecolor{zzttff}{rgb}{0.6,0.2,1}
+% \definecolor{qqqqcc}{rgb}{0,0,0.8}
+% \definecolor{ffxfqq}{rgb}{1,0.4980392156862745,0}
+% \definecolor{ffvvqq}{rgb}{1,0.3333333333333333,0}
+% \definecolor{qqqqff}{rgb}{0,0,1}
+% \definecolor{ccqqqq}{rgb}{0.8,0,0}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \LARGE{\bf Assignment}\\ 
+        \Large{\textbf{Wavelet Analysis}}
+        
+
+        \vspace*{1cm}
+
+        \includegraphics[scale=1.5]{DDU_Logo.png}
+        \vspace*{1cm}
+
+        \begin{center}
+            {\bf Department of Mathematics and Statistics\\
+        DDU Gorakhpur University, Gorakhpur (India)}
+        \end{center}
+        
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\BgThispage
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+% \vspace*{0.2cm}
+
+\BgThispage
+\section{\slshape Assignment Questions}
+
+\begin{enumerate}
+    \item Define a function $\displaystyle f:\mathbb{R}\to\mathbb{R}$ by \[f(t) = \begin{cases}
+        \frac{1}{50\sqrt{t}}\hspace*{0.5cm},\hspace*{0.5cm} t\in (0,1) ; & \\
+        0\hspace*{1cm},\hspace*{0.3cm} \mbox{Otherwise}
+    \end{cases}\]
+    Then show that $\displaystyle f\in L^1(\mathbb{R})$ but $\displaystyle f\notin L^2(\mathbb{R})$.
+
+    \item Find the Fourier transform of the following functions:
+    \begin{enumerate}[(a)]
+        \item $\displaystyle f(t) = \begin{cases}
+            -20e^{-t} \hspace*{0.5cm},\hspace*{0.5cm} t\geq 0 ; &\\
+            20e^t \hspace*{1cm},\hspace*{0.5cm} t < 0
+        \end{cases}$
+        \item $\displaystyle f(t) = \begin{cases}
+            10t \hspace*{0.5cm},\hspace*{0.5cm} 0\leq t < 1 ; &
+            \\
+            0\hspace*{1cm},\hspace*{0.3cm} \mbox{Otherwise}
+        \end{cases}$    
+    \end{enumerate}
+
+    \item Define a function $\displaystyle \psi(t)$ by 
+    \[\psi(t) = \begin{cases}
+        3 \hspace*{0.5cm}, \hspace*{0.5cm} 0\leq t < \frac{1}{2}; &\\
+        -3 \hspace*{0.5cm}, \hspace*{0.5cm} \frac{1}{2}\leq t < 1; &\\
+        0 \hspace*{0.5cm}, \hspace*{0.5cm} \mbox{Otherwise}
+    \end{cases}\]
+    Then show that (i) $\displaystyle \norm*{\psi}_2 = 3$. \hspace*{0.4cm}(ii) $\displaystyle \int_{-\infty}^{\infty} \psi(t)dt = 0$. 
+
+    \item Let $\psi \in L^2(\mathbb{R})$ be a basic wavelet and $\phi$ be a bounded, integrable function, then $\psi \ast \phi$ is also a basic wavelet.
+    
+    \item Define Mexican Hat wavelet $\displaystyle \psi_M (t)$ and prove the following
+    \begin{enumerate}[(i)]
+        \item $\displaystyle \int_{-\infty}^{\infty} \psi_M (t)dt = 0$.
+        \item $\displaystyle C_{\psi_M} < \infty$.
+    \end{enumerate}
+
+    \item Let $\delta(x)$ denotes the Dirac delta function.Then find the value of the following integrals:
+    \begin{enumerate}[(i)]
+        \item $\displaystyle \int_{-\infty}^{\infty} \delta(x-1)\left\{\cos^2(\pi x) + \sin^2(\pi x) + e^{\pi x}\right\}dx$.
+        \item $\displaystyle \int_{-\infty}^{\infty} \delta(x)\left\{x^2 + x + 1\right\}(e^x)dx$.
+    \end{enumerate}
+
+    \item Let us define a function $g_\alpha (x)$ by \[\displaystyle g_\alpha (x) = \frac{e^{\frac{-x^2}{4\alpha}}}{2\sqrt{\pi \alpha}}, \alpha > 0. \]
+    \BgThispage
+    Then prove the following:
+    \begin{enumerate}[(i)]
+        \item $\displaystyle g\in L^1 (\mathbb{R})$.
+        \item $\displaystyle g\in L^2 (\mathbb{R})$.
+        \item $\displaystyle g\in L^1(\mathbb{R}) \cap L^2(\mathbb{R})$.
+        \item $\displaystyle \norm*{g_\alpha}_1 = 1\hspace*{0.3cm} \forall\ \alpha > 0$.
+    \end{enumerate}
+    Does $g\in L^4(\mathbb{R}) ?$ Explain.
+\end{enumerate}
+
+\pagebreak
+
+\section{\slshape Solution of Assignment Questions}
+
+\BgThispage
+\subsection{\slshape Solution of Question No. 1}
+
+For inclusivity of a function $f(t)$ in $L^1(\mathbb{R})$, we have to show that 
+\[\norm*{f}_1^2 = \int_{-\infty}^{\infty}\abs*{f(t)}dt < \infty.\hspace*{1cm} \forall\ t\in \mathbb{R}\]
+
+Since in our problem 
+
+\[f(t) = \begin{cases}
+    \frac{1}{50\sqrt{t}}\hspace*{0.5cm},\hspace*{0.5cm} t\in (0,1) ; & \\
+    0\hspace*{1cm},\hspace*{0.3cm} \mbox{Otherwise}
+\end{cases}\]
+
+\begin{equation*}
+    \begin{split}
+        \mbox{So}, \hspace*{1cm} \norm*{f}_1^2 = \int_{-\infty}^{\infty}\abs*{f(t)}dt & =  \int_{-\infty}^{0}\abs*{f(t)}dt + \int_{0}^{1}\abs*{f(t)}dt + \int_{1}^{\infty}\abs*{f(t)}dt\\[3mm]
+        & = \int_{-\infty}^{0}\abs*{0}dt + \int_{0}^{1}\bigg|\frac{1}{50\sqrt{t}}\bigg|dt + \int_{1}^{\infty}\abs*{0}dt\\[3mm]
+        & = \int_{0}^{1}\frac{1}{50\abs*{\sqrt{t}}}dt = \frac{1}{50}\int_{0}^{1}\frac{1}{\sqrt{t}}dt\\[3mm]
+        & = \frac{1}{50}\lim_{\epsilon\to 0^+}\int_{\epsilon}^{1}\frac{1}{\sqrt{t}}dt\\[3mm]
+        & = \frac{1}{50}\lim_{\epsilon\to 0^+}\left[2\sqrt{t}\right]\bigg|_{\epsilon} ^{1}\\[3mm]
+        &  = \frac{2}{50}\lim_{\epsilon\to 0^+}\left[1-\sqrt{\epsilon}\right]\\[3mm]
+        & = \frac{1}{25}\left[1-\lim_{\epsilon\to 0^+}\sqrt{\epsilon}\right]\\[3mm]
+        & = \frac{1}{25}\left[1-0\right]\\[3mm]
+        & = \frac{1}{25} < \infty\\[3mm]
+        \mbox{i.e}, \hspace*{1cm} \norm*{f}_1^2 = \int_{-\infty}^{\infty}\abs*{f(t)}dt & = \frac{1}{25} < \infty \\[3mm]
+        \mbox{thus}, \hspace*{1cm} f\in L^1(\mathbb{R}) &.
+    \end{split}
+\end{equation*}
+
+\pagebreak 
+
+
+\BgThispage
+Again, For inclusivity of a function $f(t)$ in $L^2(\mathbb{R})$, we have to show that 
+\[\norm*{f}_2^2 = \int_{-\infty}^{\infty}\abs*{f(t)}^2dt < \infty.\hspace*{1cm} \forall\ t\in \mathbb{R}\]
+
+\begin{equation*}
+    \begin{split}
+        \mbox{So}, \hspace*{1cm} \norm*{f}_2^2 = \int_{-\infty}^{\infty}\abs*{f(t)}^2dt & =  \int_{-\infty}^{0}\abs*{f(t)}^2dt + \int_{0}^{1}\abs*{f(t)}^2dt + \int_{1}^{\infty}\abs*{f(t)}^2dt\\[3mm]
+        & = \int_{-\infty}^{0}\abs*{0}^2dt + \int_{0}^{1}\bigg|\frac{1}{50\sqrt{t}}\bigg|^2dt + \int_{1}^{\infty}\abs*{0}^2dt\\[3mm]
+        & = \frac{1}{2500}\int_{0}^{1}\frac{1}{\abs*{\sqrt{t}}^2}dt\\[3mm]
+        & =\frac{1}{2500} \int_{0}^{1}\frac{1}{t} dt\\[3mm]
+        & =\frac{1}{2500} \lim_{\epsilon\to 0^+}\int_{\epsilon}^{1}\frac{1}{t} dt\\[3mm]
+        & = \frac{1}{2500}\lim_{\epsilon\to 0^+}\left[\ln t\right]\bigg|_{\epsilon}^{1}\\[3mm]
+        & = \frac{1}{2500}\lim_{\epsilon\to 0^+}\left[\ln (1)-\ln(\epsilon)\right]\\[3mm]
+        & = \frac{1}{2500}\left[0 - \lim_{\epsilon\to 0^+}\ln(\epsilon)\right]\\[3mm]
+        & = \frac{1}{2500}\left[-(-\infty)\right]\\[3mm]
+        & = \frac{1}{2500}\left[\infty\right] = \infty\\[3mm]
+        \mbox{i.e}, \hspace*{1cm} \norm*{f}_2^2 = \int_{-\infty}^{\infty}\abs*{f(t)}^2dt & = \frac{1}{2500}\left[\infty\right] = \infty \\[3mm]
+        \mbox{thus}, \hspace*{1cm} f\notin L^2(\mathbb{R}) &.
+    \end{split}
+\end{equation*}
+
+Thus we have shown that $f\in L^1(\mathbb{R})$ but $f\notin L^2(\mathbb{R})$.
+\pagebreak
+
+\subsection{\slshape Solution of Question No. 2(a)}
+
+
+To find the Fourier transform of the function $f(t)$.Let's first check is it in $L^1(\mathbb{R})$ or not ?
+
+So, 
+
+\BgThispage
+
+\begin{equation*}
+    \begin{split}
+        \norm*{f}_1^2 = \int_{-\infty}^{\infty}\abs*{f(t)}dt & = \int_{-\infty}^{0}\abs*{f(t)}dt + \int_{0}^{\infty}\abs*{f(t)}dt\\[3mm]
+        & = \int_{-\infty}^{0}\abs*{20e^t}dt + \int_{0}^{\infty}\abs*{-20e^{-t}}dt\\[3mm]
+        & = 20\left[\int_{-\infty}^{0}\abs*{e^t}dt + \int_{0}^{\infty}\abs*{e^{-t}}dt\right]\\[3mm]
+        & = 20\left[\int_{-\infty}^{0}e^tdt + \int_{0}^{\infty}e^{-t}dt\right]\\[3mm]
+        & = 20\left[\lim_{M_1\to -\infty}\int_{M_1}^{0}e^tdt + \lim_{M_2\to \infty}\int_{0}^{M_2}e^{-t}dt\right]\\[3mm]
+        & = 20\left[\lim_{M_1\to -\infty}\left(e^t\right)\bigg|_{M_1}^{0} + \lim_{M_2\to \infty}\left(-e^{-t}\right)\bigg|_{0}^{M_2}\right]\\[3mm]
+        & = 20\left[\lim_{M_1\to -\infty}\left(1-e^{M_1}\right)+ \lim_{M_2\to \infty}\left(1-e^{-M_2}\right)\right]\\[3mm]
+        & = 20\left[1 - \lim_{M_1\to -\infty}e^{M_1} + 1 - \lim_{M_2\to \infty}e^{-M_2} \right]\\[3mm]
+        & = 20\left[1-0+1-0\right]\\[3mm]
+        \int_{-\infty}^{\infty}\abs*{f(t)}dt & = 40 < \infty\\[3mm]
+        \mbox{i.e}, \hspace*{1cm} \norm*{f}_1^2 = \int_{-\infty}^{\infty}\abs*{f(t)}dt & = 40 < \infty \\[3mm]
+        \mbox{thus}, \hspace*{1cm} f(t)\in L^1(\mathbb{R}) &.
+    \end{split}
+\end{equation*}
+
+Since the function $f(t)\in L^1(\mathbb{R})$, thus the Fourier transform exists and given as
+
+\begin{equation*}
+    \begin{split}
+        \mathcal{F}[f(t)](\omega) = \hat{f}(\omega) & = \int_{-\infty}^{\infty}e^{-i\omega t} f(t)dt\hspace*{2cm} \forall\ \omega\in \mathbb{R}.\\[3mm]
+        & = \int_{-\infty}^{0}e^{-i\omega t} f(t)dt + \int_{0}^{\infty}e^{-i\omega t} f(t)dt\\[3mm]
+    \end{split}
+\end{equation*}
+
+
+\begin{equation*}
+    \begin{split}
+        \hat{f}(\omega) & = \int_{-\infty}^{0}e^{-i\omega t} (20e^t)dt + \int_{0}^{\infty}e^{-i\omega t} (-20e^{-t})dt\\[3mm]
+        & = 20\left[\int_{-\infty}^{0}e^{-i\omega t} (e^t)dt - \int_{0}^{\infty}e^{-i\omega t} (e^{-t})dt\right]\\[3mm]
+        & = 20\left[\int_{-\infty}^{0}e^{-(-1+i\omega)t}dt - \int_{0}^{\infty}e^{-(1+i\omega)t}dt\right]\\[3mm]
+        & = 20\left[\lim_{M_1\to -\infty}\int_{M_1}^{0}e^{-(-1+i\omega)t}dt - \lim_{M_2\to \infty}\int_{0}^{M_2}e^{-(1+i\omega)t}dt\right]\\[3mm]
+        & = 20\left[\left(-\frac{1}{(-1+i\omega)}\right)\lim_{M_1\to -\infty}\left\{e^{-(-1+i\omega)t}\bigg|_{M_1}^{0}\right\}-\frac{1}{1+i\omega}\lim_{M_2\to\infty}\left\{e^{-(1+i\omega)t}\bigg|_{0}^{M_2}\right\}\right]\\[3mm]
+        & = 20\left[\frac{1}{1-i\omega}\lim_{M_1\to -\infty}\left\{e^{-(-1+i\omega)t}\bigg|_{M_1}^{0}\right\}-\frac{1}{1+i\omega}\lim_{M_2\to\infty}\left\{e^{-(1+i\omega)t}\bigg|_{0}^{M_2}\right\}\right]\\[3mm]
+        & = 20\left[\frac{1}{1-i\omega}\lim_{M_1\to -\infty}\left\{1 - e^{-(-1+i\omega)M_1}\right\}-\frac{1}{1+i\omega}\lim_{M_2\to\infty}\left\{e^{-(1+i\omega)M_2}- 1\right\}\right]\\[3mm]
+        & = 20\left[\frac{1}{1-i\omega}\left\{1 - \lim_{M_1\to -\infty}e^{-(-1+i\omega)M_1}\right\}-\frac{1}{1+i\omega}\left\{\lim_{M_2\to\infty}e^{-(1+i\omega)M_2}- 1\right\}\right] \hspace*{0.7cm}(1)\\[3mm]
+        \mbox{Since}, & \lim_{M_1\to -\infty}\bigg|e^{-(-1 + i\omega)M_1}\bigg|\\[3mm]
+        & =  \lim_{M_1\to -\infty}\left\{\abs*{e^{M_1}}\cdot\abs*{e^{-i\omega M_1}}\right\}\\[3mm]
+        & = \lim_{M_1\to -\infty}e^{M_1} = 0\\[3mm]
+        \mbox{Therefore}, \hspace*{1cm} & \lim_{M_1\to-\infty}e^{-(-1+i\omega)M_1} = 0\\[3mm]
+        \mbox{Similarly},\hspace*{0.7cm} & \lim_{M_2\to \infty}\bigg|e^{-(1 + i\omega)M_2}\bigg|\\[3mm]
+        & =  \lim_{M_1\to \infty}\left\{\abs*{e^{-M_2}}\cdot\abs*{e^{-i\omega M_2}}\right\}\\[3mm]
+        & = \lim_{M_2\to \infty}e^{-M_2} = 0\\[3mm]
+        \mbox{Therefore}, \hspace*{1cm} & \lim_{M_2\to \infty}e^{-(1+i\omega)M_2} = 0\\[3mm]
+    \end{split}
+\end{equation*}
+\BgThispage
+Using these values in equation (1) we get as
+
+
+
+\begin{equation*}
+    \begin{split}
+        \hat{f}(\omega) & = 20\left[\frac{1}{1-i\omega}\left\{1-0\right\} - \frac{1}{1+i\omega}\left\{0-1\right\}\right]\\[3mm]
+        & = 20\left[\frac{1}{1-i\omega} + \frac{1}{1+i\omega}\right]\\[3mm]
+        & = 20\left[\frac{2}{1+\omega^2}\right]
+    \end{split}
+\end{equation*}
+\BgThispage
+\begin{center}
+    $\displaystyle \boxed{\hat{f}(\omega)  = \frac{40}{1 + \omega^2}} $
+\end{center}
+
+\subsection{\slshape Solution of Question No. 2(b)}
+
+Since, $\displaystyle f(t) = \begin{cases}
+    10t \hspace*{0.5cm},\hspace*{0.5cm} 0\leq t < 1 ; &
+    \\
+    0\hspace*{1cm},\hspace*{0.3cm} \mbox{Otherwise}
+\end{cases}$    
+
+
+To find the Fourier transform of the function $f(t)$, let's first check wheather is it in $L^1(\mathbb{R})$ or not ?
+
+So, \begin{equation*}
+    \begin{split}
+        \norm*{f}_1^2 = \int_{-\infty}^{\infty} \abs*{f(t)}dt & = \int_{-\infty}^{0}\abs*{f(t)}dt +  \int_{0}^{1}\abs*{f(t)}dt + \int_{1}^{\infty}\abs*{f(t)}dt\\[3mm]
+        & = \int_{0}^{1} \abs*{10t}dt\\[3mm]
+        & = 10\int_{0}^{1} tdt = 10 \frac{t^2}{2}\bigg|_0^1 = 5t\bigg|_0^1 = 5 < \infty\\[3mm] 
+        \int_{-\infty}^{\infty} \abs*{f(t)}dt & = 5 < \infty 
+    \end{split}
+\end{equation*}
+
+So $f\in L^1(\mathbb{R})$.Thats why Fourier transform exists and given by
+
+\begin{equation*}
+    \begin{split}
+        \mathcal{F}[f(t)](\omega) = \hat{f}(\omega) & = \int_{-\infty}^{\infty}e^{-i\omega t} f(t)dt\hspace*{2cm} \forall\ \omega\in \mathbb{R}.\\[3mm]
+        & = \int_{-\infty}^{0}e^{-i\omega t} f(t)dt + \int_{0}^{1}e^{-i\omega t} f(t)dt + \int_{1}^{\infty}e^{-i\omega t} f(t)dt\\[3mm]
+        & = 10\int_{0}^{1}te^{-i\omega t} dt\\[3mm]
+        & = 10\left[\left.\frac{te^{-i\omega t}}{-i\omega}\right|_{0}^{1} - \int_{0}^{1} \frac{e^{-i\omega t}}{-i\omega} dt\right]\\[3mm]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \hat{f}(\omega) & = 10\left[\frac{e^{-i\omega}}{-i\omega} - \frac{e^{0}}{-i\omega} - \int_{0}^{1} \frac{e^{-i\omega t}}{-i\omega} dt\right]\\[3mm]
+        & = 10\left[ \frac{1}{-i\omega} (e^{-i\omega} - 1) - \int_{0}^{1} \frac{e^{-i\omega t}}{-i\omega} dt\right]\\[3mm]
+        & =  10\left[\frac{1}{-i\omega} (e^{-i\omega} - 1) - \left.\frac{e^{-i\omega t}}{(-i\omega)^2}\right|_{0}^{1}\right]\\[3mm]
+        & =  10\left[\frac{1}{-i\omega} (e^{-i\omega} - 1) - \frac{e^{-i\omega}}{(-i\omega)^2} + \frac{1}{(-i\omega)^2}\right]\\[3mm]
+        & =  10\left[\frac{1}{-i\omega} (e^{-i\omega} - 1) + \frac{e^{-i\omega}}{\omega^2} + \frac{1}{\omega^2}\right]\\[3mm]
+        & = 10\left[\frac{1}{-i\omega} (e^{-i\omega} - 1) + \frac{e^{-i\omega}}{\omega^2} + \frac{1}{\omega^2}\right]
+    \end{split}
+\end{equation*}
+
+
+\BgThispage
+So, the Fourier transform of the function, $f(t)$ is
+\[\boxed{\hat{f}(\omega)= 10\left[\frac{1}{-i\omega} (e^{-i\omega} - 1) + \frac{e^{-i\omega}}{\omega^2} + \frac{1}{\omega^2}\right]}\]
+
+\subsection{\slshape Solution of Question No. 3}
+
+Given function is,\[\psi(t) = \begin{cases}
+    3 \hspace*{0.5cm}, \hspace*{0.5cm} 0\leq t < \frac{1}{2}; &\\
+    -3 \hspace*{0.5cm}, \hspace*{0.5cm} \frac{1}{2}\leq t < 1; &\\
+    0 \hspace*{0.5cm}, \hspace*{0.5cm} \mbox{Otherwise}
+\end{cases}\]
+
+(i) $\norm*{\psi}_2$ is given by
+
+\begin{equation*}
+    \begin{split}
+        \norm*{\psi}_2^2 & = \int_{-\infty}^{\infty} \abs*{\psi(t)}^2 dt\\[3mm]
+        & = \int_{-\infty}^{0} \abs*{\psi(t)}^2 dt + \int_{0}^{\frac{1}{2}} \abs*{\psi(t)}^2 dt + \int_{\frac{1}{2}}^{1} \abs*{\psi(t)}^2 dt + \int_{1}^{\infty} \abs*{\psi(t)}^2 dt\\[3mm]
+        & = \int_{0}^{\frac{1}{2}} \abs*{3}^2 dt + \int_{\frac{1}{2}}^{1} \abs*{-3}^2 dt\\[3mm]
+        \norm*{\psi}_2^2 & = \int_{0}^{1} 3^2 dt = 9t\bigg|_0^1 = 9\ \implies\ \norm*{\psi}_2  =  3
+    \end{split}
+\end{equation*}
+
+(ii) $\displaystyle \int_{-\infty}^{\infty}\psi(t)dt$ is evaluated as
+
+\begin{equation*}
+    \begin{split}
+        \int_{-\infty}^{\infty}\psi(t)dt & = \int_{-\infty}^{0}\psi(t)dt + \int_{0}^{\frac{1}{2}}\psi(t)dt + \int_{\frac{1}{2}}^{1}\psi(t)dt + \int_{1}^{\infty}\psi(t)dt\\[3mm]
+        & = \int_{0}^{\frac{1}{2}}3dt + \int_{\frac{1}{2}}^{1}(-3)dt\\[3mm]
+        & = \int_{0}^{1}(3-3)dt\\[3mm]
+        \int_{-\infty}^{\infty}\psi(t)dt & = 0
+    \end{split}
+\end{equation*}
+
+\BgThispage
+\subsection{\slshape Solution of Question No. 4}
+
+It is provided in our problem that $\psi\in L^2(\mathbb{R})$ be a basic wavelet. i.e
+\[C_\psi = \int_{-\infty}^{\infty} \frac{\abs*{\hat{\psi}(\omega)}^2}{\abs*{\omega}}d\omega < \infty\]
+
+where $\hat{\psi}(\omega)$ is the Fourier transform of the function $\psi\in L^2(\mathbb{R})$.
+
+Again, it is also provided that $\phi$ is a bounded, integrable function.
+
+Then we have to show that $C_{\psi \ast \phi} < \infty$. i.e $\psi \ast \phi$ is also a basic wavelet. 
+
+To do this, since we have
+
+\[C_\psi = \int_{-\infty}^{\infty} \frac{\abs*{\hat{\psi}(\omega)}^2}{\abs*{\omega}}d\omega < \infty\]
+
+and we also know that,
+
+\[(\psi \ast \phi)(t) = \int_{-\infty}^{\infty}\psi(t-u)\phi(u)du\]
+thus,
+
+\[\Hat{\left(\psi \ast \phi\right)}(\omega) = \int_{-\infty}^{\infty} e^{-i\omega t}(\psi \ast \phi)(t)dt = \hat{\psi}(\omega)\cdot\hat{\phi}(\omega)\]
+
+then, 
+\begin{equation*}
+    \begin{split}
+        C_{\psi \ast \phi} & = \int_{-\infty}^{\infty} \frac{\abs*{\Hat{(\psi\ast\phi)}(\omega)}^2}{\abs*{\omega}}d\omega\\[3mm]
+        & = \int_{-\infty}^{\infty} \frac{\abs*{\Hat{\psi}(\omega)\cdot \hat{\phi}(\omega)}^2}{\abs*{\omega}}d\omega\\[3mm]
+    \end{split}
+\end{equation*}
+
+\[C_{\psi \ast \phi}  = \int_{-\infty}^{\infty} \frac{\abs*{\Hat{\psi}(\omega)}^2\cdot \abs*{\hat{\phi}(\omega)}^2}{\abs*{\omega}}d\omega\]
+
+Since $\psi\in L^2(\mathbb{R})$ is a basic wavelet and the $\phi$ is a bounded, integrable function then the overall integration should be less than $\infty$.i.e.
+
+
+\[C_{\psi \ast \phi}  = \int_{-\infty}^{\infty} \frac{\abs*{\Hat{\psi}(\omega)}^2\cdot \abs*{\hat{\phi}(\omega)}^2}{\abs*{\omega}}d\omega < \infty\]
+
+Hence, $C_{\psi\ast\phi} < \infty$.
+So, $\left(\psi\ast\phi\right)$ is a basic wavelet.
+
+\BgThispage
+\subsection{\slshape Solution of Question No. 5}
+
+\subsubsection*{Mexican Hat wavelet(Definition)}
+
+The {\bf Mexican Hat wavewlet/Ricker wavelet/Second derivative wavelet}  is denoted by $\mathbf{\displaystyle \psi_M (t)}$ and defined by 
+\[\boxed{\psi_M(t) = -\frac{d^2}{dt^2}\left(e^{-t^2/2}\right) = \left(1-t^2\right)e^{-t^2/2}}\]
+
+%%Plot the function
+
+\begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+        \clip(-6.071824724235667,-5.131170738191608) rectangle (7.563329073624734,3.450026439612422);
+        \draw[line width=2pt,color=zzttqq] (-6.071824724235667,0) -- (-6.071824724235667,0);
+        \draw[line width=2pt,color=zzttqq] (-6.071824724235667,0) -- (-6.037736839741016,0);
+        \draw[line width=2pt,color=zzttqq] (-6.037736839741016,0) -- (-6.003648955246365,0);
+        \draw[line width=2pt,color=zzttqq] (-6.003648955246365,0) -- (-5.9695610707517135,0);
+        \draw[line width=2pt,color=zzttqq] (-5.9695610707517135,0) -- (-5.935473186257062,0);
+        \draw[line width=2pt,color=zzttqq] (-5.935473186257062,0) -- (-5.901385301762411,0);
+        \draw[line width=2pt,color=zzttqq] (-5.901385301762411,0) -- (-5.86729741726776,0);
+        \draw[line width=2pt,color=zzttqq] (-5.86729741726776,0) -- (-5.833209532773108,0);
+        \draw[line width=2pt,color=zzttqq] (-5.833209532773108,0) -- (-5.799121648278457,0);
+        \draw[line width=2pt,color=zzttqq] (-5.799121648278457,0) -- (-5.765033763783806,0);
+        \draw[line width=2pt,color=zzttqq] (-5.765033763783806,0) -- (-5.7309458792891546,0);
+        \draw[line width=2pt,color=zzttqq] (-5.7309458792891546,0) -- (-5.696857994794503,0);
+        \draw[line width=2pt,color=zzttqq] (-5.696857994794503,0) -- (-5.662770110299852,0);
+        \draw[line width=2pt,color=zzttqq] (-5.662770110299852,0) -- (-5.628682225805201,0);
+        \draw[line width=2pt,color=zzttqq] (-5.628682225805201,0) -- (-5.5945943413105494,0);
+        \draw[line width=2pt,color=zzttqq] (-5.5945943413105494,0) -- (-5.560506456815898,0);
+        \draw[line width=2pt,color=zzttqq] (-5.560506456815898,0) -- (-5.526418572321247,0);
+        \draw[line width=2pt,color=zzttqq] (-5.526418572321247,0) -- (-5.492330687826596,0);
+        \draw[line width=2pt,color=zzttqq] (-5.492330687826596,0) -- (-5.458242803331944,0);
+        \draw[line width=2pt,color=zzttqq] (-5.458242803331944,0) -- (-5.424154918837293,0);
+        \draw[line width=2pt,color=zzttqq] (-5.424154918837293,0) -- (-5.390067034342642,0);
+        \draw[line width=2pt,color=zzttqq] (-5.390067034342642,0) -- (-5.3559791498479905,0);
+        \draw[line width=2pt,color=zzttqq] (-5.3559791498479905,0) -- (-5.321891265353339,0);
+        \draw[line width=2pt,color=zzttqq] (-5.321891265353339,0) -- (-5.287803380858688,0);
+        \draw[line width=2pt,color=zzttqq] (-5.287803380858688,0) -- (-5.253715496364037,0);
+        \draw[line width=2pt,color=zzttqq] (-5.253715496364037,0) -- (-5.219627611869385,0);
+        \draw[line width=2pt,color=zzttqq] (-5.219627611869385,0) -- (-5.185539727374734,0);
+        \draw[line width=2pt,color=zzttqq] (-5.185539727374734,0) -- (-5.151451842880083,0);
+        \draw[line width=2pt,color=zzttqq] (-5.151451842880083,0) -- (-5.117363958385432,0);
+        \draw[line width=2pt,color=zzttqq] (-5.117363958385432,0) -- (-5.08327607389078,0);
+        \draw[line width=2pt,color=zzttqq] (-5.08327607389078,0) -- (-5.049188189396129,0);
+        \draw[line width=2pt,color=zzttqq] (-5.049188189396129,0) -- (-5.015100304901478,0);
+        \draw[line width=2pt,color=zzttqq] (-5.015100304901478,0) -- (-4.9810124204068265,0);
+        \draw[line width=2pt,color=zzttqq] (-4.9810124204068265,0) -- (-4.946924535912175,0);
+        \draw[line width=2pt,color=zzttqq] (-4.946924535912175,0) -- (-4.912836651417524,0);
+        \draw[line width=2pt,color=zzttqq] (-4.912836651417524,0) -- (-4.878748766922873,0);
+        \draw[line width=2pt,color=zzttqq] (-4.878748766922873,0) -- (-4.844660882428221,0);
+        \draw[line width=2pt,color=zzttqq] (-4.844660882428221,0) -- (-4.81057299793357,0);
+        \draw[line width=2pt,color=zzttqq] (-4.81057299793357,0) -- (-4.776485113438919,0);
+        \draw[line width=2pt,color=zzttqq] (-4.776485113438919,0) -- (-4.7423972289442675,0);
+        \draw[line width=2pt,color=zzttqq] (-4.7423972289442675,0) -- (-4.708309344449616,0);
+        \draw[line width=2pt,color=zzttqq] (-4.708309344449616,0) -- (-4.674221459954965,0);
+        \draw[line width=2pt,color=zzttqq] (-4.674221459954965,0) -- (-4.640133575460314,0);
+        \draw[line width=2pt,color=zzttqq] (-4.640133575460314,0) -- (-4.606045690965662,0);
+        \draw[line width=2pt,color=zzttqq] (-4.606045690965662,0) -- (-4.571957806471011,0);
+        \draw[line width=2pt,color=zzttqq] (-4.571957806471011,0) -- (-4.53786992197636,0);
+        \draw[line width=2pt,color=zzttqq] (-4.53786992197636,0) -- (-4.503782037481709,0);
+        \draw[line width=2pt,color=zzttqq] (-4.503782037481709,0) -- (-4.469694152987057,0);
+        \draw[line width=2pt,color=zzttqq] (-4.469694152987057,0) -- (-4.435606268492406,0);
+        \draw[line width=2pt,color=zzttqq] (-4.435606268492406,0) -- (-4.401518383997755,-0.001141080075333719);
+        \draw[line width=2pt,color=zzttqq] (-4.401518383997755,-0.001141080075333719) -- (-4.3674304995031035,-0.0013034700633496655);
+        \draw[line width=2pt,color=zzttqq] (-4.3674304995031035,-0.0013034700633496655) -- (-4.333342615008452,-0.0014870286468681977);
+        \draw[line width=2pt,color=zzttqq] (-4.333342615008452,-0.0014870286468681977) -- (-4.299254730513801,-0.0016942199994023305);
+        \draw[line width=2pt,color=zzttqq] (-4.299254730513801,-0.0016942199994023305) -- (-4.26516684601915,-0.0019277525920615428);
+        \draw[line width=2pt,color=zzttqq] (-4.26516684601915,-0.0019277525920615428) -- (-4.231078961524498,-0.0021905975798509063);
+        \draw[line width=2pt,color=zzttqq] (-4.231078961524498,-0.0021905975798509063) -- (-4.196991077029847,-0.0024860077903085145);
+        \draw[line width=2pt,color=zzttqq] (-4.196991077029847,-0.0024860077903085145) -- (-4.162903192535196,-0.0028175372193219622);
+        \draw[line width=2pt,color=zzttqq] (-4.162903192535196,-0.0028175372193219622) -- (-4.1288153080405445,-0.0031890609183845885);
+        \draw[line width=2pt,color=zzttqq] (-4.1288153080405445,-0.0031890609183845885) -- (-4.094727423545893,-0.003604795135212409);
+        \draw[line width=2pt,color=zzttqq] (-4.094727423545893,-0.003604795135212409) -- (-4.060639539051242,-0.004069317545577064);
+        \draw[line width=2pt,color=zzttqq] (-4.060639539051242,-0.004069317545577064) -- (-4.026551654556591,-0.00458758738848306);
+        \draw[line width=2pt,color=zzttqq] (-4.026551654556591,-0.00458758738848306) -- (-3.99246377006194,-0.005164965289529108);
+        \draw[line width=2pt,color=zzttqq] (-3.99246377006194,-0.005164965289529108) -- (-3.958375885567289,-0.005807232528581243);
+        \draw[line width=2pt,color=zzttqq] (-3.958375885567289,-0.005807232528581243) -- (-3.924288001072638,-0.006520609477929277);
+        \draw[line width=2pt,color=zzttqq] (-3.924288001072638,-0.006520609477929277) -- (-3.8902001165779874,-0.007311772906124013);
+        \draw[line width=2pt,color=zzttqq] (-3.8902001165779874,-0.007311772906124013) -- (-3.8561122320833365,-0.00818787181097364);
+        \draw[line width=2pt,color=zzttqq] (-3.8561122320833365,-0.00818787181097364) -- (-3.8220243475886857,-0.009156541413039208);
+        \draw[line width=2pt,color=zzttqq] (-3.8220243475886857,-0.009156541413039208) -- (-3.787936463094035,-0.01022591490878918);
+        \draw[line width=2pt,color=zzttqq] (-3.787936463094035,-0.01022591490878918) -- (-3.753848578599384,-0.011404632550785165);
+        \draw[line width=2pt,color=zzttqq] (-3.753848578599384,-0.011404632550785165) -- (-3.719760694104733,-0.01270184759136393);
+        \draw[line width=2pt,color=zzttqq] (-3.719760694104733,-0.01270184759136393) -- (-3.6856728096100824,-0.014127228596799931);
+        \draw[line width=2pt,color=zzttqq] (-3.6856728096100824,-0.014127228596799931) -- (-3.6515849251154315,-0.015690957611477437);
+        \draw[line width=2pt,color=zzttqq] (-3.6515849251154315,-0.015690957611477437) -- (-3.6174970406207807,-0.017403723626825025);
+        \draw[line width=2pt,color=zzttqq] (-3.6174970406207807,-0.017403723626825025) -- (-3.58340915612613,-0.019276710788369688);
+        \draw[line width=2pt,color=zzttqq] (-3.58340915612613,-0.019276710788369688) -- (-3.549321271631479,-0.021321580757001246);
+        \draw[line width=2pt,color=zzttqq] (-3.549321271631479,-0.021321580757001246) -- (-3.515233387136828,-0.023550448628186598);
+        \draw[line width=2pt,color=zzttqq] (-3.515233387136828,-0.023550448628186598) -- (-3.4811455026421774,-0.02597585180625679);
+        \draw[line width=2pt,color=zzttqq] (-3.4811455026421774,-0.02597585180625679) -- (-3.4470576181475265,-0.028610711230848632);
+        \draw[line width=2pt,color=zzttqq] (-3.4470576181475265,-0.028610711230848632) -- (-3.4129697336528757,-0.0314682843599725);
+        \draw[line width=2pt,color=zzttqq] (-3.4129697336528757,-0.0314682843599725) -- (-3.378881849158225,-0.03456210932985184);
+        \draw[line width=2pt,color=zzttqq] (-3.378881849158225,-0.03456210932985184) -- (-3.344793964663574,-0.03790593973647942);
+        \draw[line width=2pt,color=zzttqq] (-3.344793964663574,-0.03790593973647942) -- (-3.310706080168923,-0.04151366951857509);
+        \draw[line width=2pt,color=zzttqq] (-3.310706080168923,-0.04151366951857509) -- (-3.2766181956742724,-0.045399247467074695);
+        \draw[line width=2pt,color=zzttqq] (-3.2766181956742724,-0.045399247467074695) -- (-3.2425303111796215,-0.04957658094313721);
+        \draw[line width=2pt,color=zzttqq] (-3.2425303111796215,-0.04957658094313721) -- (-3.2084424266849707,-0.054059428455549854);
+        \draw[line width=2pt,color=zzttqq] (-3.2084424266849707,-0.054059428455549854) -- (-3.17435454219032,-0.058861280829858885);
+        \draw[line width=2pt,color=zzttqq] (-3.17435454219032,-0.058861280829858885) -- (-3.140266657695669,-0.06399523079595774);
+        \draw[line width=2pt,color=zzttqq] (-3.140266657695669,-0.06399523079595774) -- (-3.106178773201018,-0.06947383092847878);
+        \draw[line width=2pt,color=zzttqq] (-3.106178773201018,-0.06947383092847878) -- (-3.0720908887063674,-0.07530893999525018);
+        \draw[line width=2pt,color=zzttqq] (-3.0720908887063674,-0.07530893999525018) -- (-3.0380030042117165,-0.08151155790320558);
+        \draw[line width=2pt,color=zzttqq] (-3.0380030042117165,-0.08151155790320558) -- (-3.0039151197170657,-0.08809164957816518);
+        \draw[line width=2pt,color=zzttqq] (-3.0039151197170657,-0.08809164957816518) -- (-2.969827235222415,-0.09505795827432924);
+        \draw[line width=2pt,color=zzttqq] (-2.969827235222415,-0.09505795827432924) -- (-2.935739350727764,-0.10241780898036794);
+        \draw[line width=2pt,color=zzttqq] (-2.935739350727764,-0.10241780898036794) -- (-2.901651466233113,-0.11017690277064317);
+        \draw[line width=2pt,color=zzttqq] (-2.901651466233113,-0.11017690277064317) -- (-2.8675635817384624,-0.11833910314106894);
+        \draw[line width=2pt,color=zzttqq] (-2.8675635817384624,-0.11833910314106894) -- (-2.8334756972438115,-0.12690621556784878);
+        \draw[line width=2pt,color=zzttqq] (-2.8334756972438115,-0.12690621556784878) -- (-2.7993878127491607,-0.1358777617319813);
+        \draw[line width=2pt,color=zzttqq] (-2.7993878127491607,-0.1358777617319813) -- (-2.76529992825451,-0.1452507500608673);
+        \draw[line width=2pt,color=zzttqq] (-2.76529992825451,-0.1452507500608673) -- (-2.731212043759859,-0.15501944444819835);
+        \draw[line width=2pt,color=zzttqq] (-2.731212043759859,-0.15501944444819835) -- (-2.697124159265208,-0.16517513322186983);
+        \draw[line width=2pt,color=zzttqq] (-2.697124159265208,-0.16517513322186983) -- (-2.6630362747705574,-0.17570590063403704);
+        \draw[line width=2pt,color=zzttqq] (-2.6630362747705574,-0.17570590063403704) -- (-2.6289483902759065,-0.186596403344452);
+        \draw[line width=2pt,color=zzttqq] (-2.6289483902759065,-0.186596403344452) -- (-2.5948605057812557,-0.19782765455453022);
+        \draw[line width=2pt,color=zzttqq] (-2.5948605057812557,-0.19782765455453022) -- (-2.560772621286605,-0.20937681862165802);
+        \draw[line width=2pt,color=zzttqq] (-2.560772621286605,-0.20937681862165802) -- (-2.526684736791954,-0.22121701913739839);
+        \draw[line width=2pt,color=zzttqq] (-2.526684736791954,-0.22121701913739839) -- (-2.492596852297303,-0.2333171635857251);
+        \draw[line width=2pt,color=zzttqq] (-2.492596852297303,-0.2333171635857251) -- (-2.4585089678026524,-0.24564178780441143);
+        \draw[line width=2pt,color=zzttqq] (-2.4585089678026524,-0.24564178780441143) -- (-2.4244210833080015,-0.2581509235504454);
+        \draw[line width=2pt,color=zzttqq] (-2.4244210833080015,-0.2581509235504454) -- (-2.3903331988133507,-0.27079999251512976);
+        \draw[line width=2pt,color=zzttqq] (-2.3903331988133507,-0.27079999251512976) -- (-2.3562453143187,-0.2835397301428001);
+        \draw[line width=2pt,color=zzttqq] (-2.3562453143187,-0.2835397301428001) -- (-2.322157429824049,-0.2963161425755036);
+        \draw[line width=2pt,color=zzttqq] (-2.322157429824049,-0.2963161425755036) -- (-2.288069545329398,-0.30907049997147945);
+        \draw[line width=2pt,color=zzttqq] (-2.288069545329398,-0.30907049997147945) -- (-2.2539816608347474,-0.32173936932514496);
+        \draw[line width=2pt,color=zzttqq] (-2.2539816608347474,-0.32173936932514496) -- (-2.2198937763400965,-0.3342546897482631);
+        \draw[line width=2pt,color=zzttqq] (-2.2198937763400965,-0.3342546897482631) -- (-2.1858058918454457,-0.3465438929542704);
+        \draw[line width=2pt,color=zzttqq] (-2.1858058918454457,-0.3465438929542704) -- (-2.151718007350795,-0.35853007141917675);
+        \draw[line width=2pt,color=zzttqq] (-2.151718007350795,-0.35853007141917675) -- (-2.117630122856144,-0.3701321963724627);
+        \draw[line width=2pt,color=zzttqq] (-2.117630122856144,-0.3701321963724627) -- (-2.083542238361493,-0.38126538740011795);
+        \draw[line width=2pt,color=zzttqq] (-2.083542238361493,-0.38126538740011795) -- (-2.0494543538668424,-0.3918412350202961);
+        \draw[line width=2pt,color=zzttqq] (-2.0494543538668424,-0.3918412350202961) -- (-2.0153664693721915,-0.4017681771216831);
+        \draw[line width=2pt,color=zzttqq] (-2.0153664693721915,-0.4017681771216831) -- (-1.9812785848775405,-0.41095192963811256);
+        \draw[line width=2pt,color=zzttqq] (-1.9812785848775405,-0.41095192963811256) -- (-1.9471907003828894,-0.4192959712735985);
+        \draw[line width=2pt,color=zzttqq] (-1.9471907003828894,-0.4192959712735985) -- (-1.9131028158882384,-0.4267020814940291);
+        \draw[line width=2pt,color=zzttqq] (-1.9131028158882384,-0.4267020814940291) -- (-1.8790149313935873,-0.43307093037039396);
+        \draw[line width=2pt,color=zzttqq] (-1.8790149313935873,-0.43307093037039396) -- (-1.8449270468989363,-0.4383027181995598);
+        \draw[line width=2pt,color=zzttqq] (-1.8449270468989363,-0.4383027181995598) -- (-1.8108391624042852,-0.44229786214904343);
+        \draw[line width=2pt,color=zzttqq] (-1.8108391624042852,-0.44229786214904343) -- (-1.7767512779096342,-0.4449577264794903);
+        \draw[line width=2pt,color=zzttqq] (-1.7767512779096342,-0.4449577264794903) -- (-1.742663393414983,-0.4461853922009094);
+        \draw[line width=2pt,color=zzttqq] (-1.742663393414983,-0.4461853922009094) -- (-1.708575508920332,-0.44588646132499465);
+        \draw[line width=2pt,color=zzttqq] (-1.708575508920332,-0.44588646132499465) -- (-1.674487624425681,-0.44396989019546795);
+        \draw[line width=2pt,color=zzttqq] (-1.674487624425681,-0.44396989019546795) -- (-1.64039973993103,-0.44034884572112315);
+        \draw[line width=2pt,color=zzttqq] (-1.64039973993103,-0.44034884572112315) -- (-1.6063118554363789,-0.43494157771219616);
+        \draw[line width=2pt,color=zzttqq] (-1.6063118554363789,-0.43494157771219616) -- (-1.5722239709417278,-0.4276722999400906);
+        \draw[line width=2pt,color=zzttqq] (-1.5722239709417278,-0.4276722999400906) -- (-1.5381360864470768,-0.4184720720135618);
+        \draw[line width=2pt,color=zzttqq] (-1.5381360864470768,-0.4184720720135618) -- (-1.5040482019524257,-0.40727967370128204);
+        \draw[line width=2pt,color=zzttqq] (-1.5040482019524257,-0.40727967370128204) -- (-1.4699603174577747,-0.39404246294100786);
+        \draw[line width=2pt,color=zzttqq] (-1.4699603174577747,-0.39404246294100786) -- (-1.4358724329631236,-0.37871720846859874);
+        \draw[line width=2pt,color=zzttqq] (-1.4358724329631236,-0.37871720846859874) -- (-1.4017845484684726,-0.3612708877844516);
+        \draw[line width=2pt,color=zzttqq] (-1.4017845484684726,-0.3612708877844516) -- (-1.3676966639738215,-0.341681441058271);
+        \draw[line width=2pt,color=zzttqq] (-1.3676966639738215,-0.341681441058271) -- (-1.3336087794791704,-0.31993847156220756);
+        \draw[line width=2pt,color=zzttqq] (-1.3336087794791704,-0.31993847156220756) -- (-1.2995208949845194,-0.2960438833228461);
+        \draw[line width=2pt,color=zzttqq] (-1.2995208949845194,-0.2960438833228461) -- (-1.2654330104898683,-0.2700124468985748);
+        \draw[line width=2pt,color=zzttqq] (-1.2654330104898683,-0.2700124468985748) -- (-1.2313451259952173,-0.2418722845233516);
+        \draw[line width=2pt,color=zzttqq] (-1.2313451259952173,-0.2418722845233516) -- (-1.1972572415005662,-0.21166526631207586);
+        \draw[line width=2pt,color=zzttqq] (-1.1972572415005662,-0.21166526631207586) -- (-1.1631693570059152,-0.17944730979631482);
+        \draw[line width=2pt,color=zzttqq] (-1.1631693570059152,-0.17944730979631482) -- (-1.1290814725112641,-0.14528857574994408);
+        \draw[line width=2pt,color=zzttqq] (-1.1290814725112641,-0.14528857574994408) -- (-1.094993588016613,-0.10927355406849601);
+        \draw[line width=2pt,color=zzttqq] (-1.094993588016613,-0.10927355406849601) -- (-1.060905703521962,-0.07150103437805534);
+        \draw[line width=2pt,color=zzttqq] (-1.060905703521962,-0.07150103437805534) -- (-1.026817819027311,-0.03208395706200716);
+        \draw[line width=2pt,color=zzttqq] (-1.026817819027311,-0.03208395706200716) -- (-0.9927299345326599,0.008850858502285312);
+        \draw[line width=2pt,color=zzttqq] (-0.9927299345326599,0.008850858502285312) -- (-0.9586420500380088,0.05116311052049771);
+        \draw[line width=2pt,color=zzttqq] (-0.9586420500380088,0.05116311052049771) -- (-0.9245541655433578,0.09469953694317335);
+        \draw[line width=2pt,color=zzttqq] (-0.9245541655433578,0.09469953694317335) -- (-0.8904662810487067,0.13929456267654833);
+        \draw[line width=2pt,color=zzttqq] (-0.8904662810487067,0.13929456267654833) -- (-0.8563783965540557,0.1847710699602012);
+        \draw[line width=2pt,color=zzttqq] (-0.8563783965540557,0.1847710699602012) -- (-0.8222905120594046,0.2309412886597095);
+        \draw[line width=2pt,color=zzttqq] (-0.8222905120594046,0.2309412886597095) -- (-0.7882026275647536,0.2776078018465338);
+        \draw[line width=2pt,color=zzttqq] (-0.7882026275647536,0.2776078018465338) -- (-0.7541147430701025,0.3245646606727045);
+        \draw[line width=2pt,color=zzttqq] (-0.7541147430701025,0.3245646606727045) -- (-0.7200268585754515,0.37159860121258276);
+        \draw[line width=2pt,color=zzttqq] (-0.7200268585754515,0.37159860121258276) -- (-0.6859389740808004,0.4184903546561523);
+        \draw[line width=2pt,color=zzttqq] (-0.6859389740808004,0.4184903546561523) -- (-0.6518510895861493,0.46501604101598254);
+        \draw[line width=2pt,color=zzttqq] (-0.6518510895861493,0.46501604101598254) -- (-0.6177632050914983,0.510948635370777);
+        \draw[line width=2pt,color=zzttqq] (-0.6177632050914983,0.510948635370777) -- (-0.5836753205968472,0.5560594946291522);
+        \draw[line width=2pt,color=zzttqq] (-0.5836753205968472,0.5560594946291522) -- (-0.5495874361021962,0.6001199318738998);
+        \draw[line width=2pt,color=zzttqq] (-0.5495874361021962,0.6001199318738998) -- (-0.5154995516075451,0.6429028245541116);
+        \draw[line width=2pt,color=zzttqq] (-0.5154995516075451,0.6429028245541116) -- (-0.4814116671128941,0.6841842421433578);
+        \draw[line width=2pt,color=zzttqq] (-0.4814116671128941,0.6841842421433578) -- (-0.4473237826182431,0.723745078388026);
+        \draw[line width=2pt,color=zzttqq] (-0.4473237826182431,0.723745078388026) -- (-0.4132358981235921,0.7613726729404255);
+        \draw[line width=2pt,color=zzttqq] (-0.4132358981235921,0.7613726729404255) -- (-0.3791480136289411,0.7968624070137045);
+        \draw[line width=2pt,color=zzttqq] (-0.3791480136289411,0.7968624070137045) -- (-0.34506012913429013,0.8300192577150717);
+        \draw[line width=2pt,color=zzttqq] (-0.34506012913429013,0.8300192577150717) -- (-0.31097224463963913,0.8606592959129532);
+        \draw[line width=2pt,color=zzttqq] (-0.31097224463963913,0.8606592959129532) -- (-0.27688436014498813,0.8886111128727316);
+        \draw[line width=2pt,color=zzttqq] (-0.27688436014498813,0.8886111128727316) -- (-0.24279647565033713,0.9137171614523029);
+        \draw[line width=2pt,color=zzttqq] (-0.24279647565033713,0.9137171614523029) -- (-0.20870859115568613,0.935834998378003);
+        \draw[line width=2pt,color=zzttqq] (-0.20870859115568613,0.935834998378003) -- (-0.17462070666103513,0.9548384150161756);
+        \draw[line width=2pt,color=zzttqq] (-0.17462070666103513,0.9548384150161756) -- (-0.14053282216638413,0.9706184451060893);
+        \draw[line width=2pt,color=zzttqq] (-0.14053282216638413,0.9706184451060893) -- (-0.10644493767173313,0.9830842391140371);
+        \draw[line width=2pt,color=zzttqq] (-0.10644493767173313,0.9830842391140371) -- (-0.07235705317708213,0.9921637961922137);
+        \draw[line width=2pt,color=zzttqq] (-0.07235705317708213,0.9921637961922137) -- (-0.03826916868243113,0.9978045461632932);
+        \draw[line width=2pt,color=zzttqq] (-0.03826916868243113,0.9978045461632932) -- (-0.004181284187780132,0.9999737754848483);
+        \draw[line width=2pt,color=zzttqq] (-0.004181284187780132,0.9999737754848483) -- (0.029906600306870867,0.998658892757702);
+        \draw[line width=2pt,color=zzttqq] (0.029906600306870867,0.998658892757702) -- (0.06399448480152187,0.9938675310086879);
+        \draw[line width=2pt,color=zzttqq] (0.06399448480152187,0.9938675310086879) -- (0.09808236929617287,0.9856274856799729);
+        \draw[line width=2pt,color=zzttqq] (0.09808236929617287,0.9856274856799729) -- (0.13217025379082387,0.9739864889724082);
+        \draw[line width=2pt,color=zzttqq] (0.13217025379082387,0.9739864889724082) -- (0.16625813828547487,0.9590118228974029);
+        \draw[line width=2pt,color=zzttqq] (0.16625813828547487,0.9590118228974029) -- (0.20034602278012587,0.9407897750688567);
+        \draw[line width=2pt,color=zzttqq] (0.20034602278012587,0.9407897750688567) -- (0.23443390727477686,0.9194249428923903);
+        \draw[line width=2pt,color=zzttqq] (0.23443390727477686,0.9194249428923903) -- (0.26852179176942786,0.8950393933629728);
+        \draw[line width=2pt,color=zzttqq] (0.26852179176942786,0.8950393933629728) -- (0.30260967626407886,0.8677716871446097);
+        \draw[line width=2pt,color=zzttqq] (0.30260967626407886,0.8677716871446097) -- (0.33669756075872986,0.8377757769589139);
+        \draw[line width=2pt,color=zzttqq] (0.33669756075872986,0.8377757769589139) -- (0.37078544525338086,0.8052197915367034);
+        \draw[line width=2pt,color=zzttqq] (0.37078544525338086,0.8052197915367034) -- (0.40487332974803186,0.7702847174736471);
+        \draw[line width=2pt,color=zzttqq] (0.40487332974803186,0.7702847174736471) -- (0.43896121424268286,0.7331629922648878);
+        \draw[line width=2pt,color=zzttqq] (0.43896121424268286,0.7331629922648878) -- (0.47304909873733386,0.6940570225642394);
+        \draw[line width=2pt,color=zzttqq] (0.47304909873733386,0.6940570225642394) -- (0.5071369832319849,0.6531776423130597);
+        \draw[line width=2pt,color=zzttqq] (0.5071369832319849,0.6531776423130597) -- (0.5412248677266358,0.6107425258067919);
+        \draw[line width=2pt,color=zzttqq] (0.5412248677266358,0.6107425258067919) -- (0.5753127522212869,0.5669745710105119);
+        \draw[line width=2pt,color=zzttqq] (0.5753127522212869,0.5669745710105119) -- (0.6094006367159379,0.5221002684981977);
+        \draw[line width=2pt,color=zzttqq] (0.6094006367159379,0.5221002684981977) -- (0.643488521210589,0.4763480712759141);
+        \draw[line width=2pt,color=zzttqq] (0.643488521210589,0.4763480712759141) -- (0.67757640570524,0.429946780461198);
+        \draw[line width=2pt,color=zzttqq] (0.67757640570524,0.429946780461198) -- (0.7116642901998911,0.383123961336422);
+        \draw[line width=2pt,color=zzttqq] (0.7116642901998911,0.383123961336422) -- (0.7457521746945421,0.3361044036817858);
+        \draw[line width=2pt,color=zzttqq] (0.7457521746945421,0.3361044036817858) -- (0.7798400591891932,0.28910863953481186);
+        \draw[line width=2pt,color=zzttqq] (0.7798400591891932,0.28910863953481186) -- (0.8139279436838442,0.24235153063053938);
+        \draw[line width=2pt,color=zzttqq] (0.8139279436838442,0.24235153063053938) -- (0.8480158281784953,0.19604093676434503);
+        \draw[line width=2pt,color=zzttqq] (0.8480158281784953,0.19604093676434503) -- (0.8821037126731464,0.15037647520308328);
+        \draw[line width=2pt,color=zzttqq] (0.8821037126731464,0.15037647520308328) -- (0.9161915971677974,0.10554838006670042);
+        \draw[line width=2pt,color=zzttqq] (0.9161915971677974,0.10554838006670042) -- (0.9502794816624485,0.06173646932907531);
+        \draw[line width=2pt,color=zzttqq] (0.9502794816624485,0.06173646932907531) -- (0.9843673661570995,0.019109225761507306);
+        \draw[line width=2pt,color=zzttqq] (0.9843673661570995,0.019109225761507306) -- (1.0184552506517506,-0.022177003216855014);
+        \draw[line width=2pt,color=zzttqq] (1.0184552506517506,-0.022177003216855014) -- (1.0525431351464016,-0.06197868319218473);
+        \draw[line width=2pt,color=zzttqq] (1.0525431351464016,-0.06197868319218473) -- (1.0866310196410527,-0.10016564569608813);
+        \draw[line width=2pt,color=zzttqq] (1.0866310196410527,-0.10016564569608813) -- (1.1207189041357037,-0.13662151556959112);
+        \draw[line width=2pt,color=zzttqq] (1.1207189041357037,-0.13662151556959112) -- (1.1548067886303548,-0.1712440132059806);
+        \draw[line width=2pt,color=zzttqq] (1.1548067886303548,-0.1712440132059806) -- (1.1888946731250059,-0.20394513339466092);
+        \draw[line width=2pt,color=zzttqq] (1.1888946731250059,-0.20394513339466092) -- (1.222982557619657,-0.2346512036904195);
+        \draw[line width=2pt,color=zzttqq] (1.222982557619657,-0.2346512036904195) -- (1.257070442114308,-0.2633028263570785);
+        \draw[line width=2pt,color=zzttqq] (1.257070442114308,-0.2633028263570785) -- (1.291158326608959,-0.28985470897028737);
+        \draw[line width=2pt,color=zzttqq] (1.291158326608959,-0.28985470897028737) -- (1.32524621110361,-0.31427538970164004);
+        \draw[line width=2pt,color=zzttqq] (1.32524621110361,-0.31427538970164004) -- (1.3593340955982611,-0.33654686413757495);
+        \draw[line width=2pt,color=zzttqq] (1.3593340955982611,-0.33654686413757495) -- (1.3934219800929122,-0.3566641212055739);
+        \draw[line width=2pt,color=zzttqq] (1.3934219800929122,-0.3566641212055739) -- (1.4275098645875632,-0.37463459638274454);
+        \draw[line width=2pt,color=zzttqq] (1.4275098645875632,-0.37463459638274454) -- (1.4615977490822143,-0.3904775508454444);
+        \draw[line width=2pt,color=zzttqq] (1.4615977490822143,-0.3904775508454444) -- (1.4956856335768653,-0.40422338558239523);
+        \draw[line width=2pt,color=zzttqq] (1.4956856335768653,-0.40422338558239523) -- (1.5297735180715164,-0.41591289973864093);
+        \draw[line width=2pt,color=zzttqq] (1.5297735180715164,-0.41591289973864093) -- (1.5638614025661675,-0.4255965025861655);
+        \draw[line width=2pt,color=zzttqq] (1.5638614025661675,-0.4255965025861655) -- (1.5979492870608185,-0.4333333885329495);
+        \draw[line width=2pt,color=zzttqq] (1.5979492870608185,-0.4333333885329495) -- (1.6320371715554696,-0.4391906844909582);
+        \draw[line width=2pt,color=zzttqq] (1.6320371715554696,-0.4391906844909582) -- (1.6661250560501206,-0.44324257873149026);
+        \draw[line width=2pt,color=zzttqq] (1.6661250560501206,-0.44324257873149026) -- (1.7002129405447717,-0.44556944007097193);
+        \draw[line width=2pt,color=zzttqq] (1.7002129405447717,-0.44556944007097193) -- (1.7343008250394227,-0.4462569358600459);
+        \draw[line width=2pt,color=zzttqq] (1.7343008250394227,-0.4462569358600459) -- (1.7683887095340738,-0.4453951568027602);
+        \draw[line width=2pt,color=zzttqq] (1.7683887095340738,-0.4453951568027602) -- (1.8024765940287248,-0.4430777561204577);
+        \draw[line width=2pt,color=zzttqq] (1.8024765940287248,-0.4430777561204577) -- (1.836564478523376,-0.43940111000658855);
+        \draw[line width=2pt,color=zzttqq] (1.836564478523376,-0.43940111000658855) -- (1.870652363018027,-0.4344635057043307);
+        \draw[line width=2pt,color=zzttqq] (1.870652363018027,-0.4344635057043307) -- (1.904740247512678,-0.4283643628888465);
+        \draw[line width=2pt,color=zzttqq] (1.904740247512678,-0.4283643628888465) -- (1.938828132007329,-0.42120349336036716);
+        \draw[line width=2pt,color=zzttqq] (1.938828132007329,-0.42120349336036716) -- (1.9729160165019801,-0.4130804033629596);
+        \draw[line width=2pt,color=zzttqq] (1.9729160165019801,-0.4130804033629596) -- (2.007003900996631,-0.40409364214629206);
+        \draw[line width=2pt,color=zzttqq] (2.007003900996631,-0.40409364214629206) -- (2.041091785491282,-0.3943401996929831);
+        \draw[line width=2pt,color=zzttqq] (2.041091785491282,-0.3943401996929831) -- (2.075179669985933,-0.3839149558505934);
+        \draw[line width=2pt,color=zzttqq] (2.075179669985933,-0.3839149558505934) -- (2.1092675544805837,-0.37291018244272234);
+        \draw[line width=2pt,color=zzttqq] (2.1092675544805837,-0.37291018244272234) -- (2.1433554389752345,-0.36141509929497645);
+        \draw[line width=2pt,color=zzttqq] (2.1433554389752345,-0.36141509929497645) -- (2.1774433234698853,-0.349515484504936);
+        \draw[line width=2pt,color=zzttqq] (2.1774433234698853,-0.349515484504936) -- (2.211531207964536,-0.33729333871599926);
+        \draw[line width=2pt,color=zzttqq] (2.211531207964536,-0.33729333871599926) -- (2.245619092459187,-0.3248266026275704);
+        \draw[line width=2pt,color=zzttqq] (2.245619092459187,-0.3248266026275704) -- (2.279706976953838,-0.3121889264920868);
+        \draw[line width=2pt,color=zzttqq] (2.279706976953838,-0.3121889264920868) -- (2.3137948614484887,-0.29944948991557246);
+        \draw[line width=2pt,color=zzttqq] (2.3137948614484887,-0.29944948991557246) -- (2.3478827459431395,-0.2866728698946497);
+        \draw[line width=2pt,color=zzttqq] (2.3478827459431395,-0.2866728698946497) -- (2.3819706304377903,-0.2739189546903302);
+        \draw[line width=2pt,color=zzttqq] (2.3819706304377903,-0.2739189546903302) -- (2.416058514932441,-0.2612429008577527);
+        \draw[line width=2pt,color=zzttqq] (2.416058514932441,-0.2612429008577527) -- (2.450146399427092,-0.24869513052094175);
+        \draw[line width=2pt,color=zzttqq] (2.450146399427092,-0.24869513052094175) -- (2.484234283921743,-0.2363213658015943);
+        \draw[line width=2pt,color=zzttqq] (2.484234283921743,-0.2363213658015943) -- (2.5183221684163937,-0.22416269717920817);
+        \draw[line width=2pt,color=zzttqq] (2.5183221684163937,-0.22416269717920817) -- (2.5524100529110445,-0.212255682474402);
+        \draw[line width=2pt,color=zzttqq] (2.5524100529110445,-0.212255682474402) -- (2.5864979374056953,-0.2006324731054306);
+        \draw[line width=2pt,color=zzttqq] (2.5864979374056953,-0.2006324731054306) -- (2.620585821900346,-0.18932096426669548);
+        \draw[line width=2pt,color=zzttqq] (2.620585821900346,-0.18932096426669548) -- (2.654673706394997,-0.17834496571419967);
+        \draw[line width=2pt,color=zzttqq] (2.654673706394997,-0.17834496571419967) -- (2.688761590889648,-0.16772438991289687);
+        \draw[line width=2pt,color=zzttqq] (2.688761590889648,-0.16772438991289687) -- (2.7228494753842987,-0.1574754544010514);
+        \draw[line width=2pt,color=zzttqq] (2.7228494753842987,-0.1574754544010514) -- (2.7569373598789495,-0.1476108953533008);
+        \draw[line width=2pt,color=zzttqq] (2.7569373598789495,-0.1476108953533008) -- (2.7910252443736003,-0.13814018947329224);
+        \draw[line width=2pt,color=zzttqq] (2.7910252443736003,-0.13814018947329224) -- (2.825113128868251,-0.12906978151477552);
+        \draw[line width=2pt,color=zzttqq] (2.825113128868251,-0.12906978151477552) -- (2.859201013362902,-0.12040331491318296);
+        \draw[line width=2pt,color=zzttqq] (2.859201013362902,-0.12040331491318296) -- (2.893288897857553,-0.11214186320443786);
+        \draw[line width=2pt,color=zzttqq] (2.893288897857553,-0.11214186320443786) -- (2.9273767823522037,-0.10428416011060476);
+        \draw[line width=2pt,color=zzttqq] (2.9273767823522037,-0.10428416011060476) -- (2.9614646668468545,-0.09682682637980997);
+        \draw[line width=2pt,color=zzttqq] (2.9614646668468545,-0.09682682637980997) -- (2.9955525513415053,-0.08976459167764919);
+        \draw[line width=2pt,color=zzttqq] (2.9955525513415053,-0.08976459167764919) -- (3.029640435836156,-0.08309051003631987);
+        \draw[line width=2pt,color=zzttqq] (3.029640435836156,-0.08309051003631987) -- (3.063728320330807,-0.0767961675735039);
+        \draw[line width=2pt,color=zzttqq] (3.063728320330807,-0.0767961675735039) -- (3.097816204825458,-0.07087188139339318);
+        \draw[line width=2pt,color=zzttqq] (3.097816204825458,-0.07087188139339318) -- (3.1319040893201087,-0.06530688877528001);
+        \draw[line width=2pt,color=zzttqq] (3.1319040893201087,-0.06530688877528001) -- (3.1659919738147595,-0.06008952593920236);
+        \draw[line width=2pt,color=zzttqq] (3.1659919738147595,-0.06008952593920236) -- (3.2000798583094103,-0.055207395851883126);
+        \draw[line width=2pt,color=zzttqq] (3.2000798583094103,-0.055207395851883126) -- (3.234167742804061,-0.05064752469855612);
+        \draw[line width=2pt,color=zzttqq] (3.234167742804061,-0.05064752469855612) -- (3.268255627298712,-0.046396506796399804);
+        \draw[line width=2pt,color=zzttqq] (3.268255627298712,-0.046396506796399804) -- (3.302343511793363,-0.04244063786262809);
+        \draw[line width=2pt,color=zzttqq] (3.302343511793363,-0.04244063786262809) -- (3.3364313962880137,-0.038766036674458985);
+        \draw[line width=2pt,color=zzttqq] (3.3364313962880137,-0.038766036674458985) -- (3.3705192807826645,-0.03535875526905877);
+        \draw[line width=2pt,color=zzttqq] (3.3705192807826645,-0.03535875526905877) -- (3.4046071652773153,-0.03220487792918587);
+        \draw[line width=2pt,color=zzttqq] (3.4046071652773153,-0.03220487792918587) -- (3.438695049771966,-0.02929060928485357);
+        \draw[line width=2pt,color=zzttqq] (3.438695049771966,-0.02929060928485357) -- (3.472782934266617,-0.02660235193325955);
+        \draw[line width=2pt,color=zzttqq] (3.472782934266617,-0.02660235193325955) -- (3.506870818761268,-0.02412677403898567);
+        \draw[line width=2pt,color=zzttqq] (3.506870818761268,-0.02412677403898567) -- (3.5409587032559187,-0.021850867424654266);
+        \draw[line width=2pt,color=zzttqq] (3.5409587032559187,-0.021850867424654266) -- (3.5750465877505695,-0.019761996699523766);
+        \draw[line width=2pt,color=zzttqq] (3.5750465877505695,-0.019761996699523766) -- (3.6091344722452203,-0.017847940000670682);
+        \draw[line width=2pt,color=zzttqq] (3.6091344722452203,-0.017847940000670682) -- (3.643222356739871,-0.016096921939240946);
+        \draw[line width=2pt,color=zzttqq] (3.643222356739871,-0.016096921939240946) -- (3.677310241234522,-0.014497639353596591);
+        \draw[line width=2pt,color=zzttqq] (3.677310241234522,-0.014497639353596591) -- (3.711398125729173,-0.01303928047288624);
+        \draw[line width=2pt,color=zzttqq] (3.711398125729173,-0.01303928047288624) -- (3.7454860102238237,-0.011711538089486174);
+        \draw[line width=2pt,color=zzttqq] (3.7454860102238237,-0.011711538089486174) -- (3.7795738947184745,-0.010504617327737135);
+        \draw[line width=2pt,color=zzttqq] (3.7795738947184745,-0.010504617327737135) -- (3.8136617792131253,-0.009409238580267357);
+        \draw[line width=2pt,color=zzttqq] (3.8136617792131253,-0.009409238580267357) -- (3.847749663707776,-0.00841663616273902);
+        \draw[line width=2pt,color=zzttqq] (3.847749663707776,-0.00841663616273902) -- (3.881837548202427,-0.007518553213841195);
+        \draw[line width=2pt,color=zzttqq] (3.881837548202427,-0.007518553213841195) -- (3.915925432697078,-0.0067072333404924085);
+        \draw[line width=2pt,color=zzttqq] (3.915925432697078,-0.0067072333404924085) -- (3.9500133171917287,-0.005975409479174056);
+        \draw[line width=2pt,color=zzttqq] (3.9500133171917287,-0.005975409479174056) -- (3.9841012016863795,-0.005316290413706455);
+        \draw[line width=2pt,color=zzttqq] (3.9841012016863795,-0.005316290413706455) -- (4.018189086181031,-0.0047235453581599045);
+        \draw[line width=2pt,color=zzttqq] (4.018189086181031,-0.0047235453581599045) -- (4.052276970675682,-0.004191286981467349);
+        \draw[line width=2pt,color=zzttqq] (4.052276970675682,-0.004191286981467349) -- (4.086364855170333,-0.0037140532181191917);
+        \draw[line width=2pt,color=zzttqq] (4.086364855170333,-0.0037140532181191917) -- (4.120452739664985,-0.0032867881774671153);
+        \draw[line width=2pt,color=zzttqq] (4.120452739664985,-0.0032867881774671153) -- (4.154540624159636,-0.0029048224329792922);
+        \draw[line width=2pt,color=zzttqq] (4.154540624159636,-0.0029048224329792922) -- (4.188628508654287,-0.0025638529425611014);
+        \draw[line width=2pt,color=zzttqq] (4.188628508654287,-0.0025638529425611014) -- (4.222716393148938,-0.002259922822019667);
+        \draw[line width=2pt,color=zzttqq] (4.222716393148938,-0.002259922822019667) -- (4.25680427764359,-0.0019894011660984887);
+        \draw[line width=2pt,color=zzttqq] (4.25680427764359,-0.0019894011660984887) -- (4.290892162138241,-0.0017489630853877902);
+        \draw[line width=2pt,color=zzttqq] (4.290892162138241,-0.0017489630853877902) -- (4.324980046632892,-0.0015355701029356353);
+        \draw[line width=2pt,color=zzttqq] (4.324980046632892,-0.0015355701029356353) -- (4.3590679311275435,-0.0013464510316175216);
+        \draw[line width=2pt,color=zzttqq] (4.3590679311275435,-0.0013464510316175216) -- (4.393155815622195,-0.0011790834323087928);
+        \draw[line width=2pt,color=zzttqq] (4.393155815622195,-0.0011790834323087928) -- (4.427243700116846,-0.0010311757336577828);
+        \draw[line width=2pt,color=zzttqq] (4.427243700116846,-0.0010311757336577828) -- (4.461331584611497,0);
+        \draw[line width=2pt,color=zzttqq] (4.461331584611497,0) -- (4.495419469106149,0);
+        \draw[line width=2pt,color=zzttqq] (4.495419469106149,0) -- (4.5295073536008,0);
+        \draw[line width=2pt,color=zzttqq] (4.5295073536008,0) -- (4.563595238095451,0);
+        \draw[line width=2pt,color=zzttqq] (4.563595238095451,0) -- (4.5976831225901025,0);
+        \draw[line width=2pt,color=zzttqq] (4.5976831225901025,0) -- (4.631771007084754,0);
+        \draw[line width=2pt,color=zzttqq] (4.631771007084754,0) -- (4.665858891579405,0);
+        \draw[line width=2pt,color=zzttqq] (4.665858891579405,0) -- (4.699946776074056,0);
+        \draw[line width=2pt,color=zzttqq] (4.699946776074056,0) -- (4.734034660568708,0);
+        \draw[line width=2pt,color=zzttqq] (4.734034660568708,0) -- (4.768122545063359,0);
+        \draw[line width=2pt,color=zzttqq] (4.768122545063359,0) -- (4.80221042955801,0);
+        \draw[line width=2pt,color=zzttqq] (4.80221042955801,0) -- (4.836298314052661,0);
+        \draw[line width=2pt,color=zzttqq] (4.836298314052661,0) -- (4.870386198547313,0);
+        \draw[line width=2pt,color=zzttqq] (4.870386198547313,0) -- (4.904474083041964,0);
+        \draw[line width=2pt,color=zzttqq] (4.904474083041964,0) -- (4.938561967536615,0);
+        \draw[line width=2pt,color=zzttqq] (4.938561967536615,0) -- (4.9726498520312665,0);
+        \draw[line width=2pt,color=zzttqq] (4.9726498520312665,0) -- (5.006737736525918,0);
+        \draw[line width=2pt,color=zzttqq] (5.006737736525918,0) -- (5.040825621020569,0);
+        \draw[line width=2pt,color=zzttqq] (5.040825621020569,0) -- (5.07491350551522,0);
+        \draw[line width=2pt,color=zzttqq] (5.07491350551522,0) -- (5.109001390009872,0);
+        \draw[line width=2pt,color=zzttqq] (5.109001390009872,0) -- (5.143089274504523,0);
+        \draw[line width=2pt,color=zzttqq] (5.143089274504523,0) -- (5.177177158999174,0);
+        \draw[line width=2pt,color=zzttqq] (5.177177158999174,0) -- (5.2112650434938255,0);
+        \draw[line width=2pt,color=zzttqq] (5.2112650434938255,0) -- (5.245352927988477,0);
+        \draw[line width=2pt,color=zzttqq] (5.245352927988477,0) -- (5.279440812483128,0);
+        \draw[line width=2pt,color=zzttqq] (5.279440812483128,0) -- (5.313528696977779,0);
+        \draw[line width=2pt,color=zzttqq] (5.313528696977779,0) -- (5.347616581472431,0);
+        \draw[line width=2pt,color=zzttqq] (5.347616581472431,0) -- (5.381704465967082,0);
+        \draw[line width=2pt,color=zzttqq] (5.381704465967082,0) -- (5.415792350461733,0);
+        \draw[line width=2pt,color=zzttqq] (5.415792350461733,0) -- (5.449880234956384,0);
+        \draw[line width=2pt,color=zzttqq] (5.449880234956384,0) -- (5.483968119451036,0);
+        \draw[line width=2pt,color=zzttqq] (5.483968119451036,0) -- (5.518056003945687,0);
+        \draw[line width=2pt,color=zzttqq] (5.518056003945687,0) -- (5.552143888440338,0);
+        \draw[line width=2pt,color=zzttqq] (5.552143888440338,0) -- (5.5862317729349895,0);
+        \draw[line width=2pt,color=zzttqq] (5.5862317729349895,0) -- (5.620319657429641,0);
+        \draw[line width=2pt,color=zzttqq] (5.620319657429641,0) -- (5.654407541924292,0);
+        \draw[line width=2pt,color=zzttqq] (5.654407541924292,0) -- (5.688495426418943,0);
+        \draw[line width=2pt,color=zzttqq] (5.688495426418943,0) -- (5.722583310913595,0);
+        \draw[line width=2pt,color=zzttqq] (5.722583310913595,0) -- (5.756671195408246,0);
+        \draw[line width=2pt,color=zzttqq] (5.756671195408246,0) -- (5.790759079902897,0);
+        \draw[line width=2pt,color=zzttqq] (5.790759079902897,0) -- (5.8248469643975485,0);
+        \draw[line width=2pt,color=zzttqq] (5.8248469643975485,0) -- (5.8589348488922,0);
+        \draw[line width=2pt,color=zzttqq] (5.8589348488922,0) -- (5.893022733386851,0);
+        \draw[line width=2pt,color=zzttqq] (5.893022733386851,0) -- (5.927110617881502,0);
+        \draw[line width=2pt,color=zzttqq] (5.927110617881502,0) -- (5.961198502376154,0);
+        \draw[line width=2pt,color=zzttqq] (5.961198502376154,0) -- (5.995286386870805,0);
+        \draw[line width=2pt,color=zzttqq] (5.995286386870805,0) -- (6.029374271365456,0);
+        \draw[line width=2pt,color=zzttqq] (6.029374271365456,0) -- (6.063462155860107,0);
+        \draw[line width=2pt,color=zzttqq] (6.063462155860107,0) -- (6.097550040354759,0);
+        \draw[line width=2pt,color=zzttqq] (6.097550040354759,0) -- (6.13163792484941,0);
+        \draw[line width=2pt,color=zzttqq] (6.13163792484941,0) -- (6.165725809344061,0);
+        \draw[line width=2pt,color=zzttqq] (6.165725809344061,0) -- (6.1998136938387125,0);
+        \draw[line width=2pt,color=zzttqq] (6.1998136938387125,0) -- (6.233901578333364,0);
+        \draw[line width=2pt,color=zzttqq] (6.233901578333364,0) -- (6.267989462828015,0);
+        \draw[line width=2pt,color=zzttqq] (6.267989462828015,0) -- (6.302077347322666,0);
+        \draw[line width=2pt,color=zzttqq] (6.302077347322666,0) -- (6.336165231817318,0);
+        \draw[line width=2pt,color=zzttqq] (6.336165231817318,0) -- (6.370253116311969,0);
+        \draw[line width=2pt,color=zzttqq] (6.370253116311969,0) -- (6.40434100080662,0);
+        \draw[line width=2pt,color=zzttqq] (6.40434100080662,0) -- (6.438428885301271,0);
+        \draw[line width=2pt,color=zzttqq] (6.438428885301271,0) -- (6.472516769795923,0);
+        \draw[line width=2pt,color=zzttqq] (6.472516769795923,0) -- (6.506604654290574,0);
+        \draw[line width=2pt,color=zzttqq] (6.506604654290574,0) -- (6.540692538785225,0);
+        \draw[line width=2pt,color=zzttqq] (6.540692538785225,0) -- (6.5747804232798766,0);
+        \draw[line width=2pt,color=zzttqq] (6.5747804232798766,0) -- (6.608868307774528,0);
+        \draw[line width=2pt,color=zzttqq] (6.608868307774528,0) -- (6.642956192269179,0);
+        \draw[line width=2pt,color=zzttqq] (6.642956192269179,0) -- (6.67704407676383,0);
+        \draw[line width=2pt,color=zzttqq] (6.67704407676383,0) -- (6.711131961258482,0);
+        \draw[line width=2pt,color=zzttqq] (6.711131961258482,0) -- (6.745219845753133,0);
+        \draw[line width=2pt,color=zzttqq] (6.745219845753133,0) -- (6.779307730247784,0);
+        \draw[line width=2pt,color=zzttqq] (6.779307730247784,0) -- (6.8133956147424355,0);
+        \draw[line width=2pt,color=zzttqq] (6.8133956147424355,0) -- (6.847483499237087,0);
+        \draw[line width=2pt,color=zzttqq] (6.847483499237087,0) -- (6.881571383731738,0);
+        \draw[line width=2pt,color=zzttqq] (6.881571383731738,0) -- (6.915659268226389,0);
+        \draw[line width=2pt,color=zzttqq] (6.915659268226389,0) -- (6.949747152721041,0);
+        \draw[line width=2pt,color=zzttqq] (6.949747152721041,0) -- (6.983835037215692,0);
+        \draw[line width=2pt,color=zzttqq] (6.983835037215692,0) -- (7.017922921710343,0);
+        \draw[line width=2pt,color=zzttqq] (7.017922921710343,0) -- (7.052010806204994,0);
+        \draw[line width=2pt,color=zzttqq] (7.052010806204994,0) -- (7.086098690699646,0);
+        \draw[line width=2pt,color=zzttqq] (7.086098690699646,0) -- (7.120186575194297,0);
+        \draw[line width=2pt,color=zzttqq] (7.120186575194297,0) -- (7.154274459688948,0);
+        \draw[line width=2pt,color=zzttqq] (7.154274459688948,0) -- (7.1883623441835995,0);
+        \draw[line width=2pt,color=zzttqq] (7.1883623441835995,0) -- (7.222450228678251,0);
+        \draw[line width=2pt,color=zzttqq] (7.222450228678251,0) -- (7.256538113172902,0);
+        \draw[line width=2pt,color=zzttqq] (7.256538113172902,0) -- (7.290625997667553,0);
+        \draw[line width=2pt,color=zzttqq] (7.290625997667553,0) -- (7.324713882162205,0);
+        \draw[line width=2pt,color=zzttqq] (7.324713882162205,0) -- (7.358801766656856,0);
+        \draw[line width=2pt,color=zzttqq] (7.358801766656856,0) -- (7.392889651151507,0);
+        \draw[line width=2pt,color=zzttqq] (7.392889651151507,0) -- (7.4269775356461585,0);
+        \draw[line width=2pt,color=zzttqq] (7.4269775356461585,0) -- (7.46106542014081,0);
+        \draw[line width=2pt,color=zzttqq] (7.46106542014081,0) -- (7.495153304635461,0);
+        \draw[line width=2pt,color=zzttqq] (7.495153304635461,0) -- (7.529241189130112,0);
+        \draw [color=qqqqff](-1.2679336661091745,-0.5115385151713404) node[anchor=north west] {$\psi_M(t) = (1-t^2)e^{-t^2/2}$};
+        \end{tikzpicture}
+\end{center}
+
+(I) We have to show $\displaystyle \int_{-\infty}^{\infty}\psi_M(t)dt = 0$.To do so
+
+\begin{equation*}
+    \begin{split}
+        \int_{-\infty}^{\infty}\psi_M(t)dt  & = \int_{-\infty}^{\infty}(1-t^2)e^{-t^2/2}dt\\[4mm]
+        \int_{-\infty}^{\infty}\psi_M(t)dt & = \int_{-\infty}^{\infty}e^{-t^2/2}dt -  \int_{-\infty}^{\infty}t^2e^{-t^2/2}dt
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \int_{-\infty}^{\infty}\psi_M(t)dt = I_1 + I_2 \tag*{(1)}
+\end{equation*}
+
+\begin{center}
+    where, $\displaystyle I_1 = \int_{-\infty}^{\infty}e^{-t^2/2}dt$ and $\displaystyle I_2 = \int_{-\infty}^{\infty}t^2e^{-t^2/2}dt$.
+\end{center}
+
+Let's evaluate $I_1$,
+
+
+\[I_1 = \int_{-\infty}^{\infty}e^{-t^2/2}dt  = 2\int_{0}^{\infty}e^{-t^2/2}dt\]
+
+\[\boxed{\mbox{Let}, \ \frac{t^2}{2} = u\\
+\implies t = \sqrt{2u}\\
+\implies dt = \frac{1}{\sqrt{2}}u^{-\frac{1}{2}}du}\]
+
+\begin{equation*}
+    \begin{split}
+        I_1 & = 2\int_{0}^{\infty}e^{-u}\frac{1}{\sqrt{2}}u^{-\frac{1}{2}}du\\[4mm]
+        & = \frac{2}{\sqrt{2}}\int_{0}^{\infty}e^{-u}u^{-\frac{1}{2}}du\\[4mm]
+        & = \sqrt{2}\int_{0}^{\infty}e^{-u}u^{\frac{1}{2}-1}du\\[4mm]
+        & = \sqrt{2}\Gamma\frac{1}{2}\\[4mm]
+        & = \sqrt{2}\cdot\sqrt{\pi}\\[4mm]
+        I_1  & = \sqrt{2\pi}\hspace*{5cm}(2)
+    \end{split}
+\end{equation*}
+
+\BgThispage
+Next, Let's evaluate $I_2$,
+
+\[I_2 = \int_{-\infty}^{\infty}t^2e^{-t^2/2}dt  = 2\int_{0}^{\infty}t^2e^{-t^2/2}dt\]
+
+\[\boxed{\mbox{Let}, \ \frac{t^2}{2} = u\\
+\implies t^2 = 2u\\
+\implies dt = \frac{1}{\sqrt{2}}u^{-\frac{1}{2}}du}\]
+
+
+\begin{equation*}
+    \begin{split}
+        I_2 & = 2\int_{0}^{\infty}2u e^{-u}\frac{1}{\sqrt{2}}u^{-\frac{1}{2}}du\\[4mm]
+        & = \frac{2\cdot 2}{\sqrt{2}}\int_{0}^{\infty}u e^{-u}u^{-\frac{1}{2}}du\\[4mm]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        I_2 & = \frac{2\cdot 2}{\sqrt{2}}\int_{0}^{\infty}e^{-u}u^{\frac{1}{2}}du\\[4mm]
+        & = \frac{2\cdot 2}{\sqrt{2}}\int_{0}^{\infty}e^{-u}u^{\frac{3}{2}-1}du\\[4mm]
+        & = \frac{2\cdot 2}{\sqrt{2}}\Gamma\frac{3}{2}\\[4mm]
+        & = \frac{2\cdot 2}{\sqrt{2}}\cdot \frac{1}{2}\Gamma\frac{1}{2}\\[4mm]
+        & = \frac{2\cdot 2}{\sqrt{2}}\cdot \frac{\sqrt{\pi}}{2}\\[4mm]
+        I_2 &  = \sqrt{2\pi}\hspace*{5cm}(3)
+    \end{split}
+\end{equation*}
+
+\begin{center}
+    Using equation (2) and (3) in equation (1), we get as
+\end{center}
+\BgThispage
+\[\boxed{\int_{-\infty}^{\infty}\psi_M(t)dt = \sqrt{2\pi} - \sqrt{2\pi} = 0}\]
+
+\vspace*{1cm}
+
+(II) We have to show that $C_{\psi_M} < \infty$. To do so
+
+Since we know that
+
+\begin{center}
+    $\displaystyle {\hat{\psi}_M(\omega) = \sqrt{2\pi} \omega^2 e^{-\omega^2/2}}$
+\end{center}
+
+Next,
+\begin{equation*}
+    \begin{split}
+        C_{\psi_M} & = \int_{-\infty}^{\infty}\frac{\abs*{\hat{\psi}_M(\omega)}^2}{\abs*{\omega}}d\omega\\[4mm]
+        & = \int_{-\infty}^{\infty}\frac{\abs*{2\pi \omega^4 e^{-\omega^2}}}{\abs*{\omega}}d\omega\\[4mm]
+        & = 4\pi\int_{0}^{\infty}\frac{\abs*{\omega^4 e^{-\omega^2}}}{\abs*{\omega}}d\omega\\[4mm]
+        & =  4\pi\int_{0}^{\infty}\frac{\omega^4 e^{-\omega^2}}{\omega}d\omega\\[4mm]
+        & =  4\pi\int_{0}^{\infty}\omega^3 e^{-\omega^2}d\omega\\[4mm]
+    \end{split}
+\end{equation*}
+
+\[\boxed{\mbox{Let}\ \omega^2 = u \ \implies \omega = \sqrt{u}\ \mbox{and}\ d\omega = \frac{1}{2}u^{-\frac{1}{2}}du}\]
+
+\begin{equation*}
+    \begin{split}
+        C_{\psi_M} & = 4\pi\int_{0}^{\infty}u^{3/2}\cdot e^{-u}\frac{1}{2}u^{-1/2}du\\[4mm]
+        & = 2\pi \int_{0}^{\infty} e^{-u} u du\\[4mm]
+        & = 2\pi\cdot 1 = 2\pi
+    \end{split}
+\end{equation*}
+
+Hence,
+\[\boxed{C_{\psi_M} = 2\pi < \infty}\]
+
+\begin{center}
+    Thus, $\psi_M$ is a basic wavelet.
+\end{center}
+\BgThispage
+\subsection{\slshape Solution of Question No. 6}
+
+The Dirac Delta function $\delta(x)$ is very cool in the sense that
+
+\[\delta(x) = \begin{cases}
+    +\infty, \, & x =0 \\
+    0, \, & x \ne 0
+    \end{cases}\]
+
+Its unique characteristics do not end there though, because when integrating the Dirac Delta function we would get
+
+\[\int_{-\infty}^\infty \delta(x) dx = 1\]
+
+Or, if we have another function $f(x)$ multiplied to the Dirac Delta function and integrating them we would get
+
+\[\int_{-\infty}^{\infty} f(x) \delta(x) \, dx = f(x) \int_{-\infty}^\infty \delta(x) \, dx = f(0)\]
+
+Since
+
+\[\int_{-\infty}^\infty \delta(x) \, dx = \begin{cases}
+    0, \, & x \ne 0 \\
+    1, \, & x = 0 \end{cases}\]
+
+Therefore in the previous integral we would have    
+
+\[\int_{-\infty}^\infty f(x)\delta(x) \, dx = \int_{-\infty}^\infty f(0)\delta(0) \, dx = f(0)\]
+
+What if we have $\delta(x-a)$ ? It's the same thing! The only thing here is we need to satisfy the condition $x-a=0$
+such that $\displaystyle \int_{-\infty}^{\infty}\delta(x-a)dx = 1$. If the bounds of our integral though is not infinity, we need to make sure that the if we let $x=a$, $a$ would be in the bounds of the integral or else the integral would evaluate into zero.
+
+\BgThispage
+\[\int_{-b}^b f(x)\delta(x-a) \, dx = \begin{cases}
+    0, & \text{if $b<a$ or $-b >a$ such that we cannot let $x \ne a$} \\
+    f(0), & \text{if $-b<a<b$ such that we can let $x = a$}
+    \end{cases}\]
+
+\vspace*{1cm}   
+
+(i) We have to evaluate, $\displaystyle \int_{-\infty}^{\infty}\delta(x-1)\left\{\cos^2(\pi x) + \sin^2(\pi x)+ e^{\pi x}\right\}dx$.
+
+In the view of above discussion about Dirac Delta function we can evaluate above integral easialy, So
+
+\[\int_{-\infty}^{\infty}\delta(x-1)\left\{\cos^2(\pi x) + \sin^2(\pi x)+ e^{\pi x}\right\}dx = f(1)\]
+
+where, $\displaystyle f(x) = \left\{\cos^2(\pi x) + \sin^2(\pi x)+ e^{\pi x}\right\}$.
+
+Thus 
+
+\[\int_{-\infty}^{\infty}\delta(x-1)\left\{\cos^2(\pi x) + \sin^2(\pi x)+ e^{\pi x}\right\}dx = \left\{\cos^2(\pi) + \sin^2(\pi)+ e^{\pi}\right\} = 1 + e^\pi\]
+
+\vspace*{1cm}
+
+(ii)We have to evaluate, $\displaystyle \int_{-\infty}^{\infty}\delta(x)\left\{x^2 + x + 1\right\}(e^x)dx$.
+
+As, similar to the above solution, we can found this one also like,
+
+\[ \int_{-\infty}^{\infty}\delta(x)\left\{x^2 + x + 1\right\}(e^x)dx = f(0)\]
+
+where, $\displaystyle f(x) = \left\{x^2 + x + 1\right\}(e^x)$.
+
+Thus
+
+\[\int_{-\infty}^{\infty}\delta(x)\left\{x^2 + x + 1\right\}(e^x)dx = \left\{0^2 + 0 + 1\right\}(e^0) = 1.\]
+
+
+\subsection{\slshape Solution of Question No. 7}
+
+We have given a function $g_{\alpha}(x)$ defined as
+
+\[g_\alpha (x) = \frac{e^{\frac{-x^2}{4\alpha}}}{2\sqrt{\pi \alpha}}, \alpha > 0. \]
+
+(i) To show that $g\in L^1(\mathbb{R})$,we have to show $\displaystyle \norm*{g_{\alpha}}_1^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}dx  < \infty$. Thus
+
+\BgThispage
+\begin{equation*}
+    \begin{split}
+        \norm*{g_{\alpha}}_1^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}dx & = \int_{-\infty}^{\infty}\bigg|\frac{e^{\frac{-x^2}{4\alpha}}}{2\sqrt{\pi \alpha}}\bigg|dx\\[4mm]
+        & = \int_{-\infty}^{\infty}\frac{\abs*{e^{-\frac{x^2}{4\alpha}}}}{\abs*{2\sqrt{\pi \alpha}}}dx\\[4mm]
+        & = \frac{1}{2\sqrt{\pi \alpha}}\int_{-\infty}^{\infty}e^{-\frac{x^2}{4\alpha}}dx\\[4mm]
+        & =  \frac{1}{\sqrt{\pi \alpha}}\int_{0}^{\infty}e^{-\frac{x^2}{4\alpha}}dx\\[4mm]
+    \end{split}
+\end{equation*}
+\[\boxed{\mbox{Let},\ u = \frac{x^2}{4\alpha} \implies dx = \sqrt{\alpha}u^{-\frac{1}{2}}du}\]
+
+\begin{equation*}
+    \begin{split}
+        \norm*{g_{\alpha}}_1^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}dx & = \frac{1}{\sqrt{\pi \alpha}}\int_{0}^{\infty}e^{-u}\sqrt{\alpha}u^{-\frac{1}{2}}du\\[4mm]
+        & = \frac{\sqrt{\alpha}}{\sqrt{\pi \alpha}}\int_{0}^{\infty}e^{-u} u^{-\frac{1}{2}}du\\[4mm]
+        & = \frac{1}{\sqrt{\pi}}\int_{0}^{\infty}e^{-u} u^{\frac{1}{2}-1}du\\[4mm]
+        & = \frac{1}{\sqrt{\pi}}\Gamma\frac{1}{2}\\[4mm]
+        & = \frac{\sqrt{\pi}}{\sqrt{\pi}}\\[4mm]
+        \norm*{g_{\alpha}}_1^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}dx & = 1< \infty
+    \end{split}
+\end{equation*}
+
+Hence, $g_\alpha \in L^1(\mathbb{R})$.
+\pagebreak
+
+(ii) To show that $g\in L^2(\mathbb{R})$,we have to show $\displaystyle \norm*{g_{\alpha}}_2^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}^2dx  < \infty$. Thus 
+
+\BgThispage
+\begin{equation*}
+    \begin{split}
+        \norm*{g_{\alpha}}_2^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}^2 dx & = \int_{-\infty}^{\infty}\bigg|\frac{e^{\frac{-x^2}{4\alpha}}}{2\sqrt{\pi \alpha}}\bigg|^2 dx\\[4mm]
+        & = \int_{-\infty}^{\infty}\frac{\abs*{e^{-\frac{x^2}{4\alpha}}}^2}{\abs*{2\sqrt{\pi \alpha}}^2}dx\\[4mm]
+        & = \frac{1}{4\pi \alpha}\int_{-\infty}^{\infty}e^{-\frac{x^2}{2\alpha}}dx\\[4mm]
+        & = \frac{1}{2\pi \alpha}\int_{0}^{\infty}e^{-\frac{x^2}{2\alpha}}dx\\[4mm]
+    \end{split}
+\end{equation*}
+
+\[\boxed{\mbox{Let},\ u = \frac{x^2}{2\alpha} \implies dx = \sqrt{\frac{\alpha}{2}}u^{-\frac{1}{2}}du}\]
+
+\begin{equation*}
+    \begin{split}
+        \norm*{g_{\alpha}}_2^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}^2 dx & = \frac{1}{2\pi \alpha}\int_{0}^{\infty}e^{-u}\sqrt{\frac{\alpha}{2}}u^{-\frac{1}{2}}du\\[4mm]
+        & = \frac{1}{2\pi \alpha}\cdot \sqrt{\frac{\alpha}{2}}\int_{0}^{\infty}e^{-u}\cdot u^{\frac{1}{2}-1}du\\[4mm]
+        & = \frac{1}{2\pi \alpha}\cdot \sqrt{\frac{\alpha}{2}}\Gamma\frac{1}{2}\\[4mm]
+        & = \frac{\sqrt{\pi}}{2\pi \alpha}\cdot \sqrt{\frac{\alpha}{2}}\\[4mm]
+        \norm*{g_{\alpha}}_2^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}^2 dx & = \frac{1}{\sqrt{8\pi \alpha}} < \infty
+    \end{split}
+\end{equation*}
+
+Hence, $g_\alpha \in L^2(\mathbb{R})$.
+
+\vspace*{1cm}
+
+(iii) We have to show that $g_\alpha \in L^1(\mathbb{R})\cap L^2(\mathbb{R})$.
+
+Since from above discussion we see that $g_\alpha \in L^1(\mathbb{R})$ as well as $g_\alpha \in L^2(\mathbb{R})$.
+
+Thus, $g_\alpha \in L^1(\mathbb{R})\cap L^2(\mathbb{R})$.
+
+\vspace*{1cm}
+
+(iv) We have to show that $\norm*{g_\alpha}_1 = 1$.
+
+Since from (i) , it is obvious that $\norm*{g_\alpha}_1 = 1$.
+Hence, there is nothing to do more.
+
+\pagebreak
+
+{\bf Yes}, $g_\alpha \in L^4(\mathbb{R})$, Here is the explaination,
+
+\subsubsection*{Explaination that $g_\alpha \in L^4(\mathbb{R})$}
+\BgThispage
+To show the inclusivity of $g_\alpha \in L^4(\mathbb{R})$.We must show that $\displaystyle \norm*{g_{\alpha}}_4^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}^4dx  < \infty$. Thus,
+
+\begin{equation*}
+    \begin{split}
+        \norm*{g_{\alpha}}_4^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}^4 dx & = \int_{-\infty}^{\infty}\bigg|\frac{e^{\frac{-x^2}{4\alpha}}}{2\sqrt{\pi \alpha}}\bigg|^4 dx\\[4mm]
+        & = \int_{-\infty}^{\infty}\frac{\abs*{e^{-\frac{x^2}{4\alpha}}}^4}{\abs*{2\sqrt{\pi \alpha}}^4}dx\\[4mm]
+        & = \frac{1}{16\pi^2 \alpha^2}\int_{-\infty}^{\infty}e^{-\frac{x^2}{\alpha}}dx\\[4mm]
+        & = \frac{1}{8\pi^2 \alpha^2}\int_{0}^{\infty}e^{-\frac{x^2}{\alpha}}dx\\[4mm]
+    \end{split}
+\end{equation*}
+
+\[\boxed{\mbox{Let},\ u = \frac{x^2}{\alpha} \implies dx = \sqrt{\alpha}\cdot \frac{1}{2}u^{-\frac{1}{2}}du}\]
+
+\begin{equation*}
+    \begin{split}
+        \norm*{g_{\alpha}}_4^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}^4 dx & = \frac{1}{8\pi^2 \alpha^2}\int_{0}^{\infty}e^{-u}\sqrt{\alpha}\cdot \frac{1}{2}u^{-\frac{1}{2}}du\\[4mm]
+        & = \frac{\sqrt{\alpha}}{16\pi^2 \alpha^2}\int_{0}^{\infty}e^{-u}\cdot u^{\frac{1}{2}-1}du\\[4mm]
+        & = \frac{\sqrt{\alpha}}{16\pi^2 \alpha^2}\Gamma\frac{1}{2}\\[4mm]
+        & = \frac{\sqrt{\pi \alpha}}{16\pi^2 \alpha^2}\\[4mm]
+        \norm*{g_{\alpha}}_4^2 = \int_{-\infty}^{\infty}\abs*{g_{\alpha} (x)}^4 dx & = \frac{\sqrt{\pi \alpha}}{16\pi^2 \alpha^2} < \infty
+    \end{split}
+\end{equation*}
+
+Hence, $g_\alpha \in L^4(\mathbb{R})$. It completes the explaination.
+
+
+
+\end{document}

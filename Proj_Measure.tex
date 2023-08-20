@@ -1,0 +1,294 @@
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{ddugu.ac.in}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Project : Measure Theory}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape By: \href{https://github.com/akhlak919}{Akhlak Ansari}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        \Large{\textbf{Measure Theory}}\\ 
+        \Large{\bf Mr. Akhlak Ansari}
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+\vspace*{0.5cm}
+
+       
+    \begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black,title=\begin{center}
+        \section{ Title of the Project : Lebesgue measurable sets in R}
+    \end{center}]
+           \subsection{Introduction(Motivation to Measure Theory)}
+
+              Measure theory is a branch of mathematics that deals with the concept of measuring the size, volume, and dimension of sets. It provides a rigorous framework for defining and studying notions of length, area, volume, and other quantities that can be assigned to sets. The primary motivation for the development of measure theory was to provide a rigorous foundation for integration theory.
+              
+              The idea of integration is fundamental to calculus, which is concerned with computing areas, volumes, and other quantities that can be approximated by sums of infinitesimal quantities. However, the classical approach to integration using Riemann sums has limitations and cannot handle all types of functions. For example, the Riemann integral cannot handle functions that have discontinuities or oscillations.
+              
+              Measure theory provides a more general approach to integration by defining a measure, which assigns a non-negative value to sets in a given space. This allows us to extend the concept of integration to a wider class of functions, including those that cannot be integrated using the Riemann approach. In particular, measure theory allows us to define the Lebesgue integral, which is a more general concept of integration that can handle a wider class of functions.
+              
+              Moreover, measure theory plays a crucial role in probability theory, where it provides a foundation for the rigorous study of probability distributions, random variables, and stochastic processes. Probability theory also relies heavily on the concept of measure, and many probability distributions can be defined as measures on suitable spaces.
+              
+              Overall, measure theory has become an essential tool in many areas of mathematics, including analysis, geometry, topology, and probability theory. Its applications are widespread, ranging from pure mathematics to physics, economics, and engineering.
+    \end{tcolorbox}
+
+    \section{Pre-requisites}
+
+       \subsection{Length of an open interval ; $\ell \left(I\right)$}
+           The length $\ell\left(I\right)$ of an open interval $I$ is defined by
+           
+           \begin{equation*}
+            \ell\left(I\right) = \begin{cases}
+                b-a \hspace*{1cm}\  \mbox{if}\  I = \left(a,b\right)\  \mbox{for some}\  a,b \in \mathbb{R}\ \mbox{with}\  a < b\ ,\\
+                0 \hspace*{1.8cm} \mbox{if}\ I = \phi\ ,\\
+                \infty \hspace*{1.6cm} \mbox{if}\ I = \left(-\infty, a\right)\ \mbox{or}\ \left(a, \infty\right)\ \mbox{for some}\ a \in \mathbb{R}\ ,\\
+                \infty \hspace*{1.5cm}\ \mbox{if}\ I = \left(-\infty, \infty\right)
+               \end{cases}
+           \end{equation*}
+
+        \subsection{Lebesgue outer measure in $\mathbb
+        R$}
+            The Riemann integral arises from approximating the area under the graph of a function by sums of the areas of approximating rectangles. These rectangles have heights that approximate the values of the function on subintervals of the function's domain. The width of each approximating rectangle is the length of the corresponding subinterval.
+
+            This length is the term $x_j - x_{j-1}$ in the definitions of the lower and upper Riemann sums.
+
+            To extend integration to a larger class of functions than the Riemann integrable functions, we will write the domain of a function as the union of subsets more
+            complicated than the subintervals used in Riemann integration. We will need to assign a size to each of those subsets, where the size is an extension of the length of intervals.
+
+            For example, we expect the size of the set $\left(1,3\right) \cup \left(7, 10\right)$ to be $5$ (because the first interval has length $2$, the second interval has length $3$, and $2 + 3 = 5$).
+
+
+
+            Suppose $A \subset R$. The size of $A$ should be at most the sum of the lengths of a sequence of open intervals whose union contains $A$. Taking th infimum of all such sums gives a reasonable definition of the size of $A$, denoted $m^*(A)$ and called the outer measure of $A$.
+
+
+            \subsubsection{Definition : Outer Measure; $m^*(A)$}
+                The outer measure of a set $A\subset \mathbb{R}$ is defined by
+
+                \begin{align*}
+                    \boxed{m^*(A) = \inf\left\{\sum_{k=1}^{\infty} \ell\left(I_k\right) : I_1, I_2, \cdots\ \mbox{are open intervals such that}\ A\subset \bigcup_{k=1}^{\infty} I_k\right\}}
+                \end{align*}
+
+        \newpage
+
+        \subsubsection{Some Useful Properties of Lebesgue Outer Measure} 
+            \begin{itemize}
+                \item Every countable subset of $\mathbb{R}$ have outer measure $0$.
+                \item \footnote{Here $t$ make sense as a outer measure of translation of subset of $\mathbb{R}$}Suppose $A$ and $B$ are subsets of $\mathbb{R}$ with $A \subset B$. Then $m^*(A) \leq m^*(B)$
+                \item Suppose $t \in \mathbb{R}$ and $A \subset \mathbb{R}$. Then $m^*(t + A) = m^*(A)$.
+                \item Suppose $A_1, A_2, \cdots$ is a sequence of subsets of $\mathbb{R}$. Then
+                \[m^*\left(\bigcup_{k=1}^{\infty} A_k\right) \leq \sum_{k=1}^{\infty}m^*(A_k)\]
+            \end{itemize}
+
+        \subsection{$\sigma-\mbox{Algebra}$}   
+            Suppose $X$ is a set and $\mathcal{S}$ is a set of subsets of $X$. Then $\mathcal{S}$ is called a $\sigma-\mbox{algebra}$ on $X$ if the following three conditions are satisfied:
+
+         
+            \begin{itemize}
+                \item $\phi \in \mathcal{S}$;
+                \item if $E \in \mathcal{S}$, then $X \setminus E \in \mathcal{S}$;
+                \item if $E_1, E_2, \cdots$ is a sequence of element of $\mathcal{S}$ , then \[\bigcup_{k=1}^{\infty}E_k \in \mathcal{S}\]
+            \end{itemize}
+
+            {\bf Examples of $\sigma-\mbox{Algebra}$ :}
+
+            \begin{itemize}
+                \item Suppose $X$ is a set. Then clearly $\left\{\phi, X \right\}$ is a $\sigma-\mbox{algebra}$ on $X$.
+                \item Suppose $X$ is a set. Then clearly the set of all subsets of $X$ is a $\sigma-\mbox{algebra}$ on $X$.
+                \item Suppose $X$ is a set. Then the set of all subsets $E$ of $X$ such that $E$ is countable or
+                $X \setminus E$ is countable is a $\sigma-\mbox{algebra}$ on $X$.
+            \end{itemize}
+
+        \subsection{Borel Sets}   
+            The smallest $\sigma-\mbox{algebra}$ on $\mathbb{R}$ containing all open subsets of $\mathbb{R}$ is called the collection of Borel subsets of $\mathbb{R}$. An element of this $\sigma-\mbox{algebra}$ is called a Borel set.
+
+        \newpage
+
+        {\bf Examples of Borel Sets :}
+
+        \begin{itemize}
+            \item Every closed subset of $\mathbb{R}$ is a Borel set because every closed subset of $\mathbb{R}$ is the complement of an open subset of $\mathbb{R}$.
+            
+            \item Every countable subset of $\mathbb{R}$ is a Borel set because if $B = \left\{x_1, x_2, \cdots \right\}$ then $B = \bigcup_{k=1}^{\infty}\left\{x_k\right\} $, which is a Borel set because each $\left\{x_k\right\}$ is a closed set.
+            
+            \item Every half-open interval $[a, b)$ (where $a, b \in \mathbb{R}$) is a Borel set because $[a, b) = \bigcap_{k=1}^{\infty}\left(a-\frac{1}{k}, b\right)$.
+            
+            \item If $f : \mathbb{R} \to \mathbb{R}$ is a function, then the set of points at which $f$ is continuous is the intersection of a sequence of open sets and thus is a Borel set.
+        \end{itemize}
+
+    
+    \section{Lebesgue measurable sets in $\mathbb{R}$}   
+
+        In measure theory, Lebesgue measurable sets in $\mathbb{R}$ are defined in an abstract way using the concept of outer measure. An outer measure on a set $X$ is a function $m^*: \mathcal{P}(X) \to [0,\infty]$, where $\mathcal{P}(X)$ is the power set of $X$, that satisfies the following properties:
+
+       \begin{enumerate}
+        \item $m^*(\phi) = 0$;
+        \item $A \subseteq B$ implies $m^*(A) \leq m^*(B)$. (monotonicity)
+        \item $m^*$ is countably subadditive, meaning that for any sequence of sets $\left\{E_k\right\}$ in $X$, we have \[m^*\left(\bigcup_{k=1}^{\infty} E_k\right) \leq \sum_{k=1}^{\infty}m^*(E_k)\]
+       \end{enumerate}
+
+
+        A set $E$ in $X$ is said to be Lebesgue measurable if for every subset $A$ of $X$, we have:
+
+        \begin{align*}
+            \boxed{m^*(A) = m^*(A \cap  E) + m^*(A \cap E^c)}
+        \end{align*}
+
+        where $E^c$ denotes the complement of $E$ in $X$.
+
+        The Lebesgue measure of a measurable set $E$ in $\mathbb{R}$ is defined as:
+
+        \[m(E) = \inf \left\{ m^*(G) : E \subseteq G\  \mbox{and}\ G \ \mbox{is an open subset of}\  \mathbb{R} \right\}\]
+        
+        where $\inf$ denotes the infimum of the set of outer measures of open sets containing $E$.
+        
+        This definition of Lebesgue measurable sets allows us to extend the concept of measure to a much larger class of sets than was possible with the older concept of Riemann integration. The Lebesgue measure is more flexible and can handle more complex sets, such as fractals and non-differentiable functions. It also has many desirable properties, such as countable additivity, translation invariance, and the ability to handle sets of measure zero.
+
+        \subsection{Example of Lebesgue measurable sets in $\mathbb{R}$}
+
+        \begin{itemize}
+            \item Suppose $a$ and $b$ are any two real numbers such that the closed interval $[a, b]$ is Lebesgue measurable, and its length is given by $b-a$.
+
+
+            \item Similarly, an open interval $(a, b)$ contains the same Lebesgue measure, i.e. $b-a$, since the difference between the two sets consists only of the endpoints, i.e. $a$ and $b$, and holds a zero measure.
+    
+    
+            \item Consider two intervals, $[a, b]$ and $[c, d]$. Here, the Cartesian product of these two intervals is called Lebesgue-measurable, and its Lebesgue measure is given by the product $(b - a)$ and $(d - c)$, i.e. $(b - a)(d  c)$. This represents the area of the rectangle formed from these points.
+    
+    
+            \item The Lebesgue measure is equal to $0$ for any countable set of real numbers. For instance, for a set of algebraic numbers, the Lebesgue measure is $0$, even if this set is said to be dense in $\mathbb{R}$.
+    
+    
+            \item Some examples of uncountable sets containing Lebesgue measure $0$ include the Cantor set, the set of Liouville numbers, and so on.
+        \end{itemize}
+
+        \section{Applications(of Lebesgue measurable sets in $\mathbb{R}$)}
+
+           The theory of Lebesgue measure and Lebesgue measurable sets in $\mathbb{R}$ has many applications in various branches of mathematics, science, and engineering. Here are some examples:
+
+
+
+           {\bf 1. Integration theory:} The Lebesgue integral is a generalization of the Riemann integral and is defined in terms of Lebesgue measurable sets. The Lebesgue integral is more powerful than the Riemann integral and can handle a broader class of functions, including functions with discontinuities and functions that are not continuous.
+
+
+           
+           {\bf 2. Probability theory:} Lebesgue measure is used to define probability measures on $\mathbb{R}$ and other metric spaces. The Lebesgue integral is used to calculate expected values of random variables and to derive other statistical properties of probability distributions.
+
+
+           
+           {\bf 3. Fourier analysis:} The theory of Fourier series and Fourier transforms relies heavily on Lebesgue measure and Lebesgue integration. The Lebesgue integral is used to define the Fourier transform, which is an essential tool in signal processing, image analysis, and other fields.
+
+
+           
+           {\bf 4. Geometry:} Lebesgue measure has many applications in geometry, including the study of fractals and the calculation of volumes of higher-dimensional objects. For example, the volume of a n-dimensional ball of radius $r$ can be expressed in terms of the Lebesgue measure of a certain set in $\mathbb{R}^n$.
+
+
+           
+           {\bf 5. Functional analysis:} Lebesgue spaces, which are spaces of functions defined using Lebesgue integration and Lebesgue measure, are a fundamental tool in functional analysis. These spaces have applications in the study of partial differential equations, harmonic analysis, and other areas of analysis.
+
+
+           {\bf 6. Numerical analysis:} The theory of Lebesgue measure and Lebesgue integration has applications in numerical analysis, where it is used to develop numerical methods for solving differential equations and other problems.
+
+
+           
+           Overall, Lebesgue measurable sets in $\mathbb{R}$ play a crucial role in many areas of mathematics and science, providing a powerful and flexible framework for the study of integration, probability, geometry, functional analysis, and numerical analysis.
+
+
+        \section{References}
+           
+           \textit{Measure, Integration \& Real Analysis : Sheldon Axler (UoSF, California)}
+
+           \textit{Measure Theory : D.H.Fremlin (University of Essex)}
+
+           \textit{ChatGPT: \url{https://openai.com}}
+
+           \textit{For document related stuffs (LaTeX code and pdf document, please visit) : \url{https://github.com/akhlak919/LaTeX_Stuffs}}
+     
+
+
+
+
+
+\end{document}

@@ -1,0 +1,453 @@
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{wrapfig}
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+\usepackage{mathrsfs}  %for cursive writting
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+\usepackage{tabularx}
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{ddugu.ac.in}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Assignment:Bio-Mathematics}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape By: \href{https://github.com/akhlak919}{Akhlak Ansari}\\ \url{https://github.com/akhlak919}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+\usepackage[pages=some]{background}
+\backgroundsetup{scale=2, angle=0, opacity=0.1, contents={\includegraphics[]{DDU_Logo.png}}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \Large{\bf Assignment}\\ 
+        \Large{\textbf{Bio-Mathematics}}
+        
+
+        \vspace*{1cm}
+
+        \includegraphics[scale=1]{DDU_Logo.png}
+        \vspace*{1cm}
+
+        \begin{center}
+            {\bf Department of Mathematics and Statistics\\
+        DDU Gorakhpur University, Gorakhpur (India)}
+        \end{center}
+        
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\BgThispage
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+% \vspace*{0.2cm}
+
+\BgThispage
+\section{\slshape Assignment Questions}
+
+\begin{enumerate}
+    \item Explain Blood flow through artery with mild stenosis. Determine the flux through the artery and prove that 'pressure gradient varies inversly as the fourth power of the surface distance of the stenosis from the axis of the artery.'
+    \item Discuss two layered flow in a rigid tube with mild stenosis.
+    \item Discuss in brief analysis and applications of heart valve vibrations.
+    \item What is molecular diffusion ? Write Fick's laws of diffusion. Give application of hemodialyser.
+    \item Compare, flow of Blood and flow in lung airways.  
+\end{enumerate}
+
+\pagebreak
+
+\section{\slshape Solution of Assignment Questions}
+
+\subsection{\slshape Solution of Question No. 1}
+% \BgThispage
+
+\subsection*{\underline{Blood flow through artery with mild stenosis}}
+
+The term stenosis denotes the narrowing of the artery due to the development of {\bf arterio sclerotic plaques} or other type of abnormal tissue development. As the growth projects into the cavity of of the artery, blood flow is obstructed.
+
+The obstruction may damage the internal cells of the wall and may lead to further growth of the stenosis.
+
+Thus there is a coupling between the growth of a stenosis and flow of blood in the artery, since each affects the other. The stenosis growth passess through three stages,
+\vspace*{1cm}
+\begin{center}
+    \def \svgwidth{15cm}
+    \input{stenosis2.eps_tex}
+\end{center}
+% \vspace*{1cm}
+
+The development of stenosis in an artery can have serious consequences, and can disrupt the normal functionality of the circulatory system.In particular it may lead to -
+\begin{enumerate}[(a)]
+    \item Increased resistance to flow with possible severe reduction in blood flow.
+    \item Increased danger of complete obstruction.
+    \item Abnormal cellular growth in the vicinity of stenosis.
+    \item Tissue damage leading to pushed stenosis dilatation
+\end{enumerate}
+
+\large{{\bf Flux through the artery and proving that 'pressure gradient varies inversly as the fourth power of the surface distance of \underline{the stenosis from the axis of the artery' \hspace*{6cm}}}}
+
+We shall consider the steady flow of a Newtonian fluid passed and axially 
+
+symmetric stenosis, whose surface is given by,
+\begin{equation*}
+    \frac{R}{R_0} = 1-\frac{\delta}{2R_0}\left(1 + \cos\frac{\pi z}{z_0}\right)\tag*{(1)}
+\end{equation*}
+
+\begin{center}
+    \def \svgwidth{15cm}
+    \input{stenosismath.eps_tex}
+\end{center}
+
+In addition we assume, $\delta << R_0$
+
+Since, axially symmetric motion is considered thus, $v_r = 0$
+
+Navier-Stokes equation gives,
+\begin{equation*}
+    \rho\left(\frac{\partial v_r}{\partial t} + v_r\frac{\partial v_r}{\partial t} + v_z\frac{\partial v_r}{\partial z}\right) = -\frac{\partial p}{\partial r} + \mu\left(\frac{\partial^2 v_r}{\partial r^2} + \frac{\partial^2 v_r}{\partial z^2}+\frac{1}{r}\frac{\partial v_r}{\partial r} - \frac{v_r}{r^2}\right)
+\end{equation*}
+
+Since, $v_r = 0$ and flow is steady, we have
+
+\begin{equation*}
+    -\frac{\partial p}{\partial r} = 0 
+\end{equation*}
+\begin{equation*}
+    \implies\ \frac{\partial p}{\partial r} = 0 \tag*{(2)}
+\end{equation*}
+\begin{equation*}
+    \implies\ p = p(z) \tag*{(3)}
+\end{equation*}
+
+Also,
+\begin{equation*}
+    \rho\left(\frac{\partial v_z}{\partial t} + v_r\frac{\partial v_z}{\partial r} + v_z\frac{\partial v_z}{\partial z}\right) = -\frac{\partial p}{\partial z} + \mu\left(\frac{\partial^2 v_z}{\partial r^2} + \frac{\partial^2 v_z}{\partial z^2}+\frac{1}{r}\frac{\partial v_z}{\partial r}\right) \tag*{(4)}
+\end{equation*}
+
+By equation of continuity,
+
+\begin{equation*}
+    \frac{1}{r}\frac{\partial}{\partial r}\left(rv_r\right) + \frac{\partial v_z}{\partial z} = 0
+\end{equation*}
+\begin{equation*}
+    \implies\ \frac{\partial v_z}{\partial z} = 0\hspace*{1cm}\ \left(\because v_r = 0\right)\tag*{(5)}
+\end{equation*}
+
+Now, in account of equation(5), $v_r = 0$ and steady flow, equation(4) can be rewritten as,
+
+\begin{equation*}
+    -\frac{\partial p}{\partial z} + \mu\left(\frac{\partial^2 v_z}{\partial r^2} +\frac{1}{r}\frac{\partial v_z}{\partial r}\right) = 0
+\end{equation*}
+
+\begin{equation*}
+    \implies\ \frac{\partial p}{\partial z} = \mu\left(\frac{\partial^2 v_z}{\partial r^2} +\frac{1}{r}\frac{\partial v_z}{\partial r}\right) = 0 \tag*{(6)}
+\end{equation*}
+or,
+\begin{equation*}
+    -\mathcal{P}(z) = \frac{\mu}{r}\frac{\partial}{\partial r}\left(r\frac{\partial v_z}{\partial r}\right)\hspace*{1.5cm} \left(\because \mathcal{P}(z) = -\frac{\partial p}{\partial z}\right)\tag*{(7)}
+\end{equation*}
+
+where $\mathcal{P}(z)$ is pressure gradient whereas $p$ is pressure.
+
+Integrating equation(7), we have
+
+\begin{equation*}
+    -\int \mathcal{P}(z)\frac{r}{\mu} dr = \int \frac{\partial}{\partial r}\left(r\frac{\partial v_z}{\partial r}\right)dr
+\end{equation*}
+
+\begin{equation*}
+    -\mathcal{P}(z)\frac{r^2}{2 \mu} + A(z) = r\frac{\partial v_z}{\partial r}
+\end{equation*}
+
+Now, at $r = 0$, $\displaystyle \frac{\partial v_z}{\partial r} = 0$ (on axis of capillary) $implies\ A(z) = 0$
+
+Integrating again we have,
+
+\begin{equation*}
+    \int \frac{\partial v_z}{\partial r} dr = -\int \mathcal{P}(z)\frac{r}{2 \mu} dr
+\end{equation*}
+
+\begin{equation*}
+    v_z = -\mathcal{P}(z)\frac{r^2}{4 \mu} + B(z)
+\end{equation*}
+
+At $r = R(z)$, $v_z = 0$  $\displaystyle \implies\ B(z) = \frac{\mathcal{P}(z) R^2(z)}{4 \mu}$ 
+
+thus,
+
+\begin{equation*}
+    v_z = -\mathcal{P}(z)\frac{r^2}{4 \mu} + \frac{\mathcal{P}(z) R^2(z)}{4 \mu}
+\end{equation*}
+
+\begin{equation*}
+    \boxed{v_z = -\frac{\mathcal{P}(z)}{4 \mu} \left\{r^2 - R^2(z)\right\}}
+\end{equation*}
+
+Note that initial conditions(no slip) on the stenosis surface is,
+
+$v_z = 0$ at $r = R(z)$, $-z_0 \leq z \leq z_0$
+
+$v_z = 0$ at $r = R_0$, $\abs*{z}\geq z_0$
+
+Now, if $Q$ is the flux through the tube then,
+
+\begin{equation*}
+    \begin{split}
+        Q & = \int_{0}^{R(z)} 2\pi r v_z dr\\[4mm]
+        \implies\ Q & = -\int_{0}^{R(z)} 2\pi r \frac{\mathcal{P}(z)}{4 \mu} \left\{r^2 - R^2(z)\right\}dr\\[4mm]
+        & = -2 \pi  \frac{\mathcal{P}(z)}{4 \mu}\left[\frac{r^4}{4}-R^2(z)\frac{r^2}{2}\right]_{0}^{R(z)}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \boxed{Q = \frac{\pi \mathcal{P}(z)}{8 \mu} R^4(z)}
+\end{equation*}
+
+Since, $Q$ is constant for all sections of the tube, the pressure gradient varies inversly as fourth power of the surface distance of the stenosis from the axis of the artery.
+ 
+\pagebreak
+
+\subsection{\slshape Solution of Question No. 2}
+
+To mathematically describe two-layer flow in a rigid tube with mild stenosis in the case of blood, we can use the equations of continuity and momentum conservation, along with the assumption of steady-state flow,incompressible fluid.
+
+The continuity equation states that the mass flow rate of fluid is constant throughout the tube:
+
+\begin{equation*}
+    \rho A v = \mbox{Constant}
+\end{equation*}
+
+where, $\rho$ is the density of blood, $A$ is the cross-sectional area of the tube and $v$ is the velocity of the fluid.
+
+We can write the velocities of the core and cell free layers as,
+
+
+\begin{equation*}
+    v_c = \frac{Q_c}{\left\{\pi \left(\frac{D}{2}\right)^2\left(1 - \gamma\right)\right\}}
+\end{equation*}
+
+
+\begin{equation*}
+    v_w = \frac{Q_w}{\left\{\pi \left(\frac{D}{2}\right)^2 \gamma\right\}}
+\end{equation*}
+
+where, $Q_c$ and $Q_w$ are the volumetric flow rates of the core and cell free layers, respectively and $\gamma$ is the ratio of core layer thikness to the tube radius.
+
+Using the assumption that core layer velocity $v_c$, is greater than the cell free layer velocity $v_w$, we can express the total velocity $v$ as,
+
+\begin{equation*}
+    v = v_c + \left(1 - \gamma\right)\left(v_w - v_c\right)
+\end{equation*}
+
+The pressure gradient, $\displaystyle \frac{\Delta P}{L}$, can be related to the shear stress, $\tau$ on the wall of the tube through the momentum conservation equation,
+
+\begin{equation*}
+    \begin{split}
+        \frac{\Delta P}{L} & = \frac{4 \mu v_c}{D} + \frac{4 \mu \gamma \left(v_w - v_c\right)}{D}\\[3mm]
+        \frac{\Delta P}{L} & = \frac{4\mu \left\{v_c + \gamma\left(v_w - v_c\right)\right\}}{D}
+    \end{split}
+\end{equation*}
+
+where, $\mu$ is the viscosity of blood, $D$ is the diameter of tube and $L$ is the length of the tube.
+
+Assuming a {\bf mild stenosis}, we can express the diameter of the tube as, $D = D_0\left(1-\epsilon\right)$, where, $D_0$ is the original diameter of the tube and $\epsilon$ is the stenosis ratio.
+
+Substituting this expression for $D$ into the equations for $v_c$ and $v_w$, and simplifying using the continuity equation, we obtain:
+
+\begin{equation*}
+    v_c = \frac{Q}{\pi D^2_0}\left(1-\gamma\right)\left(1-\epsilon\right)^2
+\end{equation*}
+
+\begin{equation*}
+    v_w = \left(\frac{Q}{\pi D^2_0}\right)\cdot\left(\frac{\gamma}{\left(1-\epsilon\right)^2}\right)
+\end{equation*}
+
+where $Q$ is the total volumetric flow rate of blood through the tube.
+
+Using these expressions for vc and vw, along with the equation for the pressure gradient, we can solve for the shear stress on the wall of the tube:
+
+\begin{equation*}
+    \tau = \left(\frac{\Delta P}{L}\right)\cdot\left(\frac{D_0}{4\mu}\right) - \left(\frac{Q}{\pi D^2_0}\right)\cdot\left(\frac{1-2\gamma}{\left(2\left(1-\epsilon\right)^2\right)}\right) 
+\end{equation*}
+
+These equations demonstrate the complex interplay between flow dynamics, geometry, and biomechanics in two-layer flow in a rigid tube with mild stenosis in the case of blood. They highlight the importance of understanding the underlying physics of blood flow in order to develop effective interventions for preventing and treating cardiovascular diseases.
+
+\subsection{\slshape Solution of Question No. 3}
+Heart valve vibrations, also known as heart murmurs, are sounds heard during the cardiac cycle that can indicate various cardiovascular conditions. The analysis and interpretation of heart valve vibrations are crucial for diagnosing and monitoring heart diseases, guiding treatment decisions, and predicting outcomes.
+
+One way to analyze heart valve vibrations is through auscultation, which involves listening to the heart sounds using a stethoscope. During auscultation, the timing, duration, and intensity of the murmurs can be assessed to determine the underlying pathology. For example, a systolic murmur may indicate aortic stenosis, while a diastolic murmur may indicate aortic regurgitation. The loudness of the murmur can also provide information about the severity of the condition.
+
+Another method for analyzing heart valve vibrations is through echocardiography, which uses ultrasound waves to visualize the heart and its movements. Echocardiography can provide information about the structure and function of the heart valves, as well as the blood flow patterns within the heart. The images obtained from echocardiography can be analyzed to measure the size and function of the heart chambers, the thickness of the heart walls, and the velocity of blood flow through the heart valves.
+
+Applications of heart valve vibrations analysis include screening for heart disease, monitoring disease progression, guiding treatment decisions, and predicting outcomes. For example, heart valve vibrations can be used to detect and monitor the progression of valve diseases such as aortic stenosis, which can lead to heart failure if left untreated. They can also be used to guide treatment decisions, such as determining the appropriate timing of valve replacement surgery. Furthermore, mathematical analysis of heart valve vibrations can be used to develop new diagnostic tools and techniques, such as machine learning algorithms that can automatically detect and classify heart sounds.
+
+In summary, the analysis and interpretation of heart valve vibrations are essential for diagnosing and monitoring heart diseases, guiding treatment decisions, and predicting outcomes. Advances in technology and mathematical analysis are improving our ability to analyze heart valve vibrations and ultimately leading to better outcomes for patients with heart disease.
+
+
+\pagebreak
+
+\subsection{\slshape Solution of Question No. 4}
+
+
+\subsection*{Molecular diffusion}
+Molecular diffusion, often simply called diffusion, is the thermal motion of all (liquid or gas) particles at temperatures above absolute zero. The rate of this movement is a function of temperature, viscosity of the fluid and the size (mass) of the particles. Diffusion explains the net flux of molecules from a region of higher concentration to one of lower concentration. Once the concentrations are equal the molecules continue to move, but since there is no concentration gradient the process of molecular diffusion has ceased and is instead governed by the process of self-diffusion, originating from the random motion of the molecules. The result of diffusion is a gradual mixing of material such that the distribution of molecules is uniform. Since the molecules are still in motion, but an equilibrium has been established, the result of molecular diffusion is called a "dynamic equilibrium". In a phase with uniform temperature, absent external net forces acting on the particles, the diffusion process will eventually result in complete mixing.
+
+Consider two systems; $S_1$ and $S_2$ at the same temperature and capable of exchanging particles. If there is a change in the potential energy of a system; for example $\mu_1>\mu_2$ ($\mu$ is Chemical potential) an energy flow will occur from $S_1$ to $S_2$, because nature always prefers low energy and maximum entropy.
+
+Molecular diffusion is typically described mathematically using Fick's laws of diffusion.
+
+\subsection*{\underline{Fick's Law of diffusion}}
+
+Fick's law of diffusion describes the rate at which a solute diffuses through a medium, such as a gas or a liquid. The law is named after the German physiologist Adolf Fick, who first formulated it in 1855.
+
+\subsection*{Fick's First law of diffusion}
+
+Fick's First Law of Diffusion states that the rate of diffusion of a substance is directly proportional to the concentration gradient of that substance. This law can be expressed mathematically as:
+
+$J = -D \cdot \left(\frac{\partial C}{\partial x}\right)$
+
+where $J$ is the flux or rate of diffusion of the substance, $D$ is the diffusion coefficient, $C$ is the concentration of the substance, and $x$ is the distance over which diffusion occurs.
+
+This law states that the flux of a substance across a given area is proportional to the concentration gradient of the substance across that area. In other words, the greater the concentration difference between two points, the higher the rate of diffusion between those points.
+
+The negative sign in the equation indicates that the direction of diffusion is always from higher concentration to lower concentration, as substances naturally move from areas of higher concentration to areas of lower concentration in an attempt to reach equilibrium.
+
+\subsection*{Fick's Second law of diffusion}
+
+Fick's Second Law of Diffusion describes how the concentration of a substance changes over time as a result of diffusion. It states that the rate of change of concentration of a substance is proportional to the second derivative of the concentration profile. This law can be expressed mathematically as:
+
+\[\frac{\partial C}{\partial t} = D \left(\frac{\partial^2 C}{\partial x^2}\right)\]
+
+where $\displaystyle \frac{\partial C}{\partial t}$ is the rate of change of concentration over time, $D$ is the diffusion coefficient, and $\displaystyle \left(\frac{\partial^2 C}{\partial x^2}\right)$ is the second derivative of the concentration profile.
+
+This law explains how the concentration of a substance changes over time as it diffuses from an area of higher concentration to an area of lower concentration. It tells us that the rate of change of concentration is proportional to the diffusion coefficient and the second derivative of the concentration profile, which is a measure of how quickly the concentration gradient is changing with respect to distance.
+
+\subsection*{Applications of hemodialyser}
+
+{\bf Hemodialysis} is a life-saving treatment for patients with kidney failure, and the hemodialyzer is a critical component of the hemodialysis process. The {\bf hemodialyzer} is a medical device that uses the principles of molecular diffusion and osmosis to remove waste products and excess fluid from the blood of the patient. Some of the key applications of the hemodialyzer include:
+
+{\bf 1. Treatment of Kidney Failure:} Hemodialysis is used to treat patients with kidney failure, a condition in which the kidneys are unable to filter waste products and excess fluids from the blood. Hemodialysis helps to remove these waste products and excess fluids, thereby reducing the risk of complications and improving the patient's quality of life.
+
+{\bf 2. Removal of Toxins:} The hemodialyzer is designed to remove toxins from the blood, including urea, creatinine, and other waste products that build up in the body due to kidney failure. By removing these toxins from the blood, hemodialysis can help to prevent serious complications, such as fluid overload, electrolyte imbalances, and other problems.
+
+{\bf 3. Regulation of Electrolytes:} The hemodialyzer can also help to regulate the balance of electrolytes in the blood, including sodium, potassium, and calcium. This is important because imbalances in electrolytes can cause a range of complications, including muscle weakness, heart rhythm disturbances, and seizures.
+
+{\bf 4. Improvement of Quality of Life:} Hemodialysis can significantly improve the quality of life for patients with kidney failure, allowing them to live longer and more fulfilling lives. The hemodialyzer is a critical component of this treatment, helping to remove toxins and excess fluid from the blood and regulate electrolyte balance.
+
+{\bf Overall}, the hemodialyzer is a powerful tool for treating kidney failure and improving the lives of patients with this condition. It is an essential medical device that has saved countless lives and continues to be an important area of research and innovation in the medical field.
+
+\pagebreak
+
+\subsection{\slshape Solution of Question No. 5}
+
+The flow of blood and flow in lung airways are two very different processes. Blood flow is the movement of blood through the body's circulatory system, while flow in lung airways is the movement of air through the lungs.
+
+Blood flow is controlled by the heart, which pumps blood through the arteries, capillaries, and veins. The rate of blood flow is determined by a number of factors, including the heart rate, the amount of blood in the body, and the resistance of the blood vessels.
+
+Flow in lung airways is controlled by the respiratory system, which includes the lungs, airways, and muscles of respiration. The rate of airflow is determined by a number of factors, including the volume of air in the lungs, the size of the airways, and the resistance of the airways.
+
+Here is a table comparing the two processes:
+
+
+
+
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabularx}{\textwidth}{|X|X|X|}
+    \hline
+    & \textbf{Flow of Blood} & \textbf{Flow in Lung Airways} \\ \hline
+    \textbf{Direction} & One-way & Bidirectional \\ \hline
+    \textbf{Purpose} & Transport oxygen, nutrients, and waste products & Exchange of gases (oxygen and carbon dioxide) \\ \hline
+    \textbf{Driving force} & Pressure differences & Pressure differences \\ \hline
+    \textbf{Transport medium} & Blood & Air \\ \hline
+    \textbf{Pathway} & Arteries, capillaries, veins & Trachea, bronchi, bronchioles, alveoli \\ \hline
+    \textbf{Resistance} & High due to narrow vessel diameter & Low due to branching and increasing diameter \\ \hline
+    \textbf{Regulation} & Controlled by nervous and endocrine systems & Controlled by nervous and local factors \\ \hline
+  \end{tabularx}
+  \caption{Comparison of flow of blood and flow in lung airways.}
+  \label{tab:comparison}
+\end{table}
+
+
+    
+The two processes are closely linked, as the flow of blood through the lungs is essential for gas exchange. The lungs are highly vascularized, with a network of blood vessels that is even more extensive than the network of airways. This ensures that there is a large surface area for gas exchange to occur.
+
+The flow of blood through the lungs is also affected by the flow of air through the airways. When we inhale, the airways expand and the blood vessels in the lungs are stretched. This decreases the resistance to blood flow and increases the rate of blood flow to the lungs. When we exhale, the airways contract and the blood vessels in the lungs relax. This increases the resistance to blood flow and decreases the rate of blood flow to the lungs.
+
+The close relationship between the flow of blood and flow in lung airways is essential for the proper functioning of the lungs.
+
+
+\end{document}

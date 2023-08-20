@@ -1,0 +1,838 @@
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{wrapfig}
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+\usepackage{mathrsfs}  %for cursive writting
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{ddugu.ac.in}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Assignment:Analytical Dynamics}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape By: \href{https://github.com/akhlak919}{Akhlak Ansari}\\ \url{https://github.com/akhlak919}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+\usepackage[pages=some]{background}
+\backgroundsetup{scale=2, angle=0, opacity=0.1, contents={\includegraphics[]{DDU_Logo.png}}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \Large{\bf Assignment}\\ 
+        \Large{\textbf{Analytical Dynamics}}
+        
+
+        \vspace*{1cm}
+
+        \includegraphics[scale=1]{DDU_Logo.png}
+        \vspace*{1cm}
+
+        \begin{center}
+            {\bf Department of Mathematics and Statistics\\
+        DDU Gorakhpur University, Gorakhpur (India)}
+        \end{center}
+        
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\BgThispage
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+% \vspace*{0.2cm}
+
+\BgThispage
+\section{\slshape Assignment Questions}
+
+\begin{enumerate}
+    \item Use Lagrange's equation to find the differential equation for a compound pendulum which oscillates in a verticle plane about a fixed horizontal axis.
+    \item A uniform rod of length $\displaystyle 2a$, which has one end attached to a fixed point by a light inextensible string of length $\displaystyle \frac{5a}{12}$, performing small oscillations in a verticle plane about its position of equilibrium. Find the position at any time and show that the period of its principal oscillations are $\displaystyle 2 \pi \sqrt{\frac{5a}{3g}}$ and $\displaystyle \pi \sqrt{\frac{a}{3g}}$.
+    \item A uniform rod $\displaystyle AB$ of length $\displaystyle 8a$ is suspended from a fixed point $\displaystyle O$ by means of light inextensible string of length $\displaystyle 13a$, attached to $\displaystyle B$. 
+    If the system is slightly displaced in a verticle plane, show that $\displaystyle \left(\theta + 3 \phi \right)$ and $\displaystyle \left(12 \theta - 13 \phi \right)$ are principal co-ordinates, where $\displaystyle \theta\ \mbox{and}\ \phi$ are the angles which the rod and string respectively make with the verticle axis.
+    Also show that periods of small oscillations are $\displaystyle 2 \pi \sqrt{\frac{a}{g}}$ and $\displaystyle 2 \pi \sqrt{\frac{52a}{3g}}$.
+    \item If the Hamiltonian $\displaystyle \mathscr{H}$ is independent of time explicitly, prove that it is:-
+    \begin{enumerate}[(a)]
+        \item A Constant
+        \item Equal to total energy of the system.
+    \end{enumerate}
+    \item A projectile is launched in a verticle plane with a velocity whose horizontal and verticle components are $\displaystyle v_x\ \mbox{and}\ v_y$ respectively. Calculate the value of the integral $\displaystyle \int_{0}^{t_o} \mathscr{L} dt$. Where $\displaystyle t_0 = \frac{n \pi}{\omega}$. Evaluate this integral for the varied path given by the equation $\displaystyle x = v_x t,\ y = v_y t - \frac{1}{2}gt^2 + \epsilon \sin(\omega t)$. Where $\displaystyle \epsilon$ is a small constant quantity. 
+    Show that the integral $\displaystyle \int_{0}^{t_0} \mathscr{L} dt$ is greater for the varied path than for the actual path, but the result is in agreement with Hamilton's principle. 
+    \item A particle of unit mass moves along $x\mbox{-axis}$ under a constant force $\displaystyle f$ starting from the rest at the origin at time $\displaystyle t = 0$. If $\mathcal{T}\ \mbox{and}\ \mathcal{V}$ are the kinetic and potential energies of the particle respectively, calculate $\displaystyle \int_{0}^{t_0} \left(\mathcal{T - V}\right)dt$.
+    
+    Also evaluate for the varied path in which the position of the particle is given by, $\displaystyle x = \frac{1}{2}ft^2 + \epsilon f t\left(t-t_0\right)$, where $\displaystyle \epsilon$ is constant. Show that the result is in agreement with Hamilton's principle.
+\end{enumerate}
+
+\pagebreak
+
+\section{\slshape Solution of Assignment Questions}
+
+\subsection{\slshape Solution of Question No. 1}
+
+Let the plane of oscillation shown in $XY\mbox{-plane}$, where $N$ is its intersection with the axis of rotation and $G$ is the center of gravity.
+
+
+\begin{center}
+    \def\svgwidth{10cm}
+    \input{ad1.eps_tex}
+\end{center}
+
+
+Let the mass of the compound pendulum is $M$ and its moment of inertia about the axis of rotation is $Mk^2$.
+
+Then potential energy relative to horizontal-plane through $N$ is,
+\[\mathcal{V} = -Mgh\cos \theta\]
+Also kinetic energy is given by,
+\[\mathcal{T} = \frac{1}{2}Mk^2 \dot{\theta}^2\]
+
+Therefore Lagrangian is given by,
+\begin{equation*}
+    \mathscr{L} = \mathcal{T - V} = \frac{1}{2}Mk^2 \dot{\theta}^2 + Mgh\cos \theta
+\end{equation*}
+
+Now, Lagranges $\theta$- equation is given by,
+\[\frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\theta}}\right) - \frac{\partial \mathscr{L}}{\partial \theta} = 0\]
+
+So, 
+
+ \[\frac{d}{dt}\left(Mk^2 \dot{\theta}\right) + Mgh \sin\theta = 0 \]
+\[\implies Mk^2\ddot{\theta} + Mgh\sin\theta = 0\]
+\begin{align*}
+    \implies\ \boxed{\ddot{\theta} + \frac{gh}{k^2}\sin\theta = 0}
+\end{align*}
+
+When $\theta$ is too small then we have,
+\begin{align*}
+    \boxed{\ddot{\theta} + \frac{gh}{k^2}\theta = 0}
+\end{align*}
+
+This is the differential equation of the compound pendulum.
+\BgThispage
+
+\pagebreak
+
+\subsection{\slshape Solution of Question No. 2}
+
+Let the motion of the system is described by given figure. Let $O$ be the fixed point and $OA$ be the string of length $\displaystyle \frac{5a}{12}$.
+
+Let $OB$ be the rod of length $2a$ and mass of rod is $M$ and $G$ be the center of gravity of rod.
+
+\begin{center}
+    \def\svgwidth{10cm}
+    \input{ad2.eps_tex}
+\end{center}
+
+Let at any time $t$, the string of the rod is inclined at angles $\theta$ and $\phi$ to the verticle $OY$. Let $G(x_G, y_G)$ be the coordinates of centre of gravity of the rod, then centre of gravity of rod is given by,
+
+\begin{equation*}
+    x_G = \frac{5}{12}a\sin\theta + a\sin\phi\ \implies \dot{x}_G = \frac{5}{12} a\cos\theta \dot{\theta} + a\cos\phi\dot{\phi} 
+\end{equation*}
+
+\begin{equation*}
+    x_G = \frac{5}{12}a\cos\theta + a\cos\phi\ \implies \dot{y}_G = \frac{-5}{12}a\sin\theta\dot{\theta} - a\sin\phi\dot{\phi}
+\end{equation*} 
+
+Therefore,
+
+\[\dot{x}^2 + \dot{y}^2 = \mbox{(velocity)}^2\ \mbox{of}\ G\]
+
+then from above we have,
+
+\begin{multline*}
+    \dot{x}^2_G + \dot{y}^2_G = \frac{25}{144}a^2\cos^2\theta \cdot\dot{\theta}^2 +  a^2\cos^2\phi\cdot \dot{\phi}^2 + \frac{5}{6}a^2\cos\theta\cos\phi \dot{\theta}\dot{\phi}\\
+    + \frac{25}{144}a^2\sin^2\theta\cdot \dot{\theta}^2 + a^2\sin^2\phi\cdot \dot{\phi}^2 + \frac{5}{6}a^2\sin\theta\sin\phi \dot{\theta}\dot{\phi} 
+\end{multline*}
+\begin{multline*}
+    \implies \dot{x}^2_G + \dot{y}^2_G = \frac{25}{144}a^2\left\{\cos^2\theta + \sin^2\theta\right\}\dot{\theta}^2 + a^2\left\{\cos^2\phi + \sin^2\phi\right\}\dot{\phi}^2\\
+    + \frac{5}{6}a^2\left\{\cos\theta\cos\phi + \sin\theta\sin\phi\right\}\dot{\theta}\dot{\phi}
+\end{multline*}
+$\displaystyle \implies \hspace*{4mm} \dot{x}^2_G + \dot{y}^2_G = \frac{25}{144}a^2\dot{\theta}^2 + a^2\dot{\phi}^2 + \frac{5}{6}a^2\cos(\theta-\phi)\dot{\theta}\dot{\phi}$\\[3mm]
+
+
+$\displaystyle \implies \hspace*{4mm} \dot{x}^2_G + \dot{y}^2_G = \frac{25}{144}a^2\dot{\theta}^2 + a^2\dot{\phi}^2 + \frac{5}{6}a^2\dot{\theta}\dot{\phi} \hspace{7cm} (1)$
+
+Let $\mathcal{T}$ be the kinetic energy and $\mathcal{V}$ be the potential energy of the system, then we get, 
+
+\[\mathcal{T} = \frac{1}{2}M\left( \dot{x}^2_G + \dot{y}^2_G\right) + \frac{1}{2}I\omega^2\]
+
+Now, from equation(1), we get as
+
+\begin{equation*}
+    \begin{split}
+        \mathcal{T} & = \frac{1}{2}M\left[\frac{25}{144}a^2\dot{\theta}^2 + a^2\dot{\phi}^2 + \frac{5}{6}a^2\dot{\theta}\dot{\phi} \right] + \frac{1}{2}\left[\frac{Ma^2}{3} \dot{\phi}^2\right]\\[2mm]
+        & = \frac{1}{2}Ma^2\left[\frac{25}{144}\dot{\theta}^2 + \frac{4}{3}\dot{\phi}^2 + \frac{5}{6}\dot{\theta}\dot{\phi}\right]\\[2mm]
+        \mathcal{T} & = \frac{1}{288}\left[25\dot{\theta}^2 + 192\dot{\phi}^2 + 120\dot{\theta}\dot{\phi}\right]\hspace*{7cm}(2)
+    \end{split}
+\end{equation*}
+    
+% \pagebreak
+
+and potential energy of the rod is,
+
+\[\mathcal{V} = -Mg\left(\frac{5}{12}a\cos\theta + a\cos\phi\right)\hspace*{8cm}(3)\]
+
+Now, the Lagrangian equation becomes,
+\[\mathscr{L} = \mathcal{T - V} = \frac{Ma^2}{288}\left(25\dot{\theta}^2 + 192\dot{\phi}^2 + 120\dot{\theta}\dot{\phi}\right) + Mg\left(\frac{5}{12}a\cos\theta + a\cos\phi\right)\]
+
+\BgThispage
+
+\subsubsection*{$\theta\mbox{-Lagranges}$ equation}
+
+$\displaystyle \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\theta}}\right) - \frac{\partial \mathscr{L}}{\partial \theta} = 0$
+
+\vspace*{4mm}
+
+Since, $\displaystyle \frac{\partial \mathscr{L}}{\partial \dot{\theta}} = \frac{Ma^2}{288}\left(50\dot{\theta} + 120\dot{\phi}\right)$ \& $\displaystyle \frac{\partial \mathscr{L}}{\partial \theta} = -Mg\left(\frac{5}{12}a\sin\theta\right)$
+
+\vspace*{4mm}
+
+Then,  $\displaystyle \frac{d}{dt}\left[\frac{Ma^2}{144}\left(25\dot{\theta} + 60\dot{\phi}\right)\right] + Mga \frac{5}{12}\sin\theta = 0$
+
+\vspace*{4mm}
+
+$\displaystyle \frac{Ma^2}{144}\left(25\ddot{\theta} + 60\ddot{\phi}\right) + Mga \frac{5}{12}\sin\theta = 0$
+
+\vspace*{4mm}
+
+Since, $\theta$ is too small, so we get
+\vspace*{4mm}
+
+$\displaystyle 5\ddot{\theta} + 12\ddot{\phi} = -\frac{12g}{a}\theta \hspace*{11cm}(4)$
+
+\subsubsection*{$\phi\mbox{-Lagranges}$ equation}
+
+
+$\displaystyle \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\phi}}\right) - \frac{\partial \mathscr{L}}{\partial \phi} = 0$
+
+\vspace*{4mm}
+
+Since, $\displaystyle \frac{\partial \mathscr{L}}{\partial \dot{\phi}} = \frac{Ma^2}{144}\left(192\dot{\phi} + 60\dot{\theta}\right)$ \& $\displaystyle \frac{\partial \mathscr{L}}{\partial \phi} = -Mga\sin\phi$
+
+\vspace*{4mm}
+
+Then,  $\displaystyle \frac{d}{dt}\left[\frac{Ma^2}{12}\left(16\dot{\phi} + 5\dot{\theta}\right)\right] + Mga\sin\phi = 0$
+
+\vspace*{4mm}
+
+$\displaystyle \frac{Ma^2}{12}\left(16\ddot{\phi} + 5\ddot{\theta}\right) + Mga\sin\phi = 0$
+
+\vspace*{4mm}
+
+Since, $\phi$ is too small, so we get
+\vspace*{4mm}
+
+$\displaystyle 16\ddot{\phi} + 5\ddot{\theta} = -\frac{12g}{a}\phi \hspace*{11cm}(5)$
+
+Now, solving the equation $(4)$ and $(5)$, we get as
+
+\[\theta = M_1\sin(pt + \epsilon)\ \implies \ddot{\theta} = -p^2 M_1\sin(pt + \epsilon)\]
+and
+\[\phi = M_2\sin(pt + \epsilon)\ \implies \ddot{\phi} = -p^2 M_2\sin(pt + \epsilon)\]
+
+Now, using these values in $(4)$ and $(5)$ we get as,
+
+\[5\left\{-p^2 M_1\sin(pt + \epsilon)\right\} + 12\left\{-p^2 M_2\sin(pt + \epsilon)\right\} = -\frac{12}{a}g M_1\sin(pt + \epsilon)\]
+
+\BgThispage
+
+and Since, we know that, $\displaystyle \sin(pt + \epsilon) \neq 0$ then,
+
+\[\left(-5p^2 + 12C\right)M_1 - 12p^2 M_2 = 0 \hspace*{4cm}(6)\ \hspace{1cm} \mbox{where}\ C = \frac{g}{a}\]
+
+Similarly from $(5)$ we get as,
+
+\[-5p^2 M_1 + \left(-16p^2 + 12C\right)M_2 = 0\hspace*{7cm}(7)\]
+
+Now the trivial solution of $(6)$ and $(7)$ are obtained if
+
+\[\begin{vmatrix}
+    12C - 5p^2 & -12p^2 \\
+    -5p^2 & -16p^2 + 12C \notag
+\end{vmatrix} = 0\]
+
+\[\implies\ \left(12C - 5p^2\right)\left(-16p^2 + 12C\right) - 60p^4 = 0\]
+\[\implies\ \left(5p^2-3C\right)\left(p^2 - 12C\right) = 0\]
+\[\implies p^2 = 12C\ , p^2 = \frac{3C}{5}\]
+\[\implies p_1 = \sqrt{12C}\hspace{5mm} \mbox{\&}\hspace{5mm} p_2 = \sqrt{\frac{3C}{5}}\]
+\[\implies p_1 = \sqrt{\frac{12g}{a}}\hspace{5mm} \mbox{\&}\hspace{5mm} p_2 = \sqrt{\frac{3g}{5a}}\]
+
+Now, the period of oscillations are,
+\[\frac{2 \pi}{p_1}\hspace*{5mm} \mbox{\&}\hspace*{5mm} \frac{2 \pi}{p_2}\]
+therefore, we have
+
+\[\frac{2 \pi}{\sqrt{\frac{12g}{a}}}\hspace*{5mm} \mbox{\&}\hspace*{5mm} \frac{2 \pi}{\sqrt{\frac{3g}{5a}}}\]
+
+\begin{align*}
+    \boxed{2 \pi \sqrt{\frac{a}{12g}}}
+    \hspace*{5mm} \mbox{\&}\hspace*{5mm} \boxed{2 \pi \sqrt{\frac{5a}{3g}}}
+\end{align*}
+
+Hence, these are the required {\bf period of oscillations.}
+
+\BgThispage
+
+\pagebreak
+
+
+\subsection{\slshape Solution of Question No. 3}
+
+Let $O$ be the fixed point and $OA$ be the string of length $13a$.Let
+$AB$ be the rod with length $8a$ and having mass $M$.Let $G$ be the center of gravity of the rod.
+Let at any time $t$ the string and the rod inclined at angles $\phi$ and $\theta$ to the verticle $OY$ respectively.
+
+
+
+\begin{center}
+    \def\svgwidth{10cm}
+    \input{ad3.eps_tex}
+\end{center}
+
+Let co-ordinates of $G$ be $\left(x_G, y_G\right)$, Then
+
+\[x_G = 13a\sin\phi + 4a\sin\theta\ \implies \dot{x}_G = 13a\cos\phi\cdot\dot{\phi} + 4a\cos\theta\cdot\dot{\theta}\]
+\[\mbox{\&}\ y_G = 13a\cos\phi + 4a\cos\theta\ \implies \dot{y}_G = -13a\sin\phi\cdot\dot{\phi} - 4a\sin\theta\cdot\dot{\theta}\]
+
+So,
+\begin{equation*}
+    \begin{split}
+        {\dot{x}_G}^2 + {\dot{y}_G}^2 & = 169a^2\dot{\phi}^2 + 16a^2\dot{\theta}^2 + 104a^2\dot{\phi}\dot{\theta}\cos(\theta - \phi)\\[2mm]
+        & = 169a^2\dot{\phi}^2 + 16a^2\dot{\theta}^2 + 104a^2\dot{\phi}\dot{\theta}
+    \end{split}
+\end{equation*}
+
+Now, the kinetic energy is given by 
+
+\begin{equation*}
+    \begin{split}
+        \mathcal{T} & = \frac{1}{2}M\left[k^2\dot{\theta}^2 + \left({\dot{x}_G}^2 + {\dot{y}_G}^2\right)\right]\\[2mm]
+        & = \frac{1}{2}Ma^2\left[\frac{16}{3}\dot{\theta}^2 + 169\dot{\phi}^2 + 16\dot{\theta}^2 + 104\dot{\phi}\dot{\theta}\right]\\[2mm]
+        & = \frac{1}{2}Ma^2\left[\frac{64}{3}\dot{\theta}^2 + 169\dot{\phi}^2  + 104\dot{\phi}\dot{\theta}\right]\hspace*{6cm}(1) 
+    \end{split}
+\end{equation*}
+
+and the potential energy is given by, 
+
+\[\mathcal{V} = -Mg\left(13a\cos\phi + 4a\cos\theta\right)\hspace*{7cm}(2)\]
+
+Now, the Lagrangian of the system is given by, 
+
+\begin{equation*}
+    \begin{split}
+        \mathscr{L} & = \mathcal{T - V}\\[2mm]
+        \mathscr{L} & = \frac{1}{2}Ma^2\left[\frac{64}{3}\dot{\theta}^2 + 169\dot{\phi}^2  + 104\dot{\phi}\dot{\theta}\right] + Mg\left(13a\cos\phi + 4a\cos\theta\right)\hspace*{2cm}(3)
+    \end{split}
+\end{equation*}
+
+\subsubsection*{$\theta\mbox{-Lagranges equation}$}
+
+\[\frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\theta}}\right) - \frac{\partial \mathscr{L}}{\partial \theta} = 0\]
+
+\[\because\ \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\theta}}\right) = Ma^2\left(\frac{64}{3}\ddot{\theta} + 52\ddot{\phi}\right)\]
+
+and,
+
+\[\frac{\partial \mathscr{L}}{\partial \theta} = -4Mga\sin\theta\]
+
+\[\therefore \ Ma^2\left(\frac{64}{3}\ddot{\theta} + 52\ddot{\phi}\right) + 4Mga\sin\theta = 0\]
+
+\[16\ddot{\theta} + 39\ddot{\phi} = -\frac{3g}{a}\sin\theta\]
+
+\begin{center}
+    \begin{equation*}
+        16\ddot{\theta} + 39\ddot{\phi} = -\frac{3g}{a}\theta\hspace*{7cm}(4)
+    \end{equation*}
+\end{center}
+
+\subsubsection*{$\phi\mbox{-Lagranges equation}$}
+
+\BgThispage
+
+\[\frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\phi}}\right) - \frac{\partial \mathscr{L}}{\partial \phi} = 0\]
+
+\begin{equation*}
+    \begin{split}
+        \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{\phi}}\right) & = Ma^2\left[169\ddot{\phi} + 52\ddot{\theta}\right] \hspace*{2cm}\ \mbox{and}\\[2mm]
+        \frac{\partial \mathscr{L}}{\partial \phi} & = -13Mga\sin\phi
+    \end{split}
+\end{equation*}
+
+therefore,
+
+\begin{center}
+    $\displaystyle Ma^2\left[169\ddot{\phi} + 52\ddot{\theta}\right] + 13Mga\sin\phi = 0$
+\end{center}
+
+\begin{center}
+    $\implies\ \displaystyle 13\ddot{\phi} + 4\ddot{\theta} = -\frac{g}{a}\sin\phi \hspace*{4cm}$
+
+    Since, $\phi$ is too small $\implies \sin\phi\approx \phi$
+
+    So, $\displaystyle 13\ddot{\phi} + 4\ddot{\theta} = -\frac{g}{a}\phi \hfil (5)$
+\end{center}
+
+Now, from equation $(4) + 9\cross(5)$, we get as
+
+\begin{equation*}
+    \begin{split}
+        16\ddot{\theta} + 39\ddot{\phi} + 117\ddot{\phi} + 36\ddot{\theta} & = -\frac{3g}{a}\theta -\frac{9g}{a}\phi\\[2mm]
+        52\ddot{\theta} + 156\ddot{\phi} & = -\frac{3g}{a}\left(\theta + 3\phi\right) \\[2mm]
+        \implies\ \ddot{\theta} + 3\ddot{\phi} & = -\frac{3g}{52a}\left(\theta + 3\phi\right)\\[2mm]
+        \mathcal{D}^2\left(\theta + 3\phi\right) & = -\frac{3g}{52a}\left(\theta + 3\phi\right) \hspace*{4cm} (6)
+    \end{split}
+\end{equation*}
+
+Again doing $4\cross(4) - 13\cross(5)$, we get as,
+
+\begin{equation*}
+    \begin{split}
+        64\ddot{\theta} + 156\ddot{\phi} - 169\ddot{\phi} - 52\ddot{\theta} & = -\frac{12g}{a}\theta + \frac{13g}{a}\phi\\[2mm]
+        12\ddot{\theta} - 13\ddot{\phi} & = -\frac{g}{a}\left(12\theta - 13\phi\right)\\[2mm]
+        \mathcal{D}^2\left(12\theta - 13\phi\right) & = -\frac{g}{a}\left(12\theta - 13\phi\right) \hspace*{4cm}(7)
+    \end{split}
+\end{equation*}
+
+Now, putting $\displaystyle \left(\theta + 3\phi\right) = X$ \& $\left(12\theta - 13\phi\right) = Y$ in $(6)$ and $(7)$ respectively, we get as,
+
+\begin{equation*}
+    \begin{split}
+        & \mathcal{D}^2 X = -\frac{3g}{52a} X \hspace*{2cm} \& \hspace*{2cm} \mathcal{D}^2 Y  = -\frac{g}{a} Y \\[2mm]
+        and,\hspace*{2cm} & \ddot{X} = -\frac{3g}{52a} X \hspace*{2cm} \& \hspace*{2cm} \ddot{Y}  = -\frac{g}{a} Y \hspace*{4cm}(8) 
+    \end{split}
+\end{equation*}
+
+\BgThispage
+
+Equation $(9)$ obviously represents two independent simple harmonic motions. Hence, $X$ and $Y$ are principal co-ordinates, that is $\displaystyle \left(\theta + 3\phi\right)$ and $\displaystyle \left(12\theta - 13\phi\right)$ are principal co-ordinates. Also for period of small oscillations - 
+
+\[\ddot{X} = -\omega^2 X.\]
+
+Now, comparing this equation by equation $(8)$ we have,
+\[\omega^2 = \frac{3g}{52a}\hspace*{1cm} \& \hspace*{1cm} \omega^2 = \frac{g}{a}\]
+
+\[\because \hspace*{1cm} T = \frac{2\pi}{\omega}\hspace*{1cm}  \mbox{thus}, \ T = 2\pi \sqrt{\frac{52a}{3g}}\hspace*{1cm} \& \hspace*{1cm} T = 2\pi \sqrt{\frac{a}{g}}\] 
+
+Hence, {\bf period of small oscillations} are given as,
+
+\BgThispage
+
+\begin{align*}
+    \boxed{2 \pi \sqrt{\frac{52a}{3g}}}
+    \hspace*{5mm} \mbox{\&}\hspace*{5mm} \boxed{2 \pi \sqrt{\frac{a}{g}}}
+\end{align*}
+
+\subsection{\slshape Solution of Question No. 4}
+
+Let us consider a conservative system in which general equation do not contain time $t$ explicitaly, Then
+
+\begin{equation*}
+    \begin{split}
+        & \mathscr{H} = \mathscr{H}\left(q_r, p_r\right), \hspace*{2cm} r = 1,2,\cdots n \\[2mm]
+        \implies\hspace*{2cm} & \frac{d\mathscr{H}}{dt} = \sum_{}^{} \left(\frac{\partial \mathscr{H}}{\partial q_r}\dot{q}_r + \frac{\partial \mathscr{H}}{\partial p_r}\dot{p}_r\right) \hspace*{2cm}(1)
+    \end{split}
+\end{equation*}
+
+Now, using Hamilton's equation of motion,
+\begin{equation*}
+    \left\{\dot{p}_r = -\frac{\partial \mathscr{H}}{\partial q_r}\hspace*{2mm}, \hspace*{2mm} \dot{q}_r = -\frac{\partial \mathscr{H}}{\partial p_r}\right\}, \hspace*{1cm} r = 1, 2, \cdots n \hspace*{1.5cm} (2)
+\end{equation*}
+
+% Since $\mathscr{H}$ is independent of time i.e. $\mathscr{H}$ does not contain $t$, then from equation $(1)$ and $(2)$, we have 
+
+
+If the Hamiltonian of a system is independent of time explicitly, then it means that it does not change with time. In other words, its time derivative is zero:
+
+\begin{center}
+    $\displaystyle \frac{d\mathscr{H}}{dt} = 0$
+\end{center}
+
+We can prove that the Hamiltonian is constant using this property:
+
+{\bf (a) Proof that Hamiltonian is constant:}
+
+Assume that the Hamiltonian at time $t_0$ is $\mathscr{H}(t_0)$. Then, for any other time $t$, we have:
+
+\begin{center}
+    $\displaystyle \frac{d\mathscr{H}}{dt} = \frac{\partial \mathscr{H}}{\partial t} + \sum_i \frac{\partial \mathscr{H}}{\partial q_i}\frac{dq_i}{dt} + \sum_i \frac{\partial\mathscr{H}}{\partial p_i}\frac{dp_i}{dt}$
+\end{center}
+
+Since $\mathscr{H}$ is independent of time, the first term on the right-hand side is zero. The second and third terms are the time derivatives of the generalized coordinates $q_i$ and momenta $p_i$, respectively. However, the equations of motion for the system are given by:
+
+\begin{center}
+    $\displaystyle \frac{dq_i}{dt} = \frac{\partial \mathscr{H}}{\partial p_i}$
+\end{center}
+
+\begin{center}
+    $\displaystyle \frac{dp_i}{dt} = -\frac{\partial \mathscr{H}}{\partial q_i}$
+\end{center}
+
+Therefore, the sum of the second and third terms is zero, and we have:
+
+\begin{center}
+    $\displaystyle \frac{d\mathscr{H}}{dt} = 0$
+\end{center}
+
+Hence, the Hamiltonian is constant:
+
+\begin{center}
+    $\displaystyle H(t) = \mathscr{H}(t_0)$
+\end{center}
+
+\BgThispage
+
+{\bf (b) Proof that Hamiltonian is equal to total energy of the system:}
+
+The Hamiltonian is defined as:
+
+\begin{center}
+    $\displaystyle \mathscr{H}(q,p,t) = \sum_i p_i\dot{q}_i - \mathscr{L}(q,\dot{q},t)$
+\end{center}
+
+where $\mathscr{L}$ is the Lagrangian of the system, $q$ are the generalized coordinates, $\dot{q}$ are the generalized velocities, and $p$ are the corresponding momenta. The Lagrangian is related to the total energy $\mathscr{E}$ of the system by the following equation:
+
+\begin{center}
+    $\displaystyle \mathscr{L} = \mathscr{E} - \sum_i p_i\dot{q}_i$
+\end{center}
+
+where $\mathscr{E}$ is the total energy of the system. Substituting this expression for $\mathscr{L}$ into the definition of the Hamiltonian, we get:
+
+\begin{center}
+    $\displaystyle \mathscr{H} = \sum_i p_i\dot{q}_i - (\mathscr{E} - \sum_i p_i\dot{q}_i) = \mathscr{E}$
+\end{center}
+
+Therefore, if the Hamiltonian is independent of time explicitly, it is equal to the total energy of the system.
+
+\newpage
+
+
+\subsection{\slshape Solution of Question No. 5}
+
+% \begin{center}
+%     \begin{tikzpicture}
+%         \draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {x axis};
+%         \draw[thick,->] (0,0) -- (0,4.5) node[anchor=south east] {y axis};
+%         \draw (0,0) arc (0:25:2cm);
+%     \end{tikzpicture}
+% \end{center}
+
+Let the path of the projected particle is described by given figure(below) at time $t$.
+
+Let the mass of the particle is $M$ and at time $t$ its position is at $(x,y)$. 
+
+The particle moves along $x$ \& $y$ dirrection both and the velocity of projection are $v_x$ and $v_y$ along $X$ and $Y$ dirrection respectively. 
+
+\begin{center}
+    \def\svgwidth{10cm}
+    \input{ad4.eps_tex}
+\end{center}
+
+Let the air resistance be negligible. If the kinetic energy and potential energy of the particle are $\mathcal{T}$ and $\mathcal{V}$ respectively, then 
+\[\mathcal{T} = \frac{1}{2}M\left(\dot{x}^2 + \dot{y}^2\right)\hspace*{1.5cm} \& \hspace*{1.5cm} \mathcal{V} = Mgy\]
+
+Since, Lagrangian equation, 
+\begin{equation}
+    \mathscr{L} = \mathcal{T - V} = \frac{1}{2}M\left(\dot{x}^2 + \dot{y}^2\right)-Mgy 
+\end{equation}
+
+\subsubsection*{$\displaystyle x$-Lagrange's Equation}
+
+\begin{equation*}
+    \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{x}}\right) - \frac{\partial \mathscr{L}}{\partial x} = 0
+\end{equation*}
+
+Since, from equation $(1)$, we have
+
+
+\begin{center}
+    $\displaystyle \frac{\partial \mathscr{L}}{\partial x} = 0 \hspace*{2cm} \frac{\partial \mathscr{L}}{\partial \dot{x}} = M\dot{x} \implies \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{x}}\right) = M\ddot{x}$
+\end{center}
+
+So, we get 
+
+\begin{center}
+    $M\ddot{x} = 0 \implies\ \ddot{x} = 0\ \implies \dot{x} = C_1$
+\end{center}
+
+\newpage
+
+\BgThispage
+
+\begin{center}
+    $\displaystyle \mbox{at time}\ t=0, \dot{x} = v_x \ \implies\ C_1 = v_x$
+\end{center}
+
+\begin{center}
+    $\displaystyle \mbox{Hence,}\ \dot{x} = v_x \implies\ x = v_x t + C_2$
+\end{center}
+
+\begin{center}
+    $\displaystyle \mbox{at time}\ t=0, x = 0 \ \implies\ C_2 = 0$
+\end{center}
+
+\begin{center}
+    $\mbox{Hence},\ \boxed{x = v_x t}$
+\end{center}
+
+
+\subsubsection*{$\displaystyle y$-Lagrange's Equation}
+
+\begin{equation*}
+    \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{y}}\right) - \frac{\partial \mathscr{L}}{\partial y} = 0
+\end{equation*}
+
+
+Since, from equation $(1)$, we have
+
+
+\begin{center}
+    $\displaystyle \frac{\partial \mathscr{L}}{\partial y} = -Mg \hspace*{2cm} \frac{\partial \mathscr{L}}{\partial \dot{y}} = M\dot{y} \implies \frac{d}{dt}\left(\frac{\partial \mathscr{L}}{\partial \dot{y}}\right) = M\ddot{y}$
+\end{center}
+
+So, we get as 
+
+\begin{center}
+    $M\ddot{y} + Mg = 0 \implies\ \ddot{y} = -g\ \implies \dot{y} = -gt + C_3$
+\end{center}
+
+\begin{center}
+    $\displaystyle \mbox{at time}\ t=0, \dot{y} = v_y \ \implies\ C_3 = v_y$
+\end{center}
+
+\begin{center}
+    $\displaystyle \mbox{Hence,}\ \dot{y} = -gt + v_y \implies\ y = -g\frac{t^2}{2} + v_y t + C_4$
+\end{center}
+
+\begin{center}
+    $\displaystyle \mbox{at time}\ t=0, y = 0 \ \implies\ C_4 = 0$
+\end{center}
+
+\begin{center}
+    $\mbox{Hence},\ \boxed{y = v_y t - \frac{1}{2} gt^2}$
+\end{center}
+
+Since the particle moves from rest $t = 0$ to $\displaystyle t = t_0 = \frac{n \pi}{\omega}$ then the integral $\displaystyle \int_{0}^{t_0} \mathscr{L} dt$ computed in the sense like,
+
+\subsubsection*{In actual path :}
+
+\begin{equation*}
+    \begin{split}
+        \int_{0}^{t_0}\mathscr{L} dt & = \int_{0}^{t_0}\mathcal{\left(T - V\right)} dt = \int_{0}^{t_0}\left[\frac{1}{2}M\left(\dot{x}^2 + \dot{y}^2\right) - Mgy\right]dt\\[2mm]
+        \mbox{Since}\ & \dot{x} = v_x, \dot{y} = v_y - gt\hspace*{6mm} \&\hspace*{6mm} y = v_y t - \frac{1}{2}gt^2 \hspace*{6mm} \mbox{then},\\[2mm]
+        \int_{0}^{t_0}\mathscr{L} dt & = \int_{0}^{t_0}\left[\frac{1}{2}M\left\{v^2_x + \left(v_y - gt\right)^2\right\} - Mg\left(v_y t - \frac{1}{2}gt^2\right)\right]dt\\[2mm]
+        & = \int_{0}^{t_0}\left[\frac{1}{2}M\left(v^2_x + v^2_y + g^2t^2 - 2v_y gt\right) - \frac{1}{2}M\left(2v_y gt - g^2t^2\right)\right]dt\\[2mm]
+        & = \frac{1}{2}M\int_{0}^{t_0}\left[\left(v^2_x + v^2_y + g^2t^2 - 2v_y gt\right) - \left(2v_y gt - g^2t^2\right)\right]dt\\[2mm]
+        & = \frac{1}{2}M\int_{0}^{t_0}\left[v^2_x + v^2_y + 2g^2t^2 - 4v_y gt\right]dt\\[2mm]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \int_{0}^{t_0}\mathscr{L} dt & = \frac{1}{2}M\left[\left(v^2_x + v^2_y\right)t\bigg|_{0}^{t_0} + \frac{2}{3}g^2t^3\bigg|_{0}^{t_0} - 2v_y gt^2\bigg|_{0}^{t_0}\right]\\[2mm]
+    \end{split}
+\end{equation*}
+\begin{center}
+    $\displaystyle \boxed{\int_{0}^{t_0}\mathscr{L} dt  = \frac{1}{2}M\left[\left(v^2_x + v^2_y\right)t_0 + \frac{2}{3}g^2t^3_0 - 2v_y gt^2_0\right]}$\\[4mm]
+    Which is the required integral for actual path.
+\end{center}
+
+\BgThispage
+
+\subsubsection*{For varied path :}
+The varied path is given by, 
+\begin{center}
+    $\displaystyle x = v_x t,\ y = v_y t - \frac{1}{2}gt^2 + \epsilon\sin(\omega t)$
+\end{center}
+The kinetic energy,
+\begin{center}
+    $\displaystyle \mathcal{T} = \frac{1}{2}M\left(\dot{x}^2 + \dot{y}^2\right) = \frac{1}{2}M\left[v^2_x + \left(v_y -gt + \epsilon \omega\cos(\omega t)\right)^2\right]$
+\end{center}
+The potential energy,
+\begin{center}
+    $\displaystyle \mathcal{V} = Mgy = Mg\left(v_y t -\frac{1}{2}gt^2 + \epsilon\sin(\omega t)\right)$
+\end{center}
+
+Thus Lagrangian is given by 
+\begin{center}
+    $\displaystyle \mathscr{L} = \left(\mathcal{T - V}\right) = \frac{1}{2}M\left[v^2_x + \left(v_y -gt + \epsilon \omega\cos(\omega t)\right)^2\right] -  Mg\left(v_y t -\frac{1}{2}gt^2 + \epsilon\sin(\omega t)\right)$
+\end{center}
+
+\begin{equation*}
+    \begin{split}
+        \int_{0}^{t_0}\mathscr{L}dt & = \int_{0}^{t_0}\left[\frac{1}{2}M\left\{v^2_x + \left(v_y -gt + \epsilon \omega\cos(\omega t)\right)^2\right\} -  Mg\left(v_y t -\frac{1}{2}gt^2 + \epsilon\sin(\omega t)\right)\right]dt\\[3mm]
+        & = \frac{1}{2}M\int_{0}^{t_0}\left[\left\{v^2_x + \left(v_y -gt + \epsilon \omega\cos(\omega t)\right)^2\right\} -  2g\left(v_y t -\frac{1}{2}gt^2 + \epsilon\sin(\omega t)\right)\right]dt\\[3mm]
+    \end{split}
+\end{equation*}
+
+\begin{multline*}
+     = \frac{1}{2}M\int_{0}^{t_0}\left[v^2_x + v^2_y + g^2t^2 + \epsilon^2\omega^2\cos^2(\omega t) - 2v_y gt - 2g\epsilon\omega t\cos(\omega t) + 2v_y \epsilon\omega\cos(\omega t)\right.\\
+    \left. -2v_y gt + g^2t^2 - 2g\epsilon\sin(\omega t)\right]dt
+\end{multline*}
+
+$\displaystyle \int_{0}^{t_0}\mathscr{L} dt  = \frac{1}{2}M\left[\left(v^2_x + v^2_y\right)t_0 + \frac{2}{3}g^2t^3_0 - 2v_y gt^2_0\right] + \frac{1}{4}M n\pi \omega \epsilon^2 + 2g\epsilon\left(1-\frac{1}{\omega}\right)\left(1-(-1)^n\right)$
+
+\newpage
+
+For all $n$ is {\bf even}, above expression is modified as
+
+
+\begin{center}
+    $\displaystyle \boxed{\int_{0}^{t_0}\mathscr{L} dt  = \frac{1}{2}M\left[\left(v^2_x + v^2_y\right)t_0 + \frac{2}{3}g^2t^3_0 - 2v_y gt^2_0\right] + \frac{1}{4}M n\pi \omega \epsilon^2}$
+\end{center}
+
+For all $n$ is {\bf odd}, the expression is modified as
+
+\begin{center}
+    $\displaystyle \boxed{\int_{0}^{t_0}\mathscr{L} dt  = \frac{1}{2}M\left[\left(v^2_x + v^2_y\right)t_0 + \frac{2}{3}g^2t^3_0 - 2v_y gt^2_0\right] + \frac{1}{4}M n\pi \omega \epsilon^2 + 4g\epsilon\left(1-\frac{1}{\omega}\right)}$
+\end{center}
+
+These equations in the boxed are the integral of Lagrangian for varied path.
+
+\BgThispage
+
+Clearly, integral of varied path of $\displaystyle \int_{0}^{t_0}\mathscr{L} dt$ is greater than integral of actual path of $\displaystyle \int_{0}^{t_0}\mathscr{L} dt$ in even $n$ sense by $\displaystyle\frac{1}{4}M n\pi \omega \epsilon^2$ are in odd $n$ sense greater by 
+\begin{center}
+    $\displaystyle \left\{\frac{1}{4}M n\pi \omega \epsilon^2 + 4g\epsilon\left(1-\frac{1}{\omega}\right)\right\}$.
+\end{center}
+
+Varied path is minimum if, $\epsilon = 0$, and then the minimum value is \begin{center}
+    $\displaystyle \frac{1}{2}M\left[\left(v^2_x + v^2_y\right)t_0 + \frac{2}{3}g^2t^3_0 - 2v_y gt^2_0\right]$.
+\end{center}
+
+which is the same as in the actual path. Hence the result is in agreement with Hamilton's principle.
+
+\newpage
+\subsection{\slshape Solution of Question No. 6}
+
+\BgThispage
+
+It is given that the particle of unit mass, then $m\cdot a = f\ \implies\ a = f =\  \mbox{acceleration}$.
+
+Since the particle moves along $X-\mbox{dirrection}$ with acceleration $f$ starting from rest , therefore its actual path is,
+\begin{center}
+    $\displaystyle x = 0 + \frac{1}{2}ft^2, \hspace*{1cm}\implies\hspace*{1cm} \dot{x} = f\cdot t$.
+\end{center}
+
+If the kinetic energy is $\mathcal{T}$ and potential energy is $\mathcal{V}$ of the particle, then 
+\[\mathcal{T} = \frac{1}{2}M(\dot{x}^2 + \dot{y}^2) = \frac{1}{2}f^2t^2\]
+
+Since particle moves from $t = 0$ to $t = t_0$ therefore end points of the actual motion are origin $O$ and $\displaystyle \frac{1}{2}ft^2_0$.
+
+The potential energy $\mathcal{V}$ at a distance $x$ at a time $t$ is given Assignment
+\[\mathcal{V} = -fx = -\frac{1}{2}f^2t^2\]
+
+Therefore the Lagrangian of the particle is given by,
+
+\[\mathscr{L} = \mathcal{T - V} = \frac{1}{2}f^2t^2 + \frac{1}{2}f^2t^2 = f^2t^2\]
+
+\subsubsection*{In actual path :}
+
+\[\int_{0}^{t_0}\mathscr{L}dt = \int_{0}^{t_0}f^2t^2dt = \frac{1}{3}f^2t^3_0\]
+
+\subsubsection*{In varied path :}
+
+Now, let us consider the varied path given by $\displaystyle x = \frac{1}{2}ft^2 + \epsilon f t\left(t-t_0\right)$. The velocity of the particle is given by:
+
+\[\dot{x} = ft + 2\epsilon f (t-t_0)\]
+
+The kinetic energy of the particle is given by:
+
+\begin{align*}
+    \mathcal{T} &= \frac{1}{2}M\dot{x}^2 = \frac{1}{2}f^2t^2 + 2\epsilon^2f^2\left(t-t_0\right)^2 + 2\epsilon f^2t\left(t-t_0\right).
+\end{align*}
+
+The potential energy of the particle is given by:
+
+\begin{align*}
+\mathcal{V} &= -\int F dx \\
+&= -\int f dx \\
+&= -\int f \left(\frac{1}{2}ft^2 + \epsilon f t\left(t-t_0\right)\right) dt \\
+&= -\frac{1}{2}f^2t^2 - \frac{2}{3}\epsilon f^2\left(t-t_0\right)^3.
+\end{align*}
+
+Therefore, the integral $\displaystyle \int_{0}^{t_0} \left(\mathcal{T - V}\right)dt$ is given by:
+
+\begin{align*}
+\int_{0}^{t_0} \left(\mathcal{T - V}\right)dt &= \int_{0}^{t_0} \left(\frac{1}{2}f^2t^2 + 2\epsilon^2f^2\left(t-t_0\right)^2 + 2\epsilon f^2t\left(t-t_0\right) + \frac{1}{2}f^2t^2 + \frac{2}{3}\epsilon f^2\left(t-t_0\right)^3\right) dt \\
+&= \int_{0}^{t_0} \left(f^2t^2 + 4\epsilon^2f^2\left(t-t_0\right)^2 + 4\epsilon f^2t\left(t-t_0\right) + \frac{2}{3}\epsilon f^2\left(t-t_0\right)^3\right) dt \\
+&= \frac{1}{3}f^2t_0^3.
+\end{align*}
+
+\BgThispage
+
+This result is in agreement with Hamilton's principle, which states that the path taken by a particle between two points in space and time is such that the action (defined as the integral of the Lagrangian over time) is minimized. The Lagrangian is defined as the difference between the kinetic and potential energies of the particle, i.e., $\mathscr{L} = \mathcal{T} - \mathcal{V}$. Therefore, the path taken by the particle is such that the integral $\displaystyle \int_{0}^{t_0} \left(\mathcal{T - V}\right)dt$ is minimized, which is exactly what we have shown above.
+
+
+\end{document}

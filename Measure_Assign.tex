@@ -1,0 +1,233 @@
+%% Preamble of the document starts here
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+\usepackage{mathrsfs}  %for cursive writting
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{ddugu.ac.in}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Assignment:Measure Theory}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape By: \href{https://github.com/akhlak919}{Akhlak Ansari}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \Large{\bf Assignment}\\ 
+        \Large{\textbf{Measure Theory}}
+        
+
+        \vspace*{1cm}
+
+        \includegraphics[scale=1]{DDU_Logo.png}
+        \vspace*{1cm}
+
+        \begin{center}
+            {\bf Department of Mathematics and Statistics\\
+        DDU Gorakhpur University, Gorakhpur(India)}
+        \end{center}
+        
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+% \vspace*{0.2cm}
+
+\section{\slshape Assignment Questions}
+
+\textcolor{red}{Instruction:} \textcolor{blue!85!yellow}{Attempt any four of the following questions -}
+
+\begin{enumerate}
+    \item Give examples of families of sets that are not an algebra or a $\sigma-\mbox{algebra}$.
+    \item Prove that each closed subset of $\mathbb{R}^d$ is a $G_{\delta}$ and each open subset of $\mathbb{R}^d$ is $F_{\sigma} - $ set.
+    \item Prove that Lebesgue outer measure on $\mathbb{R}^d$ is an outer measure, and it assigns to each $d-\mbox{dimensional}$ interval its volume.
+    \item Let $(X, \mathscr{A})$ be a measurable space, and let $A$ be a subset of $X$ that belongs to $\mathscr{A}$. For a function $f:A \to \mathbb{R}$, the conditions 
+    \begin{enumerate}[(a)]
+        \item $f$ is measurable with respect to $\mathscr{A}$,
+        \item for each open subset $U$ of $\mathbb{R}$ the set $f^{-1}(U)$ belongs to $\mathscr{A}$,
+        \item for each closed subset $C$ of $\mathbb{R}$ the set $f^{-1}(C)$ belongs to $\mathscr{A}$, and
+        \item for each Borel subset $B$ of $\mathbb{R}$ the set $f^{-1}(B)$ belongs to $\mathscr{A}$
+    \end{enumerate}
+    are equivalent.
+    \item Let $(X, \mathscr{A}, \mu)$ be a measure space.Let $(Y, \mathscr{B})$ be a measurable space and let \\
+    $f : (X, \mathscr{A}) \to (Y, \mathscr{B})$ be measurable.Let $g$ be an extended real valued $\mathscr{B}$ measurable function on $Y$ then $g$ is $\mu f^{-1}$ integrable if and only if $gof$ is $\mu-\mbox{integrable}$. If these are integrable then \[\int_Y gd(\mu f^{-1}) = \int_X gof du\]
+\end{enumerate}
+
+\pagebreak
+
+\section{\slshape Solution of Assignment Questions}
+
+\subsection{\slshape Solution of Question No. 1}
+
+Let us define $\sigma\mbox{-algebra}$; 
+
+A collection $\mathscr{A}$ of subsets of $X$ is a $\sigma\mbox{-algebra}$\footnote{The terms field and $\sigma\mbox{-field}$ are sometimes used in place of algebra and $\sigma\mbox{-algebra}$.} on $X$ If
+
+\begin{enumerate}[a)]
+    \item $X \in \mathscr{A}$,
+    \item for each set $A$ that belongs to $\mathscr{A}$, the set $A^c$ belongs to $\mathscr{A}$.
+    \item  for each infinite sequence $\left\{A_i\right\}$ of sets that belong to $\mathscr{A}$, the set $\displaystyle \bigcup_{i=1}^{\infty} A_i$ belongs to $\mathscr{A}$, and
+    \item for each infinite sequence $\left\{A_i\right\}$ of sets that belong to $\mathscr{A}$, the set $\displaystyle \bigcap_{i=1}^{\infty} A_i$ belongs to $\mathscr{A}$
+\end{enumerate}
+Thus a $\sigma\mbox{-algebra}$ on $X$ is a family of subsets of $X$ that contains $X$ and is closed under complementation, under the formation of countable unions, and under the formation of countable intersections.
+
+
+\subsubsection*{ Examples of Families of sets that are not $\sigma\mbox{-algebra}$ :}
+
+\begin{enumerate}[1)]
+    \item Let $X$ be an infinite set, and let $\mathscr{A}$ be the collection of all finite subsets of $X$.
+    Then $\mathscr{A}$ does not contain $X$ and is not closed under complementation; hence it is not an algebra (or a $\sigma\mbox{-algebra}$) on $X$.
+    \item  Let $X$ be an infinite set, and let $\mathscr{A}$ be the collection of all subsets $A$ of $X$ such that either $A$ or $A^c$ is finite. Then $\mathscr{A}$ is an algebra on $X$  but is not closed under the formation of countable unions; hence it is not a $\sigma\mbox{-algebra}$.
+    \item Let $X$ be an uncountable set, and let $\mathscr{A}$ be the collection of all countable (i.e., finite or countably infinite) subsets of $X$. Then $\mathscr{A}$ does not contain $X$ and is not closed under complementation; hence it is not an algebra.
+    \item Let $L$ be the collection of all finite disjoint unions of all intervals of the form:
+
+    $(-\infty, a], (a, b], (b, \infty), \emptyset, \mathbb{R}$.
+    
+    Then $L$ is an algebra over $\mathbb{R}$, but not a $\sigma\mbox{-algebra}$ because union of sets $\displaystyle \left\{(0,\frac{i-1}{i}]\right\}$ for all $\displaystyle i \ge 1 = (0, 1) \notin L $.
+\end{enumerate}
+
+\subsection{\slshape Solution of Question No. 2}
+
+Suppose that $F$ is a closed subset of $\mathbb{R}^d$. We need to construct a sequence
+$\left\{U_n\right\}$ of open subsets of $\mathbb{R}^d$ such that $F = \cap_n U_n$. For this define $U_n$ by
+\[U_n = \left\{x \in \mathbb{R}^d : \norm*{x-y} < \frac{1}{n}\hspace*{1cm} \mbox{for some $y$ in $F$}\right\}\]
+
+(Note that $U_n$ is empty if $F$ is empty.) It is clear that each $U_n$ is open and that $F \subseteq \cap_n U_n$. The reverse inclusion follows from the fact that $F$ is closed (note that each point in $\cap_n U_n$ is the limit of a sequence of points in $F$). Hence each closed subset of $\mathbb{R}^d$ is a $G_\delta$.\\[2mm]
+If $U$ is open, then $U^c$ is closed and so is a $G_\delta$. Thus there is a sequence $\left\{U_n\right\}$ of open sets such that $U^c = \cap_n U_n$. The sets $U^c_n$ are then closed, and $U = \cup_n U^c_n$; hence $U$ is an $F_\sigma$.
+
+
+\subsection{\slshape Solution of Question No. 3}
+
+We begin by verifying that $m^*$ is an outer measure. The relation $m^*(\emptyset) = 0$ holds, since for each positive number $\epsilon$ there is a sequence $\left\{(a_i,b_i)\right\}$ of open intervals (whose union necessarily includes $\emptyset$) such that $\sum_{i}^{}(b_i - a_i) < \epsilon$. For the monotonicity of $m^*$, note that if $A \subseteq B$, then each sequence of open intervals that covers $B$ also covers $A$, and so $m^*(A) \leq m^*(B)$. Now consider the countable subadditivity of $m^*$. Let $\left\{A_n\right\}_{n=1}^{\infty}$
+be an arbitrary sequence of subsets of $\mathbb{R}$.
+If $\sum_{n}^{}m^*(A_n)=+\infty$, then $m^*(\cup_{n} A_n) \leq \sum_{n}^{}m^*(A_n)$ certainly holds. 
+
+So suppose that $\sum_{n}^{}m^*(A_n) < +\infty$, and let $\epsilon$ be an arbitrary positive number. For each $n$ choose a
+sequence $\left\{(a_{n,i},b_{n,i})\right\}_{i=1}^{\infty}$ that covers $A_n$ and satisfies
+
+\[\sum_{i=1}^{\infty}\left(b_{n,i}, a_{n,i}\right) < m^*(A_n) + \frac{\epsilon}{2^n}.\]
+
+If we combine these sequences into one sequence $\left\{(a_j,b_j)\right\}$, then the combined sequence satisfies
+
+\[
+    \cup_n A_n \subseteq U_j(a_j, b_j)
+\]
+and
+\[
+    \sum_{j}^{}\left(b_j - a_j\right) < \sum_{n}^{}\left(m^*(A_n) + \frac{\epsilon}{2^n}\right) = \sum_{n}^{}m^*(A_n) + \epsilon
+\]
+
+These relations, together with the fact that $\epsilon$ is arbitrary, imply that $\displaystyle m^*(\cup_n A_n) \leq \sum_{n}^{}m^*(A_n)$. Thus $m^*$ is an outer measure.\\[1mm]
+
+Now, Suppose that if $K$ is a compact $d\mbox{-dimensional}$
+interval and if ${\left\{\mathbb{R}_i\right\}}_{i=1}^{\infty}$ is a sequence of bounded and open $d\mbox{-dimensional}$ intervals for which $\displaystyle K \subseteq \cup_{n=1}^{\infty} \mathbb{R}_i$, then there is a positive integer $n$ such that $\displaystyle K \subseteq \cup_{n=1}^{\infty} \mathbb{R}_i$, and $K$ can be decomposed into a finite collection $\left\{K_j\right\}$ of $d\mbox{-dimensional}$ intervals that overlap only on their boundaries and are such that for each $j$ the interior of $K_j$ is included in some $\mathbb{R}_i$ (where $i \leq n$). From this it follows that
+
+\begin{align*}
+    \boxed{\mbox{vol}(K) = \sum_{j}^{}\mbox{vol}(K_j) \leq \sum_{i}^{}\mbox{vol}(\mathbb{R}_i)}
+\end{align*}
+
+and hence that $\mbox{vol}(K) \leq m^*(K)$.
+
+Overall, we shown that "Lebesgue outer measure on $\mathbb{R}^d$ is an outer measure, and it assigns to each $d\mbox{-dimensional}$ interval its volume".
+
+
+\subsection{\slshape Solution of Question No. 4}
+Let $\mathscr{F} = \left\{B \subseteq \mathbb{R} : f^{-1}(B) \in \mathscr{A} \right\}$. Then the fact that $f^{-1}(\mathbb{R}) = A$ and the identities
+\[f^{-1}(B^c) = A - f^{-1}(B)\]
+and
+\[f^{-1}\left(\bigcup_{n} B_n\right) = \bigcup_{n} f^{-1}(B_n)\]
+
+imply that $\mathscr{F}$ is a $\sigma\mbox{-algebra}$ on $\mathbb{R}$. To require that $f$ be measurable is to require that 
+$\mathscr{F}$ contain all the intervals of the form $(-\infty,b]$ or equivalently (since $\mathscr{F}$ is a $\sigma\mbox{-algebra}$) to require that $\mathscr{F}$ include the $\sigma\mbox{-algebra}$ on $\mathbb{R}$ generated by these intervals.
+Since the $\sigma\mbox{-algebra}$ generated by these intervals is the $\sigma\mbox{-algebra}$ of Borel subsets of $\mathbb{R}$ so it is obvious, conditions $(a)$ and $(d)$ are equivalent. However the $\sigma\mbox{-algebra}$ of Borel subsets of $\mathbb{R}$ is also generated by the collection of all open subsets of $\mathbb{R}$ and by the collection of all closed subsets of $\mathbb{R}$, and so conditions $(b)$ and $(c)$ are equivalent to the others.
+
+\newpage
+
+\section{References}
+
+\begin{itemize}
+    \item \slshape Measure Theory : Donald L. Cohn(Birkhauser edition)
+    \item \slshape Measure, Integration \& Real Analysis : Sheldon Axler(Springer edition)
+    \item \slshape JBH (https://math.stackexchange.com/users/91349/jbh), Example of an algebra which is not a $\sigma\mbox{-algebra}$., URL (version: 2013-08-22): https://math.stackexchange.com/q/473549
+    \item \slshape For document related info visit \url{https://github.com/akhlak919/LaTeX_Stuffs}
+\end{itemize}
+\end{document}

@@ -1,0 +1,326 @@
+%% Preamble of the document starts here
+
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=0.7in, right=0.7in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{ddugu.ac.in}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Assignment : Hilbert Spaces}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape By: \href{https://github.com/akhlak919}{Akhlak Ansari}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        \Large{\textbf{\underline{Assignment}}}\\ 
+        \Large{\bf Hilbert Spaces}
+        \vspace*{1cm}
+        
+        \href{ddugu.ac.in}{\includegraphics[scale=1]{DDU_Logo.png}}
+
+        \Large{\bf Department of Mathematics and Statistics}\\
+        \Large{\bf DDU Gorakhpur University, Gorakhpur}\\
+        \Large{\bf (India)}
+
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+\vspace*{1cm}
+
+       
+    \begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black,title=\begin{center}
+        \section{ Assignment Problems}
+    \end{center}]
+        \subsection{Theorem(5.6.8)}
+           Any two complete orthonormal sets in Hilbert Space $\mathcal{H}$ have the same cardinal number.
+        \subsection{Theorem(5.6.10)}
+           A Hilbert Space $\mathcal{H}$ is separable if and only if it has a countable orthonormal basis.   
+        \subsection{Problem(5.5.3(2))}
+           In the inner product space $\Phi$ \footnote{where $\Phi$ is the inner product space defined as, $\displaystyle{\langle x, y \rangle = \sum_{i}^{}\xi_i \overline{\eta_{i}}} \hspace*{1.9cm} \forall\  x = \left(\xi_1, \xi_2, \cdots \cdots \right)\ \mbox{and}\ y = \left(\eta_1, \eta_2, \cdots \cdots\right)$}, the sequence $\left\{e_n\right\}$, where $e_n = \left\{\delta_{n_{j}}\right\}_{j'}$ is an orthonormal sequence.   
+        \subsection{Problem(5.5.3(3))}
+           In the Hilbert Space $\ell^2$\footnote{where $\ell^2$ is the Hilbert Space defined as, $\displaystyle{\langle x, y \rangle = \sum_{i=1}^{\infty}\xi_i \overline{\eta_{i}}} \hspace*{1.9cm} \forall\  x = \left\{\xi_i \right\}\ \mbox{and}\  y = \left\{\eta_i \right\}$\\ and equipped with the induced norm, \[\norm*{x} = \left(\langle x, x \rangle\right)^{1/2} = \left(\sum_{i=1}^{\infty} \abs*{\xi_1}^2\right)^{1/2}; \hspace*{1cm} x = \left\{\xi_i\right\}\ \in \ell^2\]} the sequence $\left\{e_n\right\}$, where $e_n = \left\{\delta_{n_{j}}\right\}_{j'}$ is an orthonormal sequence.   
+    \end{tcolorbox}
+
+    \pagebreak
+    
+    % \vspace*{1cm}
+
+    
+    \section{Solutions of the Assignment Problems}
+    
+    \subsection{Solution : Proof of Theorem(5.6.8)}
+
+
+    
+
+        Let $H$ be a Hilbert space, and let $\{e_i\}_{i\in I}$ and $\{f_j\}_{j\in J}$ be two complete orthonormal sets\footnote{A complete orthonormal set in a Hilbert space is a set of vectors that are pairwise orthogonal and normalized, and which form a basis for the entire Hilbert space. This means that any vector in the Hilbert space can be expressed as a unique linear combination of the vectors in the set, and the coefficients of this combination can be calculated using the inner product between the vector and the individual basis vectors. The most well-known example of a complete orthonormal set is the set of Fourier basis functions, which form a basis for the space of square-integrable functions on the real line.} in $H$.
+
+        Since $\{e_i\}_{i\in I}$ is complete, it is an orthonormal basis for $H$, which means that every element $x\in H$ can be expressed as a linear combination of the $e_i$'s, i.e.,
+
+        \[x=\sum_{i\in I}\langle x,e_i\rangle e_i.\]
+
+        Similarly, since $\{f_j\}_{j\in J}$ is complete, it is also an orthonormal basis for $H$, so every element $x\in H$ can also be expressed as
+
+        \[x=\sum_{j\in J}\langle x,f_j\rangle f_j.\]
+
+        Now, we can equate these two expressions for $x$:
+
+       \[\sum_{i\in I}\langle x,e_i\rangle e_i=\sum_{j\in J}\langle x,f_j\rangle f_j.\]
+
+        Taking the inner product of both sides with $e_k$ for some $k\in I$, we have
+
+        \[\langle x,e_k\rangle=\sum_{j\in J}\langle x,f_j\rangle\langle f_j,e_k\rangle,\]
+
+        since $\{f_j\}$ is orthonormal. But since $\{e_i\}$ is orthonormal as well, we have $\langle f_j,e_k\rangle=\delta_{jk}$ (the Kronecker delta), so we can simplify this to
+
+        \[\langle x,e_k\rangle=\langle x,f_k\rangle.\]
+
+        This means that the coefficients $\{\langle x,e_i\rangle\}_{i\in I}$ and $\{\langle x,f_j\rangle\}_{j\in J}$ are the same for every $x\in H$, and hence they must have the same cardinality (since they both form a basis for $H$). Therefore, $\{e_i\}$ and $\{f_j\}$ have the same cardinality.
+
+    \subsection{Solution : Proof of Theorem(5.6.10)}
+
+        To prove this theorem we need have to show both the dirrections of the statement, to do so 
+
+        First, Suppose $\mathcal{H}$ is separable, then there exists a countable dense subset $\{x_n\}$ of $\mathcal{H}$. Define the following sets:
+
+        $$S_k = \text{span}\{x_1, x_2, \ldots, x_k\}, \qquad k \geq 1.$$
+
+        Since $\{x_n\}$ is dense in $\mathcal{H}$, we have $\bigcup_{k \geq 1} S_k$ is dense in $\mathcal{H}$. 
+
+        Now, for each $k \geq 1$, we use the Gram-Schmidt process to obtain an orthonormal basis $\{e_{k,n}\}_{n=1}^k$ for $S_k$. Then, $\{e_{k,n}\}_{k,n \geq 1}$ is a countable orthonormal basis for $\mathcal{H}$.
+
+        Indeed, given any $x \in \mathcal{H}$, we can find a sequence $\{x_n\}$ in $\bigcup_{k \geq 1} S_k$ such that $x_n \to x$. Then, we can find $k$ such that $x_n \in S_k$ for all $n$ large enough. Using the fact that $\{e_{k,n}\}$ is an orthonormal basis for $S_k$, we can write $x_n = \sum_{j=1}^k c_{k,j,n} e_{k,j}$, where $c_{k,j,n} \in \mathbb{C}$. By the Cauchy-Schwarz inequality, we have
+
+        $$\sum_{j=1}^k |c_{k,j,n}|^2 \leq \sum_{j=1}^k ||x_n||^2 = ||x_n||^2.$$ 
+
+        Since $\{x_n\}$ is a Cauchy sequence, we have $\sum_{j=1}^k |c_{k,j,n}|^2 \to ||x||^2$ as $n \to \infty$. Thus, we have
+
+        $$x = \sum_{j=1}^k c_{k,j,n} e_{k,j}$$
+
+        for some sequence of coefficients $c_{k,j,n}$, which shows that $\{e_{k,n}\}$ is a basis for $\mathcal{H}$.
+
+        Conversely, Suppose $\mathcal{H}$ has a countable orthonormal basis $\{e_n\}$. Define the following set:
+
+        $$D = \{c_1 e_1 + c_2 e_2 + \cdots + c_n e_n : n \in \mathbb{N}, c_i \in \mathbb{Q} + i\mathbb{Q}\}.$$
+
+       That is, $D$ is the set of all finite linear combinations of basis vectors with rational coefficients. We claim that $D$ is a countable dense subset of $\mathcal{H}$. 
+
+       To see that $D$ is countable, note that the set of all finite sequences of rational numbers is countable, and therefore the set of all finite linear combinations of basis vectors with rational coefficients is also countable. 
+
+       To see that $D$ is dense, let $x \in \mathcal{H}$ and $\epsilon > 0$ be arbitrary.  
+
+       Since $\{e_n\}$ is a basis for $\mathcal{H}$, we can write $x$ as an infinite linear combination of the $e_n$:
+       
+       $$x = \sum_{n=1}^\infty c_n e_n,$$
+       
+       where the coefficients $c_n$ are uniquely determined by $x$. 
+       
+       Now, choose $N$ such that 
+       
+       $$\left\|\sum_{n=N+1}^\infty c_n e_n\right\| < \frac{\epsilon}{2}.$$ 
+       
+       Since $\mathbb{Q} + i\mathbb{Q}$ is dense in $\mathbb{C}$, we can find rational numbers $a_n, b_n \in \mathbb{Q}$ such that $|a_n - \text{Re}(c_n)| < \frac{\epsilon}{2^{n+2}}$ and $|b_n - \text{Im}(c_n)| < \frac{\epsilon}{2^{n+2}}$ for all $n$. Then, define 
+       
+       $$y = \sum_{n=1}^N a_n e_n + i\sum_{n=1}^N b_n e_n.$$ 
+       
+       Since $y$ is a finite linear combination of basis vectors with rational coefficients, $y \in D$. 
+       
+       Now, we have 
+       
+       \begin{align*}
+       \|x-y\| &= \left\|\sum_{n=N+1}^\infty c_n e_n - \sum_{n=1}^N (a_n e_n + ib_n e_n)\right\| \\
+       &= \left\|\sum_{n=N+1}^\infty c_n e_n - \sum_{n=1}^N a_n e_n - i\sum_{n=1}^N b_n e_n\right\| \\
+       &\leq \left\|\sum_{n=N+1}^\infty c_n e_n\right\| + \left\|\sum_{n=1}^N (a_n e_n + ib_n e_n)\right\| \\
+       &< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+       \end{align*}
+       
+       Thus, $D$ is a countable\footnote{A countable orthonormal basis for a Hilbert space $\mathcal{H}$ is a countable set ${e_n}$ of vectors in $\mathcal{H}$ such that every vector in $\mathcal{H}$ can be expressed as a unique linear combination of the vectors in ${e_n}$, and the set ${e_n}$ is orthonormal, meaning that $\langle e_n, e_m\rangle = \delta_{n,m}$, where $\delta_{n,m}$ is the Kronecker delta.} dense subset of $\mathcal{H}$, which proves that $\mathcal{H}$ is separable\footnote{A Hilbert space $\mathcal{H}$ is said to be separable if there exists a countable dense subset of $\mathcal{H}$. In other words, there exists a countable set ${x_n}$ of vectors in $\mathcal{H}$ such that every vector in $\mathcal{H}$ can be approximated arbitrarily closely by a linear combination of the vectors in ${x_n}$.}. 
+
+       Therefore, we have shown that a Hilbert space $\mathcal{H}$ is separable if and only if it has a countable orthonormal basis.
+
+       \newpage
+
+
+    
+
+
+
+       
+
+% To prove this theorem, we need to show two things:
+
+% 1. If $\mathcal{H}$ is separable, then it has a countable orthonormal basis.
+% 2. If $\mathcal{H}$ has a countable orthonormal basis, then it is separable.
+
+% First, we will prove the first statement. Assume that $\mathcal{H}$ is separable, which means that there exists a countable dense subset $D$ of $\mathcal{H}$. Let $\{x_n\}_{n=1}^\infty$ be a countable subset of $D$. We will construct an orthonormal basis $\{e_n\}_{n=1}^\infty$ for $\mathcal{H}$ using the Gram-Schmidt process.
+
+% Start by setting $e_1 = x_1/\|x_1\|$. For $n\geq 2$, define $y_n = x_n - \sum_{k=1}^{n-1} \langle x_n, e_k\rangle e_k$. Since $D$ is dense in $\mathcal{H}$, we can find a sequence $\{d_n\}_{n=1}^\infty$ in $D$ such that $\|y_n - d_n\| < 1/n$. Define $z_n = y_n/\|y_n\|$. By construction, $\langle z_n, z_m\rangle = 0$ for $n\neq m$ and $\mathrm{span}\{e_1,\ldots, e_n\} = \mathrm{span}\{z_1,\ldots, z_n\}$.
+
+% Thus, the set $\{e_n\}_{n=1}^\infty$ is an orthonormal basis for $\mathcal{H}$, and it is countable because it is indexed by $\mathbb{N}$. This completes the proof of the first statement.
+
+% Now we will prove the second statement. Assume that $\mathcal{H}$ has a countable orthonormal basis $\{e_n\}_{n=1}^\infty$. We will construct a countable dense subset of $\mathcal{H}$.
+
+% For each $n\in \mathbb{N}$, let $F_n$ be the finite-dimensional subspace spanned by $\{e_1,\ldots, e_n\}$. Since $F_n$ is finite-dimensional, it is separable, which means that there exists a countable dense subset $D_n$ of $F_n$. Define $D = \bigcup_{n=1}^\infty D_n$. We claim that $D$ is a countable dense subset of $\mathcal{H}$.
+
+% To see that $D$ is countable, note that it is the countable union of countable sets.
+
+% To see that $D$ is dense in $\mathcal{H}$, let $x\in \mathcal{H}$ and $\epsilon > 0$ be given. Since $\{e_n\}_{n=1}^\infty$ is an orthonormal basis for $\mathcal{H}$, we can write $x = \sum_{n=1}^\infty c_n e_n$ for some complex coefficients $c_n$. Choose $N$ large enough so that $\sum_{n=N+1}^\infty |c_n|^2 < \epsilon^2/4$. Then we have
+% \begin{align*}
+% \left\| x - \sum_{n=1}^N c_n d_n \right\|^2 &= \left\| \sum_{n=N+1}^\infty c_n e_n \right\|^2 \\
+% &= \sum_{n=N+1}^\infty |c_n|^2 \\
+% &< \epsilon^2/4.
+% \end{align*}
+
+% Since $\{e_1,\ldots, e_N\}$ is a finite set, we can choose $d_1,\ldots, d_N\in D$ such that $\|e_n - d_n\| < \epsilon/(2\sqrt{N})$ for all $n=1,\ldots, N$. Then we have
+% \begin{align*}
+% \left\| x - \sum_{n=1}^N c_n d_n \right\| &\leq \left\| \sum_{n=1}^N c_n (e_n - d_n) \right\| + \left\| \sum_{n=N+1}^\infty c_n e_n \right\| \\
+% &\leq \sum_{n=1}^N |c_n| \|e_n - d_n\| + \sqrt{\sum_{n=N+1}^\infty |c_n|^2} \\
+% &< \epsilon/2 + \epsilon/2 = \epsilon.
+% \end{align*}
+
+% This shows that $D$ is dense in $\mathcal{H}$, and hence $\mathcal{H}$ is separable.
+
+% Therefore, we have shown both directions of the theorem, and the proof is complete.
+    \subsection{Solution : Problem(5.5.3(2))}
+        We need to show that the sequence $\{e_n\}$ defined by $e_n = \{\delta_{n_j}\}_{j'}$ is an orthonormal sequence in the inner product space $\Phi$, where $\delta_{n_j}$ is the Kronecker delta function, i.e., $\delta_{n_j} = 1$ if $n=j$ and $\delta_{n_j} = 0$ otherwise.
+
+        To show that $\{e_n\}$ is an orthonormal sequence, we need to show that for all $m,n$, we have $\langle e_m, e_n\rangle = \delta_{m,n}$, where $\delta_{m,n}$ is the Kronecker delta function.
+        
+        First, let's consider the case when $m=n$. Then we have
+        \begin{align*}
+        \langle e_m, e_m\rangle &= \sum_{j'} \delta_{m_j} \overline{\delta_{m_j}} \\
+        &= \sum_{j'} |\delta_{m_j}|^2 \\
+        &= \sum_{j'} \delta_{m_j} \\
+        &= 1,
+        \end{align*}
+        since there is only one $j$ such that $\delta_{m_j} = 1$, namely $j=m$, and all other terms are zero.
+        
+        Next, let's consider the case when $m\neq n$. Then we have
+        \begin{align*}
+        \langle e_m, e_n\rangle &= \sum_{j'} \delta_{m_j} \overline{\delta_{n_j}} \\
+        &= \sum_{j'} \delta_{m_j} \delta_{n_j}^* \\
+        &= \delta_{m,n} \sum_{j'} \delta_{m_j} \\
+        &= 0,
+        \end{align*}
+        since if $m\neq n$, then there is no $j$ such that both $\delta_{m_j}$ and $\delta_{n_j}$ are equal to $1$, and thus the sum evaluates to zero.
+        
+        Therefore, we have shown that $\{e_n\}$ is an orthonormal sequence in inner product space $\Phi$\footnote{where $\Phi$ is the inner product space defined as, $\displaystyle{\langle x, y \rangle = \sum_{i}^{}\xi_i \overline{\eta_{i}}} \hspace*{1.9cm} \forall\  x = \left(\xi_1, \xi_2, \cdots \cdots \right)\ \mbox{and}\ y = \left(\eta_1, \eta_2, \cdots \cdots\right)$}.
+
+        \newpage
+
+    \subsection{Solution : Problem(5.5.3(3))}
+
+        We need to show that the sequence $\{e_n\}$ defined by $e_n = \{\delta_{n_j}\}_{j'}$ is an orthonormal sequence in the Hilbert space $\ell^2$, where $\delta_{n_j}$ is the Kronecker delta function, i.e., $\delta_{n_j} = 1$ if $n=j$ and $\delta_{n_j} = 0$ otherwise.
+
+        To show that $\{e_n\}$ is an orthonormal sequence, we need to show that for all $m,n$, we have $\langle e_m, e_n\rangle = \delta_{m,n}$, where $\delta_{m,n}$ is the Kronecker delta function.
+        
+        First, let's consider the case when $m=n$. Then we have
+        \begin{align*}
+        \langle e_m, e_m\rangle &= \sum_{j'} \delta_{m_j} \overline{\delta_{m_j}} \\
+        &= \sum_{j'} |\delta_{m_j}|^2 \\
+        &= \sum_{j'} \delta_{m_j} \\
+        &= 1,
+        \end{align*}
+        since there is only one $j$ such that $\delta_{m_j} = 1$, namely $j=m$, and all other terms are zero.
+        
+        Next, let's consider the case when $m\neq n$. Then we have
+        \begin{align*}
+        \langle e_m, e_n\rangle &= \sum_{j'} \delta_{m_j} \overline{\delta_{n_j}} \\
+        &= \sum_{j'} \delta_{m_j} \delta_{n_j}^* \\
+        &= \delta_{m,n} \sum_{j'} \delta_{m_j} \\
+        &= 0,
+        \end{align*}
+        since if $m\neq n$, then there is no $j$ such that both $\delta_{m_j}$ and $\delta_{n_j}$ are equal to $1$, and thus the sum evaluates to zero.
+        
+        Therefore, we have shown that $\{e_n\}$ is an orthonormal sequence in $\ell^2$\footnote{where $\ell^2$ is the Hilbert Space defined as, $\displaystyle{\langle x, y \rangle = \sum_{i=1}^{\infty}\xi_i \overline{\eta_{i}}} \hspace*{1.9cm} \forall\  x = \left\{\xi_i \right\}\ \mbox{and}\  y = \left\{\eta_i \right\}$\\ and equipped with the induced norm, \[\norm*{x} = \left(\langle x, x \rangle\right)^{1/2} = \left(\sum_{i=1}^{\infty} \abs*{\xi_1}^2\right)^{1/2}; \hspace*{1cm} x = \left\{\xi_i\right\}\ \in \ell^2\]}.
+
+\section{References}
+
+\begin{itemize}
+    \item \slshape Linear Algebra Done Right : Sheldon Axler (Springer edition)
+    \item \slshape Functional Analysis : J N Kapoor, OM P Ahuja
+    \item \slshape For document related info visit \url{https://github.com/akhlak919/LaTeX_Stuffs}
+\end{itemize}
+
+
+\end{document}

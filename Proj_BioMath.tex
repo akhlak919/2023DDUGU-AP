@@ -1,0 +1,324 @@
+\documentclass[12pt, a4paper]{article} %%doctype
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} %%For formatting page
+\usepackage{amsfonts, amsmath, amssymb, amsthm} %%For Math Symbols
+\usepackage[none]{hyphenat}  %%Disable/Enable hypenation
+%\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}  %%For header and footer
+\usepackage{wrapfig}
+\usepackage{graphicx} %% Inserting pics from pc
+\graphicspath{C:\Users\user\Desktop\Proj_2023_LATeX 4th Sem}
+\usepackage{float} %%Customizing the position of tables
+\usepackage[nottoc, notlot, notlof]{tocbibind} %%tableofcontents
+\usepackage{hyperref}  %% for referencing
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black,
+    pdftitle={How to write a math project}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{enumerate}
+\usepackage{physics}
+\usepackage{mathrsfs}  %for cursive writting
+%\usepackage{romannum}
+\usepackage{tikz, tcolorbox}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{lipsum}
+\usepackage{tabularx}
+
+%%block of code optional
+% Define the inner product command
+% \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% % Define the theorem environment with a colored background
+% \newtheoremstyle{colored}
+%   {}{}{\itshape}{}{\bfseries}{.}{ }{\colorbox{blue!10}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+
+% \theoremstyle{colored}
+% \newtheorem{thm}{Theorem}[section]
+%%block of code optional ends here
+
+
+
+
+
+\pagestyle{fancy}    %%Styling the page as your wish
+\fancyhead{}  %%Empty entity shows to remove the default header 
+\fancyfoot{}   %%Empty entity shows to remove the default footer
+
+%% Use this command to add header on left side.The optional argument [L] stands for Left
+\fancyhead[L]{\href{ddugu.ac.in}{\includegraphics[scale=0.14]{DDU_Logo.png}}}
+
+%% Use this command to add header on right side.The optional argument [R] stands for Right
+\fancyhead[R]{\slshape Project : Bio-Mathematics}
+
+%%Use this command to add footer, [C] stands for page# shown in center
+\fancyfoot[L]{\slshape By: \href{https://github.com/akhlak919}{Akhlak Ansari}\\ \url{https://github.com/akhlak919}}
+\fancyfoot[R]{\bf \thepage}
+%\fancyfoot[C]{\thepage}
+
+%%Remove horizontal line in the header
+%\renewcommand{\headrulewidth}{0pt}
+
+%%Remove horizontal line in the footer
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%Indentation related commands
+\parindent0px  %% Make the paragraph indentation to zero
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\F}{\mathbb{F}}
+\usepackage[pages=some]{background}
+\backgroundsetup{scale=2, angle=0, opacity=0.1, contents={\includegraphics[]{DDU_Logo.png}}}
+
+
+
+
+%%Body of the document starts here
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \Large{\bf PROJECT}\\ 
+        \Large{\textbf{Bio-Mathematics}}
+        
+
+        \vspace*{1cm}
+
+        \includegraphics[scale=1]{DDU_Logo.png}
+        \vspace*{1cm}
+
+        \begin{center}
+            {\bf Department of Mathematics and Statistics\\
+        DDU Gorakhpur University, Gorakhpur (India)}
+        \end{center}
+        
+        \vfill %% automatic filling the all spces on the page
+
+        {\tt \today}\\
+    \end{center}
+\end{titlepage}
+
+\BgThispage
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+\vspace*{0.2cm}
+
+\BgThispage
+\begin{center}
+    \section*{\slshape Diffusion in Artificial Kidney(Hemodialyser)\\ and types of Hemodialyser}
+\end{center}
+
+\section{Introduction}
+Diffusion is the movement of molecules from an area of high concentration to an area of low concentration. In an artificial kidney, diffusion is used to remove waste products from the blood. The blood flows through a semi-permeable membrane, which allows small molecules to pass through but not larger molecules. The waste products in the blood are then dissolved in a solution called dialysate, which flows on the other side of the membrane. The waste products then diffuse from the blood into the dialysate, where they are removed from the body.
+
+Diffusion plays a vital role in the functioning of an artificial kidney, specifically in the process of hemodialysis. Hemodialysis is a life-sustaining treatment for individuals with kidney failure, also known as end-stage renal disease (ESRD). This therapy involves the removal of waste products, excess fluids, and toxins from the blood that the kidneys can no longer effectively eliminate. The diffusion process within an artificial kidney, known as a hemodialyzer, allows for the efficient exchange of substances across a semipermeable membrane.
+
+The artificial kidney, or hemodialyzer, mimics the essential functions of the human kidney by utilizing the principle of diffusion. Diffusion refers to the movement of solutes, such as waste products and electrolytes, from an area of higher concentration to an area of lower concentration. In the context of hemodialysis, blood is pumped from the patient's body into the hemodialyzer, where it comes into contact with a semipermeable membrane. This membrane allows small solutes, such as urea, creatinine, and electrolytes, to pass through while preventing larger blood cells and proteins from crossing over.
+
+Also, there are different types of hemodialyzers available, each designed to optimize the diffusion process and improve the efficiency of waste removal during hemodialysis. Some common types include : Cellulose-based Hemodialyzers, Synthetic Membrane Hemodialyzers, High-Flux Hemodialyzers, Low-Flux Hemodialyzers, Hemodiafiltration (HDF) etc.
+
+\section{Prerequsite}
+
+There are some essential terms that we need have to remember before studying the concept of Hemodialyser :
+
+
+
+\subsection{Kidney}
+% \BgThispage
+A kidney is a bean-shaped organ that is located in the upper abdomen, one on each side of the spine. The kidneys are responsible for filtering the blood and removing waste products, such as urea and creatinine. They also help to regulate blood pressure and blood sugar levels.
+
+The kidneys are made up of millions of tiny units called nephrons. Each nephron has a glomerulus, which is a network of capillaries, and a tubule. The glomerulus filters the blood, and the tubule removes waste products and returns important substances to the blood.
+
+\begin{center}
+    \def\svgwidth{5cm}
+    \input{KidneyStructures_PioM.eps_tex}
+\end{center}
+\begin{center}
+    Figure 1 : Kidney
+\end{center}
+
+The kidneys work together to produce urine. Urine is a waste product that is made up of water, waste products, and other substances. The kidneys filter about 125 milliliters of blood per minute, which is about 2,000 liters of blood per day. Only about 1 to 2 liters of urine is produced each day.
+
+
+\subsection{Functions of Kidney}
+The kidneys are important organs that help to keep the body healthy. They play a role in many important functions, including : 
+
+\begin{itemize}
+    \item {\bf Filtration and Waste Removal:} The primary function of the kidneys is to filter the blood and remove waste products, toxins, and excess fluids from the body. They filter around 120 to 150 liters of blood per day, producing approximately 1 to 2 liters of urine.
+    
+    \item {\bf Regulation of Fluid and Electrolyte Balance:} The kidneys help maintain the balance of water and electrolytes (such as sodium, potassium, and calcium) in the body. They adjust the amount of water reabsorbed and excreted, depending on the body's hydration status, to maintain the optimal fluid balance.
+    
+    \item {\bf Acid-Base Balance:} The kidneys play a crucial role in regulating the body's pH balance by controlling the excretion and reabsorption of hydrogen ions and bicarbonate ions. They help maintain the blood's acid-base balance within a narrow range to ensure proper cellular function.
+    
+    \item {\bf Blood Pressure Regulation:} The kidneys contribute to regulating blood pressure by producing a hormone called renin. Renin helps control blood volume and vasoconstriction, influencing the body's overall blood pressure.
+    
+    \item {\bf Production of Hormones:} The kidneys are involved in the production of several important hormones. One such hormone is erythropoietin, which stimulates the production of red blood cells in the bone marrow. The kidneys also play a role in activating vitamin D, necessary for maintaining bone health and regulating calcium levels in the body.
+    
+    \item {\bf Detoxification: }The kidneys assist in the detoxification process by eliminating drugs, metabolic by-products, and other harmful substances from the bloodstream.
+\end{itemize}
+
+
+\BgThispage
+Kidney disease is a condition that affects the kidneys. Kidney disease can be caused by a number of factors, including high blood pressure, diabetes, and kidney stones. Kidney disease can lead to kidney failure, which is a serious condition that requires dialysis or a kidney transplant.
+
+\subsection{Diffusion}
+
+Diffusion is the movement of molecules from a region of higher concentration to a region of lower concentration. It is a passive process, meaning that it does not require energy input. Diffusion is driven by the difference in concentration between the two regions. The higher the concentration difference, the faster the diffusion will occur.
+
+Diffusion is a very important process in nature. It is involved in many biological processes, such as respiration, photosynthesis, and cell growth.
+
+\subsection{Osmosis}
+
+Osmosis is a specific type of diffusion that occurs when there is a selective movement of solvent molecules, typically water, across a semipermeable membrane from an area of lower solute concentration to an area of higher solute concentration. In osmosis, the movement of water is driven by the concentration gradient of solute particles.
+
+The semipermeable membrane used in osmosis allows the passage of solvent molecules (usually water) but restricts the movement of solute particles. This membrane has small pores or is selectively permeable, enabling water molecules to pass through while blocking the passage of larger solute particles.
+
+The direction of water flow in osmosis depends on the relative concentrations of solute on either side of the membrane. Water moves from an area of lower solute concentration, where there is a higher water concentration (or lower solute concentration), to an area of higher solute concentration, where there is a lower water concentration (or higher solute concentration). This movement of water continues until the concentration of solute becomes equal on both sides of the membrane or until the hydrostatic pressure exerted by the water column (osmotic pressure) is balanced by an opposing force.
+
+Osmosis plays a crucial role in various biological processes. For instance, it is involved in the absorption of water by plant roots, the regulation of water balance in animal cells, the movement of water in the nephrons of the kidney during urine formation, and the preservation of red blood cells in isotonic solutions.
+
+\subsection{Malfunctioning of Kidney}
+\BgThispage
+
+Malfunctioning of the kidney refers to a condition where the kidneys are unable to perform their normal functions adequately. There are various factors and conditions that can lead to kidney malfunction, including acute or chronic diseases, infections, structural abnormalities, and certain medications or toxins.
+
+Some common types of kidney malfunction include:
+
+\begin{enumerate}[a)]
+    \item {\bf Acute Kidney Injury (AKI):} AKI occurs suddenly and is often caused by factors such as severe dehydration, low blood flow to the kidneys, kidney infections, certain medications, or urinary tract obstructions. It is characterized by a rapid decline in kidney function, resulting in the accumulation of waste products and toxins in the body.
+    \item {\bf Chronic Kidney Disease (CKD):} CKD is a progressive condition where the kidneys gradually lose their ability to function over time. It can be caused by various underlying conditions, such as high blood pressure, diabetes, autoimmune diseases, polycystic kidney disease, or long-term use of certain medications. CKD leads to a gradual decline in kidney function and can ultimately result in kidney failure if left untreated.
+    \item {\bf Kidney Infections:} Infections of the kidneys, known as pyelonephritis, can cause inflammation and damage to the kidney tissue. These infections are often caused by bacteria entering the urinary tract and ascending to the kidneys. Symptoms may include fever, flank pain, frequent urination, and blood in the urine.
+    \item {\bf Kidney Stones:} Kidney stones are hard mineral and salt deposits that form in the kidneys. They can cause severe pain and discomfort, obstruct urine flow, and potentially lead to kidney damage or infection if not treated promptly.
+    \item {\bf Polycystic Kidney Disease (PKD):} PKD is an inherited condition characterized by the growth of numerous fluid-filled cysts in the kidneys. Over time, these cysts can enlarge and impair kidney function.
+\end{enumerate}
+
+The malfunctioning of the kidneys can have various consequences on the body, including the buildup of waste products and toxins, electrolyte imbalances, fluid retention, high blood pressure, anemia, bone problems, and impaired production of hormones necessary for red blood cell production and calcium regulation.
+
+
+
+\BgThispage
+
+\pagebreak
+
+\section{Diffusion in Artificial Kidney(Hemodialyzer)}
+
+\subsection{Hemodialysis \& Hemodialyzer}
+
+\textbf{{\slshape Hemodialysis}} is a treatment to filter wastes and water from your blood, as your kidneys did when they were healthy. Hemodialysis helps control blood pressure and balance important minerals, such as potassium, sodium, and calcium, in your blood.
+
+
+During hemodialysis, your blood goes through a filter, called a \textbf{{\slshape Hemodialyzer}}, outside your body. A Hemodialyzer is sometimes called an “\textbf{{\slshape Artificial kidney}}.”
+
+At the start of a hemodialysis treatment, a dialysis nurse or technician places two needles into your arm. A numbing cream or spray can be used if placing the needles bothers you. Each needle is attached to a soft tube connected to the dialysis machine.
+
+\begin{center}
+     \includegraphics[scale=2]{NKDEP_Hemodialysis_Illustration_900x602.png}
+\end{center}
+\begin{center}
+    Figure 2 : Dialysis Process
+\end{center}
+
+The dialysis machine pumps blood through the filter and returns the blood to your body. During the process, the dialysis machine checks your blood pressure and controls how quickly
+
+\begin{itemize}
+    \item blood flows through the filter
+    \item fluid is removed from your body
+\end{itemize}
+
+\subsection{Mathematical Breakthrough of \\ Diffusion in Artificial Kidney(Hemodialyzer)}
+
+The diffusion equation for an artificial kidney (hemodialyzer) can be derived from Fick's Law of Diffusion, which describes the rate of diffusion of a solute across a membrane. Fick's Law states that \textbf{{\slshape the rate of diffusion of a solute is proportional to the concentration gradient and the surface area of the membrane, and inversely proportional to the distance that the solute must travel across the membrane.}}
+
+The equation is :
+
+\[J = -D \cdot A \cdot \left(\frac{dC}{dx} \right)\]
+
+Where :
+$J$ is the rate of diffusion (mass per unit time),
+$D$ is the diffusion coefficient of the solute,
+$A$ is the surface area of the membrane available for diffusion, and
+$\displaystyle \left(\frac{dC}{dx} \right)$ is the concentration gradient of the solute across the membrane.
+
+\BgThispage
+
+{\bf To derive the diffusion equation for an artificial kidney}, we consider the hemodialyzer as a membrane through which solutes in the blood diffuse. The solute concentration gradient across the membrane is dependent on the concentration of the solute in the blood and the dialysate, which is the fluid used to clean the blood.
+
+Let us assume that the concentration of the solute in the blood is $C_b$ and the concentration in the dialysate is $C_d$. The concentration gradient across the membrane can be expressed as $(C_b - C_d)$.
+
+The surface area of the membrane is denoted by $A$, and the thickness of the membrane is represented by $L$.
+
+We can then rewrite Fick's Law as:
+
+\[J = -D \cdot A \cdot   \frac{(C_b - C_d)}{L}\]
+
+The mass of solute that diffuses through the membrane per unit time is given by $J$. 
+
+The rate of change of solute concentration in the blood with respect to time can be expressed as :
+
+\[\frac{\partial C}{\partial t} = -\frac{J}{V_b}\]
+
+Where :
+$V_b$ is the volume of blood being filtered per unit time.
+
+Substituting $J$ from the Fick's Law equation, we get :
+
+\[\frac{\partial C}{\partial t} = D \cdot A \cdot \frac{(C_d - C_b)}{(LV_b)}\]
+
+This is the diffusion equation for an artificial kidney. It describes the rate of change of solute concentration in the blood as a function of time, diffusion coefficient, membrane surface area, membrane thickness, and the concentration difference between the blood and the dialysate.
+
+In summary, the diffusion equation for an artificial kidney can be derived from Fick's Law of Diffusion and provides a mathematical framework for understanding and optimizing the performance of hemodialyzers.
+
+\section{Types of Hemodialyzer}
+
+\BgThispage
+
+There are several types of hemodialyzers available for the treatment of kidney failure. These hemodialyzers differ in design, membrane composition, and operational characteristics. The choice of hemodialyzer depends on factors such as the patient's specific needs, the underlying condition, and the preferences of the healthcare provider. Here are some common types of hemodialyzers:
+
+\begin{enumerate}[1)]
+    \item \textbf{{\slshape Cellulose-based Hemodialyzers:}} These hemodialyzers feature a membrane made from cellulose, a natural polymer derived from plant sources. They have been widely used in hemodialysis for many years. Cellulose-based hemodialyzers are biocompatible and provide effective removal of waste products. However, they may activate the immune system and cause allergic reactions in some patients.
+    
+    \item \textbf{{\slshape Synthetic Membrane Hemodialyzers:}} Synthetic membrane hemodialyzers are made from synthetic materials such as polysulfone, polyethersulfone, or polyamide. These membranes offer improved biocompatibility and reduced risk of allergic reactions compared to cellulose-based membranes. They provide efficient clearance of waste products and have high permeability.
+    
+    \item \textbf{{\slshape High-Flux Hemodialyzers:}} High-flux hemodialyzers are designed to enhance the removal of larger molecules, including middle-sized toxins, such as beta-2 microglobulin. These hemodialyzers have larger pore sizes and higher permeability compared to conventional hemodialyzers. High-flux hemodialysis is often recommended for patients with high levels of middle molecules.
+    
+    \item \textbf{{\slshape Low-Flux Hemodialyzers:}} Low-flux hemodialyzers have smaller pore sizes and lower permeability compared to high-flux hemodialyzers. They are efficient in removing small to medium-sized molecules but less effective in clearing larger molecules. Low-flux hemodialysis is commonly used in stable patients or those with minimal middle molecule accumulation.
+    
+    \item \textbf{{\slshape Hemodiafilters:}} Hemodiafilters combine the principles of hemodialysis and hemofiltration. They have both a diffusion component and a convective component. In addition to removing waste products by diffusion, they also remove fluid through convective transport, similar to hemofiltration. Hemodiafilters are effective in removing both small and larger molecules.
+    
+    \item \textbf{{\slshape Polysulfone-coated Hemodialyzers:}} These hemodialyzers have a polysulfone coating on the surface of the membrane. The coating improves biocompatibility, reduces protein adsorption, and minimizes the activation of the complement system. Polysulfone-coated hemodialyzers are widely used and provide efficient solute removal.
+\end{enumerate}
+
+It's important to note that the choice of hemodialyzer should be made in consultation with healthcare professionals who can consider factors such as patient-specific requirements, the presence of allergies or sensitivities, and the anticipated dialysis goals. Different hemodialyzers have their advantages and considerations, and the selection should be tailored to each individual's needs.
+
+\BgThispage
+
+\section{References}
+
+\begin{itemize}
+    \item \url{https://www.ncbi.nlm.nih.gov/}
+    \item \url{https://en.wikipedia.org/wiki/Hemodialysis}
+    \item \url{https://wiki.ucl.ac.uk/display/BECS/Kidney+Dialysis}
+    \item For More Info about this document visit : \url{https://github.com/akhlak919/LaTeX_Stuffs/}
+\end{itemize}
+
+
+
+
+
+
+
+
+\end{document}
